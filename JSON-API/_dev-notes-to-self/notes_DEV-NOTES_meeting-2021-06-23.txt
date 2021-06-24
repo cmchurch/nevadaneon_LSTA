@@ -1,0 +1,47 @@
+https file headers - set no-need to invalidate headers? -> track when last modified....
+
+add lost modified key -> make one call periodically to check to see if the object needs pulled again
+
+JSON API created modified date, but it's in the node->data and not as a header to the API call
+
+docker container -> safety net -> should this all go in docker container, would that work with UNR VM infastructure -> VM in VM?
+
+yearlong headers -> no need to update frequently
+
+don't want to store assets in two places, but do want to cache for performance -> look into caching -> yearlong static cache -> use VARNISH or SQUID PROXY /NGINX
+
+ALSO, getting the data from JSON API requires a lot of calls (~5000)
+- using includes, this can be cut down dramatically, but the includes are not associated directly with the items in the DATA array -> would need to refilter them out anyway
+- possibly quicker to use includes and make fewer endpoint hits, but scripts are far more intelligible if each corresponds to an endpoint
+- currently planning to use 1 script per endpoint
+    (UPDATE: seemed to work fine, even if it did take several minutes to complete the large number of requests -> not at all optimal, but may not be necessary to optimize because data changes very infrequently and will be stored locally in cache)
+
+php opt caching
+
+DISCUSSION (Is DRUPAL and CMF ncessary? has higher overhead and more maintenance / security concerns)
+Does it make sense to go with static pages using something like JEKYLL OR FLASK
+- Should spend a weekend seeing how far I can get with each and what the limitations are
+
+****FLASK*****
+
+FLASK (https://flask.palletsprojects.com/en/2.0.x/)
+SQLITE
+PYTHON WITH SQLALCHEMY
+
+****JEKYLL****
+
+JEKYLL - pull in the JSON, store it local, then use JEKYLL to make static pages
+
+WGET scripts to generate WARC files (use as CHECKSUM of sorts to see if change has been made)
+
+----CURRENT WORKFLOW PLAN-----
+
+1. BUILD CSV, XML, or JSON OBJECT BY CALLING ENDPOINT WITH ALL DATA I NEED, STORE ON SERVER
+2. IMPORT VIA FEEDS INTO DRUPAL OR BUILD STATIC PAGES
+3. SET UP VARNISH TO SERVE CROSSDOMAIN ASSETS FROM CACHE
+
+FILE ENDPOINT include RELATIONSHIP MEDIA ENDPOINT, CONDITION ID MEDIAPOINT MATCHES ID RE
+
+BUILD THE URI OFF THE NAME CONTAINED IN THE MEDIA OBJECT?
+
+USE CACHE TO REBUILD A DATA ASSET THAT IS EASIER TO PROCESS AND INGEST INTO WHATEVER FORM THE SITE TAKES, JSON OBJECTS ARE LARGE AND UNWEILDY, LOTS OF BURIED RELATIONSHIPS

@@ -9,7 +9,7 @@
 #NORTHERN NEVADA NEON PROJECT
 
 #DATE LAST UPDATED
-#06-23-2021
+#06-28-2021
 
 echo "\n\nDOWNLOADING JSON OBJECT FROM ENDPOINT AT UNLV FOR DC_CONTENT, MEDIA, AND FILE NODES RELATED TO NEON USING INCLUDES\n";
 echo "******************************************************************************************************************\n\n";
@@ -100,5 +100,5 @@ echo "**************************************************************************
 	echo "Saved JSON to OUTPUT DIRECTORY\n"; #let the user know we've finished
 
 	#finished
-	echo "\n\nFINISHED!";
+	echo "\n\nFINISHED!\n\n";
 ?>

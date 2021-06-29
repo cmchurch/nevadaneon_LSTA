@@ -91,10 +91,10 @@ foreach ($dcNodes as $key=>$node){
   $progress = $key/$total_dcNodes*100;
   echo "PROGRESS: $progress %     \r";
 
-  #get the key attributes and relationships for each dc_node in JSON
+  #get the information on whether this is a child or a prent node (it's a child if it is a member of another node)
   $dcNode_parent=$node->relationships->field_member_of->data;
 
-  #if we haven't skipped the current node then continue grabbing attributes from the JSON
+  #get all the relevant data we need from the JSON for the current node in the foreach loop
   $dcNode = ['did'      =>    $node->attributes->field_digital_id,
              'uuid'     =>    $node->id,
              'url'      =>    str_replace("http://n2t.net","http://special.library.unlv.edu",$node->attributes->field_archival_resource_key->uri),
@@ -133,24 +133,26 @@ foreach ($dcNodes as $key=>$node){
         #it is a child, so update the file URLs with the results from ABOVE
         $updateUUID=$dcNode_parent[0]->id;
 
+
+        #NOTE: make these proper functions!
         #update service image
-        $tempURLS=$finalNodeArray[$updateUUID]['service'];      #NOTE: make these proper functions!
-        $tempURLtoADD=$dcNode['service'];
-        if (isset($tempURLtoADD)) {
+        $tempURLS=$finalNodeArray[$updateUUID]['service'];      #get what's already in the finalArray for URLS to the files for service
+        $tempURLtoADD=$dcNode['service'];                       #get the url from the current child in the iteration to add to the list from previous line
+        if (isset($tempURLtoADD)) {                             #check to make sure we have something to add, or else we end up with extraneous commas
           $finalNodeArray[$updateUUID]['service']=$tempURLS.",".$tempURLtoADD;
         }
 
         #update thumbnail
-        $tempURLS=$finalNodeArray[$updateUUID]['thumbnail'];
-        $tempURLtoADD=$dcNode['thumbnail'];
-        if (isset($tempURLtoADD)) {
+        $tempURLS=$finalNodeArray[$updateUUID]['thumbnail'];  #get what's already in the finalArray for URLS to the files for thumbnail photos
+        $tempURLtoADD=$dcNode['thumbnail'];                   #get the url from the current child in the iteration to add to the list from previous line
+        if (isset($tempURLtoADD)) {                           #check to make sure we have something to add, or else we end up with extraneous commas
           $finalNodeArray[$updateUUID]['thumbnail']=$tempURLS.",".$tempURLtoADD;
         }
 
         #update original
-        $tempURLS=$finalNodeArray[$updateUUID]['original'];
-        $tempURLtoADD=$dcNode['original'];
-        if (isset($tempURLtoADD)) {
+        $tempURLS=$finalNodeArray[$updateUUID]['original'];  #get what's already in the finalArray for URLS to the files for original photos
+        $tempURLtoADD=$dcNode['original'];                   #get the url from the current child in the iteration to add to the list from previous line
+        if (isset($tempURLtoADD)) {                          #check to make sure we have something to add, or else we end up with extraneous commas
           $finalNodeArray[$updateUUID]['original']=$tempURLS.",".$tempURLtoADD;
         }
     }

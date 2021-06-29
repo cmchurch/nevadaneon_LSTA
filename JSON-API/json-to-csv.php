@@ -28,6 +28,25 @@ function getlatlon($node)
   return [$latitude,$longitude];
 }
 
+function getbody($node)
+{
+    if (!empty($node->attributes->body)) {
+      return $node->attributes->body->value;
+    }
+    else {
+      return NULL;
+    }
+}
+
+function getcitation($node)
+{
+    if (!empty($node->attributes->citation)) {
+      return $node->attributes->body->value;
+    }
+    else {
+      return NULL;
+    }
+}
 #***********************************
 #***************MAIN****************
 #***********************************
@@ -39,6 +58,7 @@ $input_path = "JSON-OUTPUT/media-nodes.json";
 $mediaNodes = json_decode(file_get_contents($input_path));
 $input_path = "JSON-OUTPUT/dc-nodes.json";
 $dcNodes = json_decode(file_get_contents($input_path));
+$total_dcNodes = count($dcNodes);
 $input_path = "JSON-OUTPUT/files.json";
 $fileNodes = json_decode(file_get_contents($input_path));
 
@@ -46,15 +66,18 @@ $fileNodes = json_decode(file_get_contents($input_path));
 $counter=1; #so we don't run the entire thing while testing
 $csvLines =[]; #this is where we will store all CSV lines before writing them
 
-$mediaTypes =['0db579ad-a810-45bb-acd1-002bf314b50f'  =>  'service',  #media use UUID taxonomy term for service files
-              '7bb44572-2b5c-4c28-b9f3-423c578455a8'  =>  'thumbnail',#media use UUID taxonomy term for thumbnail files
+$mediaTypes =['0db579ad-a810-45bb-acd1-002bf314b50f'  =>  'thumbnail',#media use UUID taxonomy term for thumbnail files
+              '7bb44572-2b5c-4c28-b9f3-423c578455a8'  =>  'service',  #media use UUID taxonomy term for service files
               '5111671c-1010-4d63-9a53-5001aefc836a'  =>  'original'  #media use UUID taxonomy term for original files
             ];
 
 #define function for grabbing attributes, using local variables so they reset with each get_called_class
 
-foreach ($dcNodes as $node){
+foreach ($dcNodes as $key=>$node){
 
+  #show progress to user
+  $progress = $key/$total_dcNodes*100;
+  echo "PROGRESS: $progress %     \r";
 
   #get the key attributes and relationships for each dc_node in JSON
   $dcNode_parent=$node->relationships->field_member_of->data;
@@ -65,8 +88,8 @@ foreach ($dcNodes as $node){
              'uuid'     =>    $node->id,
              'url'      =>    str_replace("http://n2t.net","http://special.library.unlv.edu",$node->attributes->field_archival_resource_key->uri),
              'title'    =>    $node->attributes->title,
-             'body'     =>    $node->attributes->body->value,
-             'citation' =>    $node->attributes->field_citation->value,
+             'body'     =>    getbody($node),
+             'citation' =>    getcitation($node),
              'lat'      =>    getlatlon($node)[0],
              'lon'      =>    getlatlon($node)[1],
              'thumbnail'=>    NULL,
@@ -74,10 +97,9 @@ foreach ($dcNodes as $node){
              'original' =>    NULL
 
   ];
-  echo $dcNode['title']."\n";
 
   #iterate over mediaNodes for the current dc_node and find the associated files
-  foreach ($mediaNodes as $mediaNode)
+  foreach ($mediaNodes as $mediaKey=>$mediaNode)
     {
       $media = ['parent_id'   =>    $mediaNode->relationships->field_media_of->data->id,      #this is the UUID of the dc node to which the current media node belongs
                 'file_id'     =>    $mediaNode->relationships->field_media_image->data->id,   #file id of the associated file to the current media node
@@ -86,12 +108,13 @@ foreach ($dcNodes as $node){
 
       if ($media['parent_id']==$dcNode['uuid']) {  #it looks like some don't have service files
         $type = $mediaTypes[$media['usage']];
-        echo $type;
-        foreach ($fileNodes as $fileNode) {
+        foreach ($fileNodes as $fileKey=>$fileNode) {
           $fileId = $fileNode->id;
           if ($fileId==$media['file_id']) {
             $dcNode[$type] = "http://special.library.unlv.edu".$fileNode->attributes->uri->url;
             $dcNode_fileURL = "http://special.library.unlv.edu".$fileNode->attributes->uri->url;
+            unset($mediaNodes[$mediaKey]);
+            unset($fileNodes[$fileKey]);
           }
         }
       }
@@ -102,7 +125,7 @@ foreach ($dcNodes as $node){
   array_push($csvLines,$dcNode);
 
   #only test on a handful during development
-  if ($counter==10) { break;}
+  #if ($counter==10) { break;}
   $counter++;
 
 }
@@ -114,6 +137,6 @@ foreach ($csvLines as $line) {
   fputcsv($output,$line,'|');
 }
 fclose($output); #close the output file
-echo "END\n";    #let the user know we are done
+echo "\nEND\n";    #let the user know we are done
 
 ?>

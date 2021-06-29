@@ -47,6 +47,17 @@ function getcitation($node)
       return NULL;
     }
 }
+
+function getFile($file_uuid, $fileNodesToSearch) {
+  foreach ($fileNodesToSearch as $fileKey=>$fileNode) {
+    $fileId = $fileNode->id;
+    if ($fileId==$file_uuid) {
+      $result = ["http://special.library.unlv.edu".$fileNode->attributes->uri->url,$fileKey];
+      return $result;
+    }
+  }
+}
+
 #***********************************
 #***************MAIN****************
 #***********************************
@@ -65,6 +76,7 @@ $fileNodes = json_decode(file_get_contents($input_path));
 #set variables
 $counter=1; #so we don't run the entire thing while testing
 $csvLines =[]; #this is where we will store all CSV lines before writing them
+$finalNodeArray=[];
 
 $mediaTypes =['0db579ad-a810-45bb-acd1-002bf314b50f'  =>  'thumbnail',#media use UUID taxonomy term for thumbnail files
               '7bb44572-2b5c-4c28-b9f3-423c578455a8'  =>  'service',  #media use UUID taxonomy term for service files
@@ -81,8 +93,7 @@ foreach ($dcNodes as $key=>$node){
 
   #get the key attributes and relationships for each dc_node in JSON
   $dcNode_parent=$node->relationships->field_member_of->data;
-  #check to see if this is a child node; if it is, skip it
-  if (!empty($dcNode_parent)) {continue;}
+
   #if we haven't skipped the current node then continue grabbing attributes from the JSON
   $dcNode = ['did'      =>    $node->attributes->field_digital_id,
              'uuid'     =>    $node->id,
@@ -108,32 +119,61 @@ foreach ($dcNodes as $key=>$node){
 
       if ($media['parent_id']==$dcNode['uuid']) {  #it looks like some don't have service files
         $type = $mediaTypes[$media['usage']];
-        foreach ($fileNodes as $fileKey=>$fileNode) {
-          $fileId = $fileNode->id;
-          if ($fileId==$media['file_id']) {
-            $dcNode[$type] = "http://special.library.unlv.edu".$fileNode->attributes->uri->url;
-            $dcNode_fileURL = "http://special.library.unlv.edu".$fileNode->attributes->uri->url;
-            unset($mediaNodes[$mediaKey]);
-            unset($fileNodes[$fileKey]);
-          }
-        }
+        $fileGrab = getFile($media['file_id'],$fileNodes);
+        $dcNode[$type] = $fileGrab[0];
+        $fileKey = $fileGrab[1];
+        unset($mediaNodes[$mediaKey]);
+        unset($fileNodes[$fileKey]);
+
       }
     }
 
-  #write the row to the csv file using a delimiter
-  #fputcsv($output,$dcNode,'|');
-  array_push($csvLines,$dcNode);
+    #check to see if this is a child node; if it is, use the UUID to update what's already in the finalNodeArray -> PROBLEM: this only works if the children come after the parents in the JSON always (otherwise it'll get overwritten)
+    if (!empty($dcNode_parent)) {
+        #it is a child, so update the file URLs with the results from ABOVE
+        $updateUUID=$dcNode_parent[0]->id;
+
+        #update service image
+        $tempURLS=$finalNodeArray[$updateUUID]['service'];      #NOTE: make these proper functions!
+        $tempURLtoADD=$dcNode['service'];
+        if (isset($tempURLtoADD)) {
+          $finalNodeArray[$updateUUID]['service']=$tempURLS.",".$tempURLtoADD;
+        }
+
+        #update thumbnail
+        $tempURLS=$finalNodeArray[$updateUUID]['thumbnail'];
+        $tempURLtoADD=$dcNode['thumbnail'];
+        if (isset($tempURLtoADD)) {
+          $finalNodeArray[$updateUUID]['thumbnail']=$tempURLS.",".$tempURLtoADD;
+        }
+
+        #update original
+        $tempURLS=$finalNodeArray[$updateUUID]['original'];
+        $tempURLtoADD=$dcNode['original'];
+        if (isset($tempURLtoADD)) {
+          $finalNodeArray[$updateUUID]['original']=$tempURLS.",".$tempURLtoADD;
+        }
+    }
+    else {
+      #it is a parent, so add it to the final Array as an entirely new object
+      $finalNodeArray[$dcNode['uuid']]=$dcNode;
+
+    }
+
+
+  #add the current DC Node to the final array using the UUID as the key
+
 
   #only test on a handful during development
-  #if ($counter==10) { break;}
+  #if ($counter==100) { break;}
   $counter++;
 
 }
 
 #we've finished, now time to output results
 $output = fopen("CSV-OUTPUT/import.csv", "w");  #open an a file to output as csv
-fputcsv($output,array_keys($csvLines[0]),'|'); #output headers to first line of CSV file
-foreach ($csvLines as $line) {
+fputcsv($output,array_keys($dcNode),'|'); #output headers to first line of CSV file
+foreach ($finalNodeArray as $line) {
   fputcsv($output,$line,'|');
 }
 fclose($output); #close the output file

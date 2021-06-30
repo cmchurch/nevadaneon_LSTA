@@ -1,25 +1,41 @@
 <?PHP
-#DESCRIPTION
-#TRANSFORM JSON OBJECTS INTO CSV FOR CMS IMPORT
+/*
+DESCRIPTION
+ TRANSFORM JSON OBJECTS INTO CSV FOR CMS IMPORT
 
-#CREDITS
-#CHRISTOPHER M. CHURCH, PHD
-#UNIVERSITY OF NEVADA
-#LSTA GRANT, 2021
-#NORTHERN NEVADA NEON PROJECT
+CREDITS
+ CHRISTOPHER M. CHURCH, PHD
+ UNIVERSITY OF NEVADA
+ LSTA GRANT, 2021
+ NORTHERN NEVADA NEON PROJECT
 
-#DATE LAST UPDATED
-#06-28-2021
+DATE LAST UPDATED
+ 06-30-2021
+
+BASIC PSEUDOCODE
+1. GET ALL JSON OBJECTS (DCNODES, MEDIA NODES, AND FILE NODES)
+2. ITERATE OVER DCNODES IN MAIN FUNCTION USING FOREACH LOOP
+3. IN FOREACH LOOP ITERATION, DO THE FOLLOWING:
+    a) GET THE MAIN DATA FOR EACH DC NODE AND STORE IT IN AN ASSOCIATIVE ARRAY
+    b) CALL mediaNodesIterate(), WHICH CALLS getFile() AND GRABS THE MEDIA NODES RELATED THROUGH field_media_of IN JSON
+       AND GETS THE ASSOCIATED FILE URL FROM THE FILE NODE
+    c) DETERMINE IF WE HAVE A CHILD OR PARENT NODE BASED ON field_member_of IN THE DCNODE JSON
+    d) IF PARENT, ADD IT DIRECTLY TO THE FINAL NODE ARRAY THAT WILL BE EXPORTED TO CSV
+       IF CHILD, ADD IT TO A TEMPORARY CHILD NODE ARRAY WITH PARENT INFO APPENDED
+4. AFTER FOREACH LOOP ON DCNODES, ITERATE OVER CHILD NODE ARRAY TO UPDATE THE FINAL NODE ARRAY WITH THE FILE URLS USING UUID AS KEY TO JOIN THE TWO ASSOCIATIVE ARRAYS
+5. EXPORT THE CSV WITH HEADERS
+
+*/
 
 #***********************************
 #*************FUNCTIONS*************
 #***********************************
 
-function getlatlon($node)
+function getlatlon($_node)
 {
-  if (!empty($node->attributes->field_topic_location)) {
-    $latitude=$node->attributes->field_topic_location[0]->lat;
-    $longitude=$node->attributes->field_topic_location[0]->lng;
+  if (!empty($_node->attributes->field_topic_location)) {
+    $latitude=$_node->attributes->field_topic_location[0]->lat;
+    $longitude=$_node->attributes->field_topic_location[0]->lng;
   }
   else {
     $latitude=NULL;
@@ -28,28 +44,28 @@ function getlatlon($node)
   return [$latitude,$longitude];
 }
 
-function getbody($node)
+function getbody($_node)
 {
-    if (!empty($node->attributes->body)) {
-      return $node->attributes->body->value;
+    if (!empty($_node->attributes->body)) {
+      return $_node->attributes->body->value;
     }
     else {
       return NULL;
     }
 }
 
-function getcitation($node)
+function getcitation($_node)
 {
-    if (!empty($node->attributes->field_citation)) {
-      return $node->attributes->field_citation->value;
+    if (!empty($_node->attributes->field_citation)) {
+      return $_node->attributes->field_citation->value;
     }
     else {
       return NULL;
     }
 }
 
-function getFile($file_uuid, $fileNodesToSearch) {
-  foreach ($fileNodesToSearch as $fileKey=>$fileNode) {
+function getFile($file_uuid, $_fileNodes) {
+  foreach ($_fileNodes as $fileKey=>$fileNode) {
     $fileId = $fileNode->id;
     if ($fileId==$file_uuid) {
       $result = ["http://special.library.unlv.edu".$fileNode->attributes->uri->url,$fileKey];
@@ -58,7 +74,7 @@ function getFile($file_uuid, $fileNodesToSearch) {
   }
 }
 
-function mediaNodesIterate($_mediaNodes, $_fileNodes, $dcNode,$mediaTypes) {
+function mediaNodesIterate($_mediaNodes, $_fileNodes, $_dcNode,$_mediaTypes) {
   foreach ($_mediaNodes as $mediaKey=>$mediaNode)
     {
       #print_r($mediaNode->relationships->field_media_of->data->id);
@@ -67,16 +83,16 @@ function mediaNodesIterate($_mediaNodes, $_fileNodes, $dcNode,$mediaTypes) {
                 'usage'       =>    $mediaNode->relationships->field_media_use->data[0]->id   #this is the UUID of the taxonomy term attached to media node SEE SET VARIABLES ABOVE
       ];
 
-      if ($media['parent_id']==$dcNode['uuid']) {  #it looks like some don't have service files
-        $type = $mediaTypes[$media['usage']];
+      if ($media['parent_id']==$_dcNode['uuid']) {  #it looks like some don't have service files
+        $type = $_mediaTypes[$media['usage']];
         $fileGrab = getFile($media['file_id'],$_fileNodes);
-        $dcNode[$type] = $fileGrab[0];
+        $_dcNode[$type] = $fileGrab[0];
         $fileKey = $fileGrab[1];
         unset($_mediaNodes[$mediaKey]);
         unset($_fileNodes[$fileKey]);
       }
     }
-    return [$_mediaNodes,$_fileNodes,$dcNode];
+    return [$_mediaNodes,$_fileNodes,$_dcNode];
 }
 
 #***********************************
@@ -114,7 +130,7 @@ foreach ($dcNodes as $key=>$node){
   echo "PROGRESS: $progress %     \r";
 
   #get the information on whether this is a child or a prent node (it's a child if it is a member of another node)
-  $dcNode_parent=$node->relationships->field_member_of->data;
+  $dcNode_parent=$node->relationships->field_member_of->data;   #pull out the parent (not part of dcNode associative array -> we don't want it in final csv)
 
   #get all the relevant data we need from the JSON for the current node in the foreach loop
   $dcNode = ['did'      =>    $node->attributes->field_digital_id,
@@ -133,9 +149,9 @@ foreach ($dcNodes as $key=>$node){
 
   #iterate over mediaNodes for the current dc_node and find the associated files
   $iterateMediaResults = mediaNodesIterate($mediaNodes, $fileNodes, $dcNode,$mediaTypes);
-  $mediaNodes = $iterateMediaResults[0];
+  $mediaNodes = $iterateMediaResults[0];  #inside mediaNodesIterate function it unsets the array element once it's been processed, so we have to update the master list so we don't iterate over items already processed
   $fileNodes = $iterateMediaResults[1];
-  $dcNode = $iterateMediaResults[2];
+  $dcNode = $iterateMediaResults[2];      #update the current dcNode we're working with in the foreach loop with the results from iterating over the mediaNodes
 
 
   #check to see if this is a child node; if it is, use the UUID to update what's already in the finalNodeArray -> PROBLEM: this only works if the children come after the parents in the JSON always (otherwise it'll get overwritten)
@@ -184,7 +200,8 @@ foreach ($childNodeArray as $child) {
 
 #we've finished, now time to output results
 $output = fopen("CSV-OUTPUT/import.csv", "w");  #open an a file to output as csv
-fputcsv($output,array_keys($dcNode),'|'); #output headers to first line of CSV file
+$initArrayKey=array_key_first($finalNodeArray);
+fputcsv($output,array_keys($finalNodeArray[$initArrayKey]),'|'); #output headers to first line of CSV file
 foreach ($finalNodeArray as $line) {
   fputcsv($output,$line,'|');
 }

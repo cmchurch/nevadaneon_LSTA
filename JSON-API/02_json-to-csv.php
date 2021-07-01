@@ -88,8 +88,9 @@ function mediaNodesIterate($_mediaNodes, $_fileNodes, $_dcNode,$_mediaTypes) {
         $fileGrab = getFile($media['file_id'],$_fileNodes);
         $_dcNode[$type] = $fileGrab[0];
         $fileKey = $fileGrab[1];
-        unset($_mediaNodes[$mediaKey]);
-        unset($_fileNodes[$fileKey]);
+        #if we unset the node, then if there is a duplicate, we get a blank -> duplicates can arise if the call for media_nodes to the JSON API results in the two associated media files falling across an OFFSET divide -> the included dc_node will then show up twice in the "included" JSON element, so if we unset it, then we will lose the file data for the second time it shows up
+        #unset($_mediaNodes[$mediaKey]); 
+        #unset($_fileNodes[$fileKey]);
       }
     }
     return [$_mediaNodes,$_fileNodes,$_dcNode];
@@ -152,7 +153,6 @@ foreach ($dcNodes as $key=>$node){
   $mediaNodes = $iterateMediaResults[0];  #inside mediaNodesIterate function it unsets the array element once it's been processed, so we have to update the master list so we don't iterate over items already processed
   $fileNodes = $iterateMediaResults[1];
   $dcNode = $iterateMediaResults[2];      #update the current dcNode we're working with in the foreach loop with the results from iterating over the mediaNodes
-
 
   #check to see if this is a child node; if it is, use the UUID to update what's already in the finalNodeArray -> PROBLEM: this only works if the children come after the parents in the JSON always (otherwise it'll get overwritten)
   if (!empty($dcNode_parent)) {

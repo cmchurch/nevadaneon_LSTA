@@ -15,8 +15,11 @@ DATE LAST UPDATED
 
 $input_path = "INPUT/UNR_metadata_2021-07-06.csv";
 $input_data = fopen($input_path,"r");
+$first_row = fgetcsv($input_data,0,$separator = "|");
+$keys = array_values($first_row);
+print_r($keys);
 while (($row = fgetcsv($input_data,0,$separator = "|")) != FALSE) {
-  var_dump($row);
+#  var_dump($row);
 }
 
 fclose($input_data);

@@ -15,6 +15,7 @@ DATE LAST UPDATED
 
 
 #************************MAIN***************************
+print "\nSTART.\n";
 $output_path = "OUTPUT/output.csv"; #where we will save the CSV
 
 $UNR_metadata = fetchCSV("INPUT/UNR_metadata_2021-07-06.csv",'DigitalitemIDNNN'); #grab the data from UNR
@@ -23,7 +24,7 @@ $UNLV_metadata = fetchCSV("../JSON-API/CSV-OUTPUT/import.csv",'did');           
 $combined = array_merge_recursive($UNLV_metadata,$UNR_metadata);                  #merge array on shared key 'did' vs 'DigitalitemIDNNN'
 
 makeCSV($output_path,$combined);  #export the combined array as a CSV
-
+print "END.\n";
 #************************MFUNCTIONS**********************
 
 function fetchCSV($input_path,$_UID_KEY) {
@@ -63,6 +64,7 @@ function makeCSV($_output_path,$finalNodeArray) {
     fputcsv($output,$line,'|');
   }
   fclose($output); #close the output file
+  print "CSV exported to $_output_path\n";
 }
 
  ?>

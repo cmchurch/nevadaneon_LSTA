@@ -89,7 +89,8 @@ function mediaNodesIterate($_mediaNodes, $_fileNodes, $_dcNode,$_mediaTypes) {
         $_dcNode[$type] = $fileGrab[0];
         $fileKey = $fileGrab[1];
         #if we unset the node, then if there is a duplicate, we get a blank -> duplicates can arise if the call for media_nodes to the JSON API results in the two associated media files falling across an OFFSET divide -> the included dc_node will then show up twice in the "included" JSON element, so if we unset it, then we will lose the file data for the second time it shows up
-        #unset($_mediaNodes[$mediaKey]); 
+        #without unset commands, it is twice as slow, however
+        #unset($_mediaNodes[$mediaKey]);
         #unset($_fileNodes[$fileKey]);
       }
     }

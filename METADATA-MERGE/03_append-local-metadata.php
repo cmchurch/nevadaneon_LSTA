@@ -16,11 +16,28 @@ DATE LAST UPDATED
 $input_path = "INPUT/UNR_metadata_2021-07-06.csv";
 $input_data = fopen($input_path,"r");
 $first_row = fgetcsv($input_data,0,$separator = "|");
+$csvKeys=[];
+$csvLines=[];
+
 $keys = array_values($first_row);
-print_r($keys);
+  foreach ($keys as $index=>$key) {
+    if ($key==NULL) { $key = "BLANK".$index;}
+    $key = preg_replace("/[^A-Za-z0-9]/", '', $key);
+    $key = substr($key, 0, 20);
+    array_push($csvKeys, $key);
+  }
+
+#print_r($csvKeys);
+
 while (($row = fgetcsv($input_data,0,$separator = "|")) != FALSE) {
-#  var_dump($row);
+    $csvLine=[];
+    foreach ($row as $index=>$r) {
+        $csvLine[$csvKeys[$index]]=$r;
+    }
+    array_push($csvLines,$csvLine);
 }
+
+#print_r($csvLines);
 
 fclose($input_data);
  ?>

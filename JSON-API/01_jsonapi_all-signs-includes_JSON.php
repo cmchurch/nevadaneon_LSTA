@@ -84,19 +84,19 @@ echo "**************************************************************************
   #SAVE MEDIA NODES
 	echo "\nSaving $count_media_nodes Media Nodes...\n"; #let the user know we're done iterating over the JSON API endpoint
 	$finalJson = json_encode($dataArray); #encode the DATA results as a JSON OBJECT
-	file_put_contents("JSON-OUTPUT/media-nodes.json", $finalJson); #Save object to output directory to be used in cache for CMS
+	file_put_contents(__DIR__ . "/JSON-OUTPUT/media-nodes.json", $finalJson); #Save object to output directory to be used in cache for CMS
 	echo "Saved JSON to OUTPUT DIRECTORY\n"; #let the user know we've finished
 
   #SAVE DC NODES
 	echo "\nSaving $count_dc_nodes DC Nodes...\n";
 	$finalJson = json_encode($nodeArray); #encode the DATA results as a JSON OBJECT
-	file_put_contents("JSON-OUTPUT/dc-nodes.json", $finalJson); #Save object to output directory to be used in cache for CMS
+	file_put_contents(__DIR__ . "/JSON-OUTPUT/dc-nodes.json", $finalJson); #Save object to output directory to be used in cache for CMS
 	echo "Saved JSON to OUTPUT DIRECTORY\n"; #let the user know we've finished
 
   #SAVE FILE NODES
 	echo "\nSaving $count_file_nodes File Nodes...\n";
 	$finalJson = json_encode($fileArray); #encode the DATA results as a JSON OBJECT
-	file_put_contents("JSON-OUTPUT/files.json", $finalJson); #Save object to output directory to be used in cache for CMS
+	file_put_contents(__DIR__ . "/JSON-OUTPUT/files.json", $finalJson); #Save object to output directory to be used in cache for CMS
 	echo "Saved JSON to OUTPUT DIRECTORY\n"; #let the user know we've finished
 
 	#finished

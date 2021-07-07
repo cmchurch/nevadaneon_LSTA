@@ -104,12 +104,12 @@ function mediaNodesIterate($_mediaNodes, $_fileNodes, $_dcNode,$_mediaTypes) {
 echo "\n\nTRANSFORMING JSON OBJECT INTO CSV FOR CMS IMPORT\n";
 echo "*************************************************\n\nSTART\n";
 #READ IN THE JSONS FROM CACHE
-$input_path = "JSON-OUTPUT/media-nodes.json";
+$input_path = __DIR__ . "/JSON-OUTPUT/media-nodes.json";
 $mediaNodes = json_decode(file_get_contents($input_path));
-$input_path = "JSON-OUTPUT/dc-nodes.json";
+$input_path = __DIR__ . "/JSON-OUTPUT/dc-nodes.json";
 $dcNodes = json_decode(file_get_contents($input_path));
 $total_dcNodes = count($dcNodes);
-$input_path = "JSON-OUTPUT/files.json";
+$input_path = __DIR__ . "/JSON-OUTPUT/files.json";
 $fileNodes = json_decode(file_get_contents($input_path));
 
 #set variables
@@ -200,7 +200,7 @@ foreach ($childNodeArray as $child) {
 #***********************************
 
 #we've finished, now time to output results
-$output = fopen("CSV-OUTPUT/import.csv", "w");  #open an a file to output as csv
+$output = fopen(__DIR__ . "/CSV-OUTPUT/import.csv", "w");  #open an a file to output as csv
 $initArrayKey=array_key_first($finalNodeArray);
 fputcsv($output,array_keys($finalNodeArray[$initArrayKey]),'|'); #output headers to first line of CSV file
 foreach ($finalNodeArray as $line) {

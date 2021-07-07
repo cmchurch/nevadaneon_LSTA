@@ -16,10 +16,10 @@ DATE LAST UPDATED
 
 #************************MAIN***************************
 print "\nSTART.\n";
-$output_path = "OUTPUT/output.csv"; #where we will save the CSV
+$output_path = __DIR__ . "/OUTPUT/output.csv"; #where we will save the CSV
 
-$UNR_metadata = fetchCSV("INPUT/UNR_metadata_2021-07-06.csv",'DigitalitemIDNNN'); #grab the data from UNR
-$UNLV_metadata = fetchCSV("../JSON-API/CSV-OUTPUT/import.csv",'did');             #grab the data from UNLV
+$UNR_metadata = fetchCSV(__DIR__ . "/INPUT/UNR_metadata_2021-07-06.csv",'DigitalitemIDNNN'); #grab the data from UNR
+$UNLV_metadata = fetchCSV(__DIR__ . "/../JSON-API/CSV-OUTPUT/import.csv",'did');             #grab the data from UNLV
 
 $combined = array_merge_recursive($UNLV_metadata,$UNR_metadata);                  #merge array on shared key 'did' vs 'DigitalitemIDNNN'
 

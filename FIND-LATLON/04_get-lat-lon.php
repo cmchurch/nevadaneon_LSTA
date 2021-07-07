@@ -16,19 +16,20 @@ DATE LAST UPDATED
 
 #************************MAIN***************************
 print "\nSTART - GETTING LAT LON.\n";
-$output_path = "OUTPUT/output.csv"; #where we will save the CSV
+$output_path = __DIR__ . "/OUTPUT/output.csv"; #where we will save the CSV
 
 $UNR_metadata = fetchCSV(__DIR__."/INPUT/input.csv",'did'); #grab the csv
-
+$count = 0;
 foreach ($UNR_metadata as $item) {
 
-  if (isset($item['site-address'])) {
-    $address = strip_tags($item['site-address']);
-    get_lat_lon($address);
+  if (!empty($item['site-address'])&&empty($item['lat-lon'])) {    #only call GOOGLE MAP API if this row has an address but does not yet have a lat-lon pair
+    $did = $item['did'];                                           #grab the 'did' of the item to update the main associative array
+    $address = strip_tags($item['site-address']);                  #get address and strip out HTML to pass to API endpoint
+    $UNR_metadata[$did]['lat-lon'] = get_lat_lon($address);        #get geocoded lat-lon and store them in the main associative array
   }
 }
 
-#makeCSV($output_path,$combined);  #export the combined array as a CSV
+makeCSV($output_path,$UNR_metadata);  #export the combined array as a CSV
 print "END.\n";
 #************************MFUNCTIONS**********************
 
@@ -73,27 +74,20 @@ function makeCSV($_output_path,$finalNodeArray) {
 }
 
 function get_lat_lon($_address) {
-  $url = "http://maps.google.com/maps/api/geocode/json?address=".urlencode($_address);
+#this function calls the GOOGLE API to grab the latitude and longitude for each row
+  $api_key = trim(file_get_contents(__DIR__."/API-KEY/api-key.txt"));         #get the API key from HD (not shared on Github)
+  $url = "https://maps.google.com/maps/api/geocode/json?address=".urlencode($_address)."&key=".$api_key; #build API endpoint call
+  $responseJson = file_get_contents($url); #get geocode resutls from endpoint as JSON
+  $response = json_decode($responseJson);  #decode JSON to use
 
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $url);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-  $responseJson = curl_exec($ch);
-  curl_close($ch);
-
-  $response = json_decode($responseJson);
-
-  if ($response->status == 'OK') {
+  if ($response->status == 'OK') {         #if we got a 200 OK from endpoint, store the results; IF NOT, return NULL
       $latitude = $response->results[0]->geometry->location->lat;
       $longitude = $response->results[0]->geometry->location->lng;
-
-      echo 'Latitude: ' . $latitude;
-      echo '<br />';
-      echo 'Longitude: ' . $longitude;
+      return $latitude.", ".$longitude;
   } else {
-      echo $response->status;
-      var_dump($response);
+      return NULL;
   }
+
 }
 
  ?>

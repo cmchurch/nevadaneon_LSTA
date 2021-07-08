@@ -44,5 +44,6 @@ FIND-LATLON/04_get-lat-lon.php
 1. (RESOLVED) The images associated with each dc_content node do not distinguish between Thumbnails, Full-sized Derivatives, and Originals (only distinction is in filename and path and not the metadata itself) -> when pulling images out of the JSON API to use in application layer, some are large and some a small thumbnails
 2. (RESOLVED) Currently caching a local copy of the JSON API results pulled through custom PHP -> needs to use multiple API calls to get the URIs of the files associated with each dc_content node in the NNN collection -> while I can pull these as includes, a secondary step associating them on UUID would still be necessary
     * PULLED THESE AS INCLUDES AND THEN PROCESSED UNR SERVER-SIDE, CALLS DOWN FROM THOUSANDS TO 10s
-3. (RESOLVED) Need to figure out best way to serve images (do I want to cache and serve locally, or just do it cross-domain) 
+3. (RESOLVED) Need to figure out best way to serve images (do I want to cache and serve locally, or just do it cross-domain)
     * DECISION: store only URLs to the resources at UNLV and keep UNR app layer asset light
+4. METADATA MERGE #THE MERGE RECURSIVE doesn't work because it's not making a properly formed CSV -> need to go line by line so that empty keys still get a blank value, or fix it in code after the merge (after line 182, we have the wrong number of lines, causing import to fail

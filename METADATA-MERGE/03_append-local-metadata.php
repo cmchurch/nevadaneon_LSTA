@@ -49,7 +49,7 @@ function fetchCSV($input_path,$_UID_KEY) {
   while (($row = fgetcsv($input_data,0,$separator = "|")) != FALSE) {
       $csvLine=[];
       foreach ($row as $index=>$r) {
-          if ($csvKeys[$index]=='lit-unlit') {$r = preg_replace("/,\s+/", ',', $r);} #check to see if it is one of the multifields, and if so, remove the space after comma -> maybe use TAMPER module after this script instead
+          #if ($csvKeys[$index]=='lit-unlit') {$r = preg_replace("/,\s+/", ',', $r);} #NOTE: moving to TAMPER MODULE, check to see if it is one of the multifields, and if so, remove the space after comma -> maybe use TAMPER module after this script instead
           $csvLine[$csvKeys[$index]]=$r;    #here is the actual value for each field in CSV
       }
       $csvLines[$csvLine[$_UID_KEY]]=$csvLine;

@@ -46,4 +46,8 @@ FIND-LATLON/04_get-lat-lon.php
     * PULLED THESE AS INCLUDES AND THEN PROCESSED UNR SERVER-SIDE, CALLS DOWN FROM THOUSANDS TO 10s
 3. (RESOLVED) Need to figure out best way to serve images (do I want to cache and serve locally, or just do it cross-domain)
     * DECISION: store only URLs to the resources at UNLV and keep UNR app layer asset light
-4. METADATA MERGE #THE MERGE RECURSIVE doesn't work because it's not making a properly formed CSV -> need to go line by line so that empty keys still get a blank value, or fix it in code after the merge (after line 182, we have the wrong number of lines, causing import to fail
+4. (RESOLVED) METADATA MERGE #THE MERGE RECURSIVE doesn't work because it's not making a properly formed CSV -> need to go line by line so that empty keys still get a blank value, or fix it in code after the merge (after line 182, we have the wrong number of lines, causing import to fail
+5. 07-08-21: Got the metadata merge working, and I've successfully imported a test batch and got it to allow sorting on whether it's "lit" or "unlit." There are two things, though, that might cause an issue:
+        * If an NNN item has children that are different than the parent (i.e. parent node is lit, but children are unlit), this could cause an issue with filtering
+        * The PHO items don't have that metadata
+    * The first of these is a bigger issue, because it goes back to how we want to handle the child nodes (which only happens in the NNN collection). Right now, I'm folding the children into the parent, but maybe we should keep them as separate?

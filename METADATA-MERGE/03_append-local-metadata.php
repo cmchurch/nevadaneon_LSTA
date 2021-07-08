@@ -21,8 +21,9 @@ $output_path = __DIR__ . "/OUTPUT/import.csv"; #where we will save the CSV
 $UNR_metadata = fetchCSV(__DIR__ . "/INPUT/input.csv",'did-unr'); #grab the data from UNR (change header to did-unr for recursive merge, otherwise it nests them if they have the same name)
 $UNLV_metadata = fetchCSV(__DIR__ . "/../JSON-API/CSV-OUTPUT/import.csv",'did');             #grab the data from UNLV
 
-$combined = array_merge_recursive($UNLV_metadata,$UNR_metadata);                  #merge array on shared key 'did' vs 'DigitalitemIDNNN'
-#THE MERGE RECURSIVE doesn't work because it's not making a properly formed CSV -> need to go line by line so that empty keys still get a blank value, or fix it in code after the merge (after line 182, we have the wrong number of lines, causing import to fail)
+#NOTE: MERGE RECURSIVE won't create keys for the NULL values if they don't exist in the second array, so this is handled in the makeCSV function (see below)
+$combined = array_merge_recursive($UNLV_metadata,$UNR_metadata);                  #merge array on shared key 'did' vs 'did-unr'
+
 
 makeCSV($output_path,$combined);  #export the combined array as a CSV
 print "END.\n";
@@ -61,9 +62,12 @@ function makeCSV($_output_path,$finalNodeArray) {
 #This function exports the provided array as a CSV to the output path
   $output = fopen($_output_path, "w");  #open an a file to output as csv
   $initArrayKey=array_key_first($finalNodeArray);
-  fputcsv($output,array_keys($finalNodeArray[$initArrayKey]),'|'); #output headers to first line of CSV file
+  $header_keys = array_keys($finalNodeArray[$initArrayKey]);
+  fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
   foreach ($finalNodeArray as $line) {
-    fputcsv($output,$line,'|');
+    $temp_line = array_fill_keys($header_keys,NULL); #create a blank template of the line with all the keys set to NULL (NOTE: this ensures a well-formed CSV when there are NULLs from the RECURSIVE MERGE in main)
+    $line_filledKeysWhereBlank = array_replace($temp_line,$line); #update the temp line of NULLS with values from the current line in the finalNodeArray
+    fputcsv($output,$line_filledKeysWhereBlank,'|'); #output to file
   }
   fclose($output); #close the output file
   print "CSV exported to $_output_path\n";

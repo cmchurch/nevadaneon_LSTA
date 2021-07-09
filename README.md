@@ -30,6 +30,11 @@ Christopher Church, PHD
 * THIS SCRIPT PERFORMS A DATA UNION ON THE DID (digital id) OF THE SIGNS FROM THE UNLV COLLECTION
    * EXTENSIBLE METADATA HELD BY UNR IS APPENDED TO THE DATA PULLED FROM THE JSON API
    * ALLOWS THE ADDITION OF EXTENSIBLE METADATA AS PART OF DATA FLOW, SO THAT BOTH THE UNLV COLLECTION LAYER AND THE UNR METADATA LAYERS CAN BE UPDATED AND REMERGED AS NECESSARY
+   
+05_grab-FAST-metadata.php
+   * THIS SCRIPT GETS THE UNIQUE POSSIBLE VALUES FOR THE FAST SUBJECTS THAT CAN BE USED TO POPULATE DRUPAL TAXONOMY VOCABULARY
+      * EACH IS A PAIR: TERM--URL
+      * URL SHOULD BE CREATED AS A TAXONOMY FIELD FOR THE FAST SUBJECT VOCABULARY
 
 ### FIND LAT LON
 FIND-LATLON/04_get-lat-lon.php
@@ -57,14 +62,14 @@ FIND-LATLON/04_get-lat-lon.php
             * needs to handle variable numbers of Thumbnails
             * mark these images as decorative for screen readers, since they are just a preview and don't add new INFORMATION
             * this would give the viewer a preview that would make sense if he/she searches for unlit signs (the unlit ones would show up in thumbnail mosaic), because right now it only shows the first image of the parent and its children, which may or may not be what matched in the search of the metadata for lit/unlit or interior/exterior
-6. ~~(RESOLVED) 07-09-21: need to build a one-off script to pull out the FAST info and URLS to populate a Drupal vocabulary so the metadata import will working
-    * PSEUDOCODE:
-        * 1) Explode on COMMA
-        * 2) FOREACH pair of FAST name and url, explode on --
-        * 3) TRIM leading and trailing whitespace
-        * 4) REMOVE duplicates in array
-        * 5) PUT into csv
-    * THEN, import into a FAST vocabulary in DRUPAL using csv
-    * write code now, but will need to be run once all possible FAST entries have been inputted
-    * WORKING - made list of TERMS (added them to Drupal project docs)~~
-7. 
+6. ~~(RESOLVED) 07-09-21: need to build a one-off script to pull out the FAST info and URLS to populate a Drupal vocabulary so the metadata import will working~~
+    * ~~PSEUDOCODE:~~
+        * ~~1) Explode on COMMA~~
+        * ~~2) FOREACH pair of FAST name and url, explode on -- ~~
+        * ~~3) TRIM leading and trailing whitespace~~
+        * ~~4) REMOVE duplicates in array~~
+        * ~~5) PUT into csv~~
+    * ~~THEN, import into a FAST vocabulary in DRUPAL using csv~~
+    * ~~write code now, but will need to be run once all possible FAST entries have been inputted~~
+    * ~~WORKING - made list of TERMS (added them to Drupal project docs)~~
+7.

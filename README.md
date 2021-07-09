@@ -51,3 +51,18 @@ FIND-LATLON/04_get-lat-lon.php
     *     5a. If an NNN item has children that are different than the parent (i.e. parent node is lit, but children are unlit), this could cause an issue with filtering
     *     5b. The PHO items don't have that metadata
     * The first of these is a bigger issue, because it goes back to how we want to handle the child nodes (which only happens in the NNN collection). Right now, I'm folding the children into the parent, but maybe we should keep them as separate?
+        * maybe the way to solve this would be to display a mosaic of available thumbnails for each NNN item on the signs field?
+        * maybe something like this would work, built into the VIEW:https://medium.com/@axel/mosaic-layouts-with-css-grid-d13f4e3ed2ae
+            * would need to be responsive
+            * needs to handle variable numbers of Thumbnails
+            * mark these images as decorative for screen readers, since they are just a preview and don't add new INFORMATION
+            * this would give the viewer a preview that would make sense if he/she searches for unlit signs (the unlit ones would show up in thumbnail mosaic), because right now it only shows the first image of the parent and its children, which may or may not be what matched in the search of the metadata for lit/unlit or interior/exterior
+6. 07-09-21: need to build a one-off script to pull out the FAST info and URLS to populate a Drupal vocabulary so the metadata import will working
+    * PSEUDOCODE:
+        * 1) Explode on COMMA
+        * 2) FOREACH pair of FAST name and url, explode on --
+        * 3) TRIM leading and trailing whitespace
+        * 4) REMOVE duplicates in array
+        * 5) PUT into csv
+    * THEN, import into a FAST vocabulary in DRUPAL using csv
+    * write code now, but will need to be run once all possible FAST entries have been inputted

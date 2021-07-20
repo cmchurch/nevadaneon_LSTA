@@ -30,7 +30,7 @@ Christopher Church, PHD
 * THIS SCRIPT PERFORMS A DATA UNION ON THE DID (digital id) OF THE SIGNS FROM THE UNLV COLLECTION
    * EXTENSIBLE METADATA HELD BY UNR IS APPENDED TO THE DATA PULLED FROM THE JSON API
    * ALLOWS THE ADDITION OF EXTENSIBLE METADATA AS PART OF DATA FLOW, SO THAT BOTH THE UNLV COLLECTION LAYER AND THE UNR METADATA LAYERS CAN BE UPDATED AND REMERGED AS NECESSARY
-   
+
 05_grab-FAST-metadata.php
    * THIS SCRIPT GETS THE UNIQUE POSSIBLE VALUES FOR THE FAST SUBJECTS THAT CAN BE USED TO POPULATE DRUPAL TAXONOMY VOCABULARY
       * EACH IS A PAIR: TERM--URL
@@ -72,4 +72,8 @@ FIND-LATLON/04_get-lat-lon.php
     * ~~THEN, import into a FAST vocabulary in DRUPAL using csv~~
     * ~~write code now, but will need to be run once all possible FAST entries have been inputted~~
     * ~~WORKING - made list of TERMS (added them to Drupal project docs)~~
-7.
+7. 07-19-21: MATERIALS STILL TO GRAB (COLLECTIONS)
+   * Southern Nevada Neon Survey Records (collection) with previx 'neo'  -- EXAMPLE: http://special.library.unlv.edu/ark%3A/62930/d1b853r4n
+   * Dreaming the Skyline (can't find in Islandora as a collection; it seems to be a Digital Project with many records from YESCO corporate records) - see http://special.library.unlv.edu/search?keys=neon&f%5B0%5D=digital_project%3ADreaming%20the%20Skyline%3A%20Resort%20Architecture%20and%20the%20New%20Urban%20Space
+   * **Note:** Neon in Nevada Photograph Collection with pho prefix grabs a lot of duplicates from the NNN collection (maybe exclude?)
+   * Instead of pulling from collections, maybe pull from Neon Survey digital project by uuid (2038 records) - though would need to filter by Resource Type (image only)

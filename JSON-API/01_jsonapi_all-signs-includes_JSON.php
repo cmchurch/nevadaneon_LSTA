@@ -22,7 +22,11 @@ echo "**************************************************************************
 	 $offset=0;
 	#prefixes and collection identifiers -> first in associative array is prefix on the digital id and second is the UUID of the collection
 	#also available "sky" (did not include "sky" because the collection includes much more than NEON)
-	 $digital_id_prefixes = ["NNN"=>null,"pho"=>"1661de4d-e916-4108-b529-f3b15030c27b"]; #note: as of 6-2021, the NNN materials have not been assigned a collection, so it is left null
+	 $digital_id_prefixes = [
+                            "NNN"=>null, #note: as of 6-2021, the NNN materials have not been assigned a collection, so it is left null
+                            "pho"=>"1661de4d-e916-4108-b529-f3b15030c27b", #materials with prefix pho in the Neon in Nevada Photograph Collection (uuid provided)
+                            "neo"=>null #materials with prefix neo (neon signs), no specific collection
+                          ];
 	#the URL of the ENDPOINT (dc_content) plus filters
 	 $crawl_url="http://special.library.unlv.edu/jsonapi/media/image/?include=field_media_image,field_media_of&fields[file--file]=uri,url&fields[node--node]=field_digital_id&filter[prefix][condition][path]=field_media_of.field_digital_id&filter[prefix][condition][operator]=STARTS_WITH&filter[prefix][condition][value]=";
 	#initialize an empty array to which we can append the data results from each call of the JSON API

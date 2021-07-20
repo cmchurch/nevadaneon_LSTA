@@ -157,7 +157,7 @@ foreach ($dcNodes as $key=>$node){
 
   #check to see if this is a child node; if it is, use the UUID to update what's already in the finalNodeArray -> PROBLEM: this only works if the children come after the parents in the JSON always (otherwise it'll get overwritten)
   if (!empty($dcNode_parent)) {
-    $dcNode['parent']=$dcNode_parent[0]->id;
+    $dcNode['parent']=$dcNode_parent;
     $childNodeArray[$dcNode['uuid']]=$dcNode;
   }
   else {
@@ -176,8 +176,13 @@ foreach ($dcNodes as $key=>$node){
 #NOW ITERATE OVER THE CHILD NODES AND ADD THEIR DATA TO THE PARENT (urls for the files) - Doing this second makes the program work even if the children are out of order (i.e. don't follow parent in JSON), because the parent is instantiated in an array first before the child references it by a UUID index
 foreach ($childNodeArray as $child) {
   #it is a child, so update the file URLs with the results from ABOVE
-  $updateUUID=$child['parent'];
-
+  $parents=$child['parent']; #there can be multiple parents in array for some collections
+  foreach ($parents as $parent) { #iterate over the parents and see if one matches our parent list, if so break
+    if (isset($finalNodeArray[$parent->id])) {
+      $updateUUID = $parent->id;
+      break;
+    }
+  }
   foreach (array_values($mediaTypes) as $type) {
 
     #update each image type based on what's in the child

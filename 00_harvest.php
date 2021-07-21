@@ -16,4 +16,5 @@ DATE LAST UPDATED
 include __DIR__ . "/JSON-API/01_jsonapi_all-signs-includes_JSON.php"; #NOTE: NEED TO WORK OUT THE RELATIVE PATHS FOR THE INCLUDES
 include __DIR__ . "/JSON-API/02_json-to-csv.php";
 include __DIR__ . "/METADATA-MERGE/03_append-local-metadata.php";
+include __DIR__ . "/METADATA-MERGE/99_update-feeds.php";
  ?>

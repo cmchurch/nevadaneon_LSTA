@@ -55,6 +55,10 @@ foreach ($dcNodes as $index=>$node) {
       }
   }
 
+  #get rid of the text "Information about the sign is available in the Southern Nevada Neon Survey Data Sheet." as well as the "Two surveys were..." if it exists in the description
+  $string="/Information about the.+|Two surveys were.+./";
+  $row['unr-desc'] = preg_replace($string,"",$row['unr-desc']);
+
   /*See if it contains the keywords lit or unlit, day or night*/
   $litTags=[];                                          #initialize a blank array for the tags on whether the sign is lit or unlit
   $timeTags=[];                                         #initialize a blank array for the tags on whether the sign is day or night

@@ -79,15 +79,8 @@ FIND-LATLON/04_get-lat-lon.php
            * it seems that only photographs have service images, whereas the doc, pdf children only have thumbnails and no service images
            * going to import and see what happens
            * RESULTS: the 'neo' items only grabbed the thumbnail images (they do not have service images or originals like the other collections) -> it seems it's there in the json, but it's not getting it when converting to CSV (are non-images breaking it?) - here's the error:
-
-PHP Notice:  Undefined index: e3411af5-d56a-4690-a896-9af3167b855f in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Trying to access array offset on value of type null in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Undefined index: service in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Undefined index: original in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Undefined index: d2db8ad5-7f59-4202-b258-d32a85a726db in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Trying to access array offset on value of type null in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Undefined index: service in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
-PHP Notice:  Undefined index: original in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
+               * PHP Notice:  Undefined index: e3411af5-d56a-4690-a896-9af3167b855f in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
+               * FIXED! - the 'neo' items have mutiple parents, so I updated the json-to-csv script to iterate over parents and go with one that matches in dc-nodes.json
 
    * Dreaming the Skyline (can't find in Islandora as a collection; it seems to be a Digital Project with many records from YESCO corporate records) - see http://special.library.unlv.edu/search?keys=neon&f%5B0%5D=digital_project%3ADreaming%20the%20Skyline%3A%20Resort%20Architecture%20and%20the%20New%20Urban%20Space
    * **Note:** Neon in Nevada Photograph Collection with pho prefix grabs a lot of duplicates from the NNN collection (maybe exclude?)

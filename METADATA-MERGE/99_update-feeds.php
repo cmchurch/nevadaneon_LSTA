@@ -1,6 +1,5 @@
 <?php
 /*
-/*
 DESCRIPTION
  THIS SCRIPT COPIES THE OUTPUT FROM 03_append-local-metadata.php TO THE FEEDS DIRECTORY IN DRUPAL FOR IMPORT
 
@@ -12,8 +11,6 @@ CREDITS
 
 DATE LAST UPDATED
  07-21-2021
-*/
-
 */
 
 $source = __DIR__ . "/OUTPUT/import.csv";

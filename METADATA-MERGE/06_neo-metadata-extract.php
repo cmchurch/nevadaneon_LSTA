@@ -59,6 +59,9 @@ foreach ($dcNodes as $index=>$node) {
   $string="/Information about the.+|Two surveys were.+./";
   $row['unr-desc'] = preg_replace($string,"",$row['unr-desc']);
 
+  #original data did not include city and state, so let's add it so we can run it through our geolocator (FIND-LATLON/04_get-lat-lon.php)
+  if (!empty($row['site-address'])) {$row['site-address']=$row['site-address'].", Las Vegas, NV";}
+
   /*See if it contains the keywords lit or unlit, day or night*/
   $litTags=[];                                          #initialize a blank array for the tags on whether the sign is lit or unlit
   $timeTags=[];                                         #initialize a blank array for the tags on whether the sign is day or night

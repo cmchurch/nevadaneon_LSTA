@@ -18,12 +18,12 @@ DATE LAST UPDATED
 print "\nSTART - GETTING LAT LON.\n";
 $output_path = __DIR__ . "/OUTPUT/output.csv"; #where we will save the CSV
 
-$UNR_metadata = fetchCSV(__DIR__."/INPUT/input.csv",'did'); #grab the csv
+$UNR_metadata = fetchCSV(__DIR__."/INPUT/input.csv",'did-unr'); #grab the csv
 $count = 0;
 foreach ($UNR_metadata as $item) {
 
   if (!empty($item['site-address'])&&empty($item['lat-lon'])) {    #only call GOOGLE MAP API if this row has an address but does not yet have a lat-lon pair
-    $did = $item['did'];                                           #grab the 'did' of the item to update the main associative array
+    $did = $item['did-unr'];                                           #grab the 'did' of the item to update the main associative array
     $address = strip_tags($item['site-address']);                  #get address and strip out HTML to pass to API endpoint
     $UNR_metadata[$did]['lat-lon'] = get_lat_lon($address);        #get geocoded lat-lon and store them in the main associative array
   }

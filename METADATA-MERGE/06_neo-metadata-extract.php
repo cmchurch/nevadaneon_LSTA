@@ -45,6 +45,7 @@ foreach ($dcNodes as $index=>$node) {
   $row = initRow();                                     #initialize a blank row to be populated with Metadata
   $row['did-unr'] = $id;                                #set the did (will later be used for the metadata join in 03_append-local-metadata.php)
   $body = getBody($node);                               #get the unprocessed metadata in the description of the dc node
+  $row['unr-desc']=$body;                               #we plan to overwrite this below, but we have a fallback if the REGEX match fails
 
   #iterate over the patterns to extract the relevant data
   foreach ($patterns as $key=>$pattern) {

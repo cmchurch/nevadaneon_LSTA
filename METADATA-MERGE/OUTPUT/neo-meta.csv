@@ -1,7 +1,7 @@
 did-unr|unr-file-name|unr-title|unr-desc|date-inst|site-name|site-address|lat-lon|sign-manf|sign-owner|lit-unlit|time-day|subj-fast|print-pub|format|dcmi|prov|proj-name|unr-cit|dig-pub|contrib|int-ext|staff-notes|date-img|title-code|title-full|creator
 neo000001|||"Daytime and nighttime views of the Aladdin Hotel Casino and Resort signs on the Strip. "|2000|"Aladdin Hotel (Las Vegas, Nev.)"|"3667 Las Vegas Blvd, Las Vegas, NV"|||"Aladdin Gaming LLC"||day,night||||||||||||2002|||"Joshua Cannaday"
 neo000002|||"Daytime and nighttime views of the Alan Albert's restaurant signs on the Strip. "|||"3763 S Las Vegas Blvd, Las Vegas, NV"|||||day,night||||||||||||2002|||"Joshua Cannaday"
-neo000003|||"Views of the Algiers Hotel signs at dusk on the Strip. "|1953|"Algiers Hotel (Las Vegas, Nev.)"|"2845 S Las Vegas Blvd, Las Vegas, NV"|||"Larry Kiefer"||||||||||||||2002|||"Joshua Cannaday"
+neo000003|||"Views of the Algiers Hotel signs at dusk on the Strip. "|1953|"Algiers Hotel (Las Vegas, Nev.)"|"2845 S Las Vegas Blvd, Las Vegas, NV"|||"Larry Kiefer"||dusk||||||||||||2002|||"Joshua Cannaday"
 neo000004|||"Daytime and nighttime views of the Arby's and Guinness World of Records Museum signs on the Strip. "|||"2776 Las Vegas Blvd, 2780 Las Vegas Blvd, Las Vegas, NV"|||"Arby's: Schultzen and Harry Sax, Guinness: ?, Cj's: PDS Gaming used to be Carl Fredrickson"||day,night||||||||||||2002|||"Joshua Cannaday"
 neo000005|||"Daytime and nighttime views of the Arco ampm sign on the Strip. "|3175||"2728 S Las Vegas Blvd, Las Vegas, NV"|||||day,night||||||||||||2002|||"Joshua Cannaday"
 neo000006|||"Photos show Bally's signs at night and during the day. "||"Bally's Las Vegas"|"3645 S Las Vegas Blvd, Las Vegas, NV"|||"Park Place Entertainment"||day,night||||||||||||2002|||"Joshua Cannaday"
@@ -51,7 +51,7 @@ neo000049|||"Photos show MGM Grand signs at night. "|1993|"MGM Grand Hotel and C
 neo000050|||"Photos show Mirage signs during the daytime. "|1989|"Mirage (Las Vegas, Nev.)"|"3400 S Las Vegas Blvd, Las Vegas, NV"|||"MGM Mirage"||day||||||||||||2002|||"Joshua Cannaday"
 neo000051|||"Photos show Monte Carlo signs during the day. "|1995|"Monte Carlo Resort and Casino (Las Vegas, Nev.)"|"3770 S Las Vegas Blvd, Las Vegas, NV"|||"Mandalay Resort Group (50%), MGM Mirage (50%)-Mandalay manages the property"||day||||||||||||2002|||"Joshua Cannaday"
 neo000052|||"Nighttime views of the Motel 8 signs on the Strip. "|||"3961 S Las Vegas Blvd, Las Vegas, NV"|||||night||||||||||||2002|||"Joshua Cannaday"
-neo000053|||"Views of the NASCAR Cafe signs at dusk on the Strip. "|2000|"Sahara Hotel and Casino (Las Vegas, Nev.)"|"2535 S Las Vegas Blvd, Las Vegas, NV"|||||||||||||||||2002|||"Joshua Cannaday"
+neo000053|||"Views of the NASCAR Cafe signs at dusk on the Strip. "|2000|"Sahara Hotel and Casino (Las Vegas, Nev.)"|"2535 S Las Vegas Blvd, Las Vegas, NV"|||||dusk||||||||||||2002|||"Joshua Cannaday"
 neo000054|||"Photos show New York New York signs at night. "|1997|"New York-New York Hotel and Casino (Las Vegas, Nev.)"|"3790 S Las Vegas Blvd, Las Vegas, NV"|||"MGM Mirage"||night||||||||||||2002|||"Joshua Cannaday"
 neo000055|||"Daytime views of the Official Tourist Bureau and Viva Vegas Gifts signs on the Strip. "|||"3734 S Las Vegas Blvd, Las Vegas, NV"|||||day||||||||||||2002|||"Joshua Cannaday"
 neo000056|||"Daytime views of the O'Sheas Casino signs on the Strip. "|1989||"3555 S Las Vegas Blvd, Las Vegas, NV"|||"Park Place Entertainment"||day||||||||||||2002|||"Joshua Cannaday"
@@ -87,7 +87,6 @@ neo000085|||"Daytime view of the Coca Cola structure and sign on the Strip."||||
 neo000086|||"Daytime and nighttime views of the Gold Key Shops signs on the Strip."||||||||day,night|||||||||||||||
 neo000087|||"Daytime views of the signs for Smith & Wollensky's, Sun Shade Sunglasses, Partagas Cigar Factory, Ghirardelli, and Field of Dreams on the Strip."||||||||day|||||||||||||||
 neo000088|||"Daytime view of the Stage Door Casino sign."||||||||day|||||||||||||||
-neo000089|||"Nighttime view of The Beach nightclub sign."||||||||night|||||||||||||||
 neo000089|||"Nighttime view of The Beach nightclub sign."||||||||night|||||||||||||||
 neo000090|||"Daytime view of the Vagabond Inn sign."||||||||day|||||||||||||||
 neo000091|||"Daytime view of the sign for the Wet n' Wild water park on the Strip."||||||||day|||||||||||||||
@@ -131,7 +130,7 @@ neo000128|||"The Gold and Silver Pawn Shop sits at 713 South Las Vegas Boulevard
 neo000129|||"The Roadhouse Casino sign sits unlit at 2100 North Boulder Highway. "|||"2100 N Boulder Hwy, Las Vegas, NV"|||"Robert McMackin"|unlit|||||||||||||2017|||"Wyatt Currie-Diamond"
 neo000130|||"The Outpost Motel sign sits at 1104 North Boulder Highway. "|1950|"Outpost Motel (Las Vegas, Nev.)"|"1104 N Boulder Hwy, Las Vegas, NV"|||"Vegas Outpost Motel LLC"||||||||||||||2017|||"Lauren Vaccaro"
 neo000131|||"The Skyline Hotel and Casino sign sits at 1741 North Boulder Highway. "|1988||"1741 N Boulder Hwy, Las Vegas, NV"|||"Jim Marsh American Corp."||||||||||||||2017|||"Mitchell Cohen"
-neo000132|||"A replica of the ""Welcome to Fabulous Las Vegas"" sign sits at a median near Boulder Highway at dusk. "|2007||"Boulder Hwy, Las Vegas, NV"|||"Commissioned by the Boulder Hwy casinos"||||||||||||||2017|||"Emily Fellmer"
+neo000132|||"A replica of the ""Welcome to Fabulous Las Vegas"" sign sits at a median near Boulder Highway at dusk. "|2007||"Boulder Hwy, Las Vegas, NV"|||"Commissioned by the Boulder Hwy casinos"||dusk||||||||||||2017|||"Emily Fellmer"
 neo000133|||"The Jerry's Nugget Casino sign sits at 1821 North Las Vegas Boulevard. The family-owned and operated casino has been in business for over fifty years. "|1964||"1821 N Las Vegas Blvd, Las Vegas, NV"|||"The Stamis Family"||||||||||||||2017|||"Carlyle Constantino"
 neo000134|||"The Starlite Motel sits at 1873 North Las Vegas Boulevard. Shortly after this photo was taken, the sign was scrubbed of its neon and made dormant. "|1950||"1873 N Las Vegas Blvd, Las Vegas, NV"|||"LAS VEGAS DRAGON HOTEL LLC"|lit|||||||||||||2017|||"Lauren Vaccaro"
 neo000135|||"The Las Vegas Library sign sits at 833 North Las Vegas Boulevard. "|4314||"833 N Las Vegas Blvd, Las Vegas, NV"|||"City of Las Vegas is the owner of the property since 2015, but it is an Independent government agency ran by a board of trustees chosen by the city and county"||||||||||||||2017|||"Emily Fellmer"

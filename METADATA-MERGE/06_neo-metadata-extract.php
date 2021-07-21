@@ -71,6 +71,8 @@ foreach ($dcNodes as $index=>$node) {
   if (preg_match("/[u|U]nlit/",$desc)) {array_push($litTags,"unlit");}
   if (preg_match("/[D|d]ay/", $desc)) {array_push($timeTags,'day');}
   if (preg_match("/[N|n]ight/",$desc)) {array_push($timeTags,'night');}
+  if (preg_match("/[D|d]awn/", $desc)) {array_push($timeTags,'dawn');}
+  if (preg_match("/[D|d]usk/",$desc)) {array_push($timeTags,'dusk');}
   #UPDATE ROW INFO WITH APPROPRIATE TAGS
   $row['lit-unlit']=join($litTags,",");
   $row['time-day']=join($timeTags,",");
@@ -83,7 +85,7 @@ foreach ($dcNodes as $index=>$node) {
   if(isset($match[0])) {$row['date-inst']=$match[0];}
 
   #ADD ROW TO THE ARRAY OF ROWS
-  array_push($rows,$row);
+  $rows[$id]=$row;                                    #we assign an index by id to ensure that each row is unique per Digital ID
 }
 
 #OUTPUT THE RESULTS

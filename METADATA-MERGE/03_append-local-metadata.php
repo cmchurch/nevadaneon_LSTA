@@ -10,7 +10,7 @@ CREDITS
  NORTHERN NEVADA NEON PROJECT
 
 DATE LAST UPDATED
- 07-06-2021
+ 07-21-2021
 */
 
 
@@ -65,6 +65,12 @@ function makeCSV($_output_path,$finalNodeArray) {
   $header_keys = array_keys($finalNodeArray[$initArrayKey]);
   fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
   foreach ($finalNodeArray as $line) {
+    if (empty($line['unr-desc'])) {$line['unr-desc']=$line['body'];}   #we want to use 'unr-desc' as the description on the website, not the original body from UNLV, but if it's empty, let's make sure something is there
+    if (!empty($line['lat-lon'])) {
+      $latLon_array=explode(",",$line['lat-lon']);
+      $line['lat']=$latLon_array[0];
+      $line['lon']=$latLon_array[1];
+    }
     $temp_line = array_fill_keys($header_keys,NULL); #create a blank template of the line with all the keys set to NULL (NOTE: this ensures a well-formed CSV when there are NULLs from the RECURSIVE MERGE in main)
     $line_filledKeysWhereBlank = array_replace($temp_line,$line); #update the temp line of NULLS with values from the current line in the finalNodeArray
     fputcsv($output,$line_filledKeysWhereBlank,'|'); #output to file

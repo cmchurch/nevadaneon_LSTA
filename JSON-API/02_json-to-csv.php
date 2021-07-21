@@ -156,7 +156,9 @@ foreach ($dcNodes as $key=>$node){
   $dcNode = $iterateMediaResults[2];      #update the current dcNode we're working with in the foreach loop with the results from iterating over the mediaNodes
 
   #check to see if this is a child node; if it is, use the UUID to update what's already in the finalNodeArray -> PROBLEM: this only works if the children come after the parents in the JSON always (otherwise it'll get overwritten)
-  if (!empty($dcNode_parent)) {
+  #**note** does not work for the 'neo' items, because they can be a member of, so adding a second condition (did is not hyphenated) to verify we are dealing with a child node
+  $isHyphenated = preg_match("/\-/",$dcNode['did']);
+  if (!empty($dcNode_parent)&&$isHyphenated==1) {
     $dcNode['parent']=$dcNode_parent;
     $childNodeArray[$dcNode['uuid']]=$dcNode;
   }

@@ -40,6 +40,12 @@ Christopher Church, PHD
 06_neo-metadata-extract.php
    * THIS SCRIPT PROCESSES THE METADATA CONTAINED IN THE DESCRIPTION FIELD FOR THE ITEMS IN THE NEO COLLECTION, BUILDING A METADATA TABLE FOR 03_append-local-metadata
       * IT SKIPS ALL CHILDREN NODES AND ONLY DOES THE PARENTS
+      * **ISSUE** we are still ending up with the INFORMATION ABOUT... entries that don't have any photographs (unfortunately the metadata doesn't contain any info on whether it's a photograph or the survey results pdf)
+
+07_neo-metadata-extract.php
+   * THIS SCRIPT PROCESSES THE METADATA CONTAINED IN THE DESCRIPTION FIELD FOR THE ITEMS IN THE SKY PREFIX (YESCO COLLECTION), BUILDING A METADATA TABLE FOR 03_append-local-metadata
+      * IT SKIPS ALL CHILDREN NODES AND ONLY DOES THE PARENTS; IT PROCESSES THE DATE RANGES INTO A COMMA SEPARATED RANGE
+
 
 99_update-feeds.php
   * THIS SCRIPT COPIES THE OUTPUT FROM 03_append-local-metadata.php TO THE FEEDS DIRECTORY IN DRUPAL FOR IMPORT

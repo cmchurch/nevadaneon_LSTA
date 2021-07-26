@@ -14,3 +14,17 @@ Sports -- http://id.worldcat.org/fast/1130432/
 Stores -- http://id.worldcat.org/fast/1134043/
 Video arcades -- http://id.worldcat.org/fast/1747314/
 Airports -- http://id.worldcat.org/fast/803726/
+Psychics -- http://id.worldcat.org/fast/1081230/
+Motion picture theaters -- http://id.worldcat.org/fast/1027261/
+Pharmacy -- http://id.worldcat.org/fast/1060285/
+Amusement parks -- http://id.worldcat.org/fast/808076/
+Stripteasers -- http://id.worldcat.org/fast/1135527/
+Liquors -- http://id.worldcat.org/fast/999743/
+Pawnbroking -- http://id.worldcat.org/fast/1055651/
+Library buildings -- http://id.worldcat.org/fast/997647/
+Shopping centers -- http://id.worldcat.org/fast/1116908/
+Mobile home parks -- http://id.worldcat.org/fast/1024236/
+Lease and rental services -- http://id.worldcat.org/fast/995021/
+Automobiles -- http://id.worldcat.org/fast/823232/
+Medical care -- http://id.worldcat.org/fast/1013753/
+Tattooing -- http://id.worldcat.org/fast/1143549/

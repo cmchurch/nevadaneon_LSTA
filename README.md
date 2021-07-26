@@ -95,6 +95,7 @@ FIND-LATLON/04_get-lat-lon.php
            * RESULTS: the 'neo' items only grabbed the thumbnail images (they do not have service images or originals like the other collections) -> it seems it's there in the json, but it's not getting it when converting to CSV (are non-images breaking it?) - here's the error:
                * PHP Notice:  Undefined index: e3411af5-d56a-4690-a896-9af3167b855f in /home/chris/Desktop/NevadaNeon/NorthernNevadaNeon/JSON-API/02_json-to-csv.php on line 184
                * FIXED! - the 'neo' items have mutiple parents, so I updated the json-to-csv script to iterate over parents and go with one that matches in dc-nodes.json
+          * **NOTE** Items 'neo000203' to neo000236 are survey documents and not photos; they should be excluded from the website (look in metadata for a way to rule them out) -> are they coded as photographs?
 
    * Dreaming the Skyline (can't find in Islandora as a collection; it seems to be a Digital Project with many records from YESCO corporate records) - see http://special.library.unlv.edu/search?keys=neon&f%5B0%5D=digital_project%3ADreaming%20the%20Skyline%3A%20Resort%20Architecture%20and%20the%20New%20Urban%20Space
    * **Note:** Neon in Nevada Photograph Collection with pho prefix grabs a lot of duplicates from the NNN collection (maybe exclude?)

@@ -99,12 +99,13 @@ foreach ($tf_idf as $id=>$items)
 }
 
 #sort the document frequency and raw frequncy lists
-asort($freq_list);
+asort($freq_list); #sort in ascending order
 asort($documentFreq);
 
 #see what our aggregate top terms were
-asort($finalTermList);
-print_r($finalTermList);
+arsort($finalTermList); #sort it in descending order
+
+makeCSV(__DIR__."/top-terms-by-tf-idf.csv",$finalTermList);
 
 #-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {
@@ -141,5 +142,18 @@ function getStopwords($input_path) {
   $text = fread($file,filesize($input_path));
   return explode("\n",$text);
 }
+
+function makeCSV($_output_path,$finalNodeArray) {
+#This function exports the provided array as a CSV to the output path
+  $output = fopen($_output_path, "w");  #open an a file to output as csv
+  $header_keys = ["term","occurences"];
+  fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
+  foreach ($finalNodeArray as $term=>$value) {
+    fputcsv($output,[$term,$value],'|'); #output to file
+  }
+  fclose($output); #close the output file
+  print "tf-idf exported to $_output_path\n";
+}
+#----------------------------------------END FUNCTIONS------------------------------------------
 
 ?>

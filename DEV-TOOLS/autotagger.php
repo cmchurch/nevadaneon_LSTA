@@ -1,17 +1,37 @@
 <?PHP
-/*SCRIPT TO PULL OUT KEY WORDS AND THEN POTENTIALLY GENERATE AUTOTAGS*/
+/*
+CREDITS
+ CHRISTOPHER M. CHURCH, PHD
+ UNIVERSITY OF NEVADA
+ LSTA GRANT, 2021
+ NORTHERN NEVADA NEON PROJECT
 
+DESCRIPTION
+SCRIPT TO PULL OUT KEY WORDS AND THEN POTENTIALLY GENERATE AUTOTAGS
+ note: LOOK INTO http://php-nlp-tools.com/
 
+/*notes:
+It appears that the brevity of the descriptions makes it so that doing word frequency analysis wouldn't really work.
 
+Using tf-idf produces moderately useful results.
+
+*/
+
+#-------------------------------------------------MAIN-------------------------------------------------
+
+#INITS
 $UNLV_metadata = fetchCSV(__DIR__ . "/../METADATA-MERGE/OUTPUT/import.csv",'did');
 $stopwords = getStopwords(__DIR__ . "/stopwords.txt");
 $freq_list = [];
-
+$totalTokens=[];
+$documentFreq=[];
 $pattern = "/[^a-z\s]/";
+
+#tokenize and count tokens for each node, filtering out stopwords
 foreach ($UNLV_metadata as $row) {
   $id = $row['did'];
   $id_prefix = substr($id,0,3);
-  if ($id_prefix!='neo') {continue;}
+  #if ($id_prefix!='neo') {continue;}
   $title = $row['title'];
   $body = $row['unr-desc'];
   $string = $title ." ". $body;
@@ -19,20 +39,63 @@ foreach ($UNLV_metadata as $row) {
   $string = preg_replace($pattern," ",$string);
   $string = preg_replace("/\s+/"," ",$string);
   $tokens = explode(" ",$string);
+
+#count the document frequency -- could use $countedTokens[$id] = array_count_values($tokens); - but that doesn't do stopwords
   foreach ($tokens as $token) {
     if (in_array($token, $stopwords)) {continue;}
-    if (isset($freq_list[$token])) {$freq_list[$token]++;}
-    else {$freq_list[$token]=1;}
+    if (isset($countedTokens[$id][$token])) {$countedTokens[$id][$token]++;} else {$countedTokens[$id][$token]=1;}
+    array_push($totalTokens,$token);
   }
-
-asort($freq_list,);
-print_r($freq_list);
-
 }
 
-#print_r($UNLV_metadata);
+#get the total frequencies over the entire data set
+$freq_list = array_count_values($totalTokens);
+$term_keys = array_keys($freq_list);
 
-/*-----------------*/
+
+#build document frequency for each term
+foreach ($term_keys as $term) {
+  foreach ($countedTokens as $countedToken) {
+    if (in_array($term, array_keys($countedToken))) {
+      if (isset($documentFreq[$term])) {$documentFreq[$term]++;} else {$documentFreq[$term]=1;}
+    }
+  }
+}
+
+#now build tf-idf for the tags (see https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+foreach ($countedTokens as $countedToken)
+{
+  foreach ($countedTokens as $id=>$tokens)
+  {
+    foreach ($tokens as $term=>$token)
+    {
+      $tf_idf[$id][$term] = $token / log($documentFreq[$term]+1);
+    }
+  }
+}
+
+#see the top 3 terms for each document
+foreach ($tf_idf as $id=>$items)
+{
+  print "\n\n" . $id . "\n";
+  arsort($items);
+  $count=0;
+  foreach ($items as $term=>$value)
+  {
+    #if ($value<1) {continue;}
+    print $term ." ". $value ."\n";
+    $count++;
+    if ($count>=3) {break;}
+  }
+}
+
+#sort the document frequency and raw frequncy lists
+asort($freq_list);
+asort($documentFreq);
+#print_r($documentFreq);
+#print_r($freq_list);
+
+#-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {
 /*This function fetches as CSV at the $input_path, stores all the rows in an associative array with the key provided as an argument pulled from each entry*/
   $input_data = fopen($input_path,"r");

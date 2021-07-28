@@ -20,7 +20,7 @@ Using tf-idf produces moderately useful results.
 #-------------------------------------------------MAIN-------------------------------------------------
 
 #INITS
-$UNLV_metadata = fetchCSV(__DIR__ . "/../METADATA-MERGE/OUTPUT/import.csv",'did');
+$UNLV_metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');
 $stopwords = getStopwords(__DIR__ . "/stopwords.txt");
 $freq_list = [];
 $totalTokens=[];
@@ -77,13 +77,14 @@ foreach ($countedTokens as $countedToken)
 #see the top 5 terms for each document
 foreach ($tf_idf as $id=>$items)
 {
-  print "\n\n" . $id . "\n";
+  #print "\n\n" . $id . "\n";
   arsort($items);
   $count=0;
+  $topTerms=[];
   foreach ($items as $term=>$value)
   {
-    print $term ." ". $value ."\n";
-
+    #print $term ." ". $value ."\n";
+    array_push($topTerms,$term);
     #add to an array so we can see what the aggregate top terms were
     if(isset($finalTermList[$term])) {
       $finalTermList[$term]++;
@@ -92,6 +93,8 @@ foreach ($tf_idf as $id=>$items)
       $finalTermList[$term]=1;
     }
 
+
+    $finalTFIDF[$id]=join($topTerms,",");
     #stop once we hit the top number of terms
     $count++;
     if ($count>=5) {break;}
@@ -105,7 +108,8 @@ asort($documentFreq);
 #see what our aggregate top terms were
 arsort($finalTermList); #sort it in descending order
 
-makeCSV(__DIR__."/top-terms-by-tf-idf.csv",$finalTermList);
+makeCSV(__DIR__."/arregrate-top-terms-by-tf-idf.csv",$finalTermList,["term","occurences"]);
+makeCSV(__DIR__."/individual-top-terms-by-tf-idf.csv",$finalTFIDF,["id","terms"]);
 
 #-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {
@@ -143,16 +147,15 @@ function getStopwords($input_path) {
   return explode("\n",$text);
 }
 
-function makeCSV($_output_path,$finalNodeArray) {
+function makeCSV($_output_path,$finalNodeArray,$header_keys) {
 #This function exports the provided array as a CSV to the output path
   $output = fopen($_output_path, "w");  #open an a file to output as csv
-  $header_keys = ["term","occurences"];
   fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
   foreach ($finalNodeArray as $term=>$value) {
     fputcsv($output,[$term,$value],'|'); #output to file
   }
   fclose($output); #close the output file
-  print "tf-idf exported to $_output_path\n";
+  print "CSV exported to $_output_path\n";
 }
 #----------------------------------------END FUNCTIONS------------------------------------------
 

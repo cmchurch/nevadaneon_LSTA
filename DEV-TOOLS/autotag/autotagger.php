@@ -21,7 +21,20 @@ Using tf-idf produces moderately useful results.
 
 #INITS
 $UNLV_metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');
+
+#get stopwords and add extended list
 $stopwords = getStopwords(__DIR__ . "/stopwords.txt");
+$extended_stopwords =  getStopwords(__DIR__ . "/expanded-stopwords.txt");
+$stopwords = array_merge($stopwords,$extended_stopwords);
+
+#map terms to a controlled vocabulary
+$term_mappings = fetchCSV(__DIR__ . "/term-mappings.csv",'term');
+foreach ($term_mappings as $key=>$value)
+{
+  if (empty($value['tag'])) { unset($term_mappings[$key]);}
+}
+
+#init arrays to hold data
 $freq_list = [];
 $totalTokens=[];
 $documentFreq=[];
@@ -84,7 +97,13 @@ foreach ($tf_idf as $id=>$items)
   foreach ($items as $term=>$value)
   {
     #print $term ." ". $value ."\n";
-    array_push($topTerms,$term);
+    #put in the mapped term if available, otherwise put in the raw term
+    if(isset($term_mappings[$term])) {
+       array_push($topTerms,$term_mappings[$term]['tag']);
+    }
+    else {
+      array_push($topTerms,$term);
+    }
     #add to an array so we can see what the aggregate top terms were
     if(isset($finalTermList[$term])) {
       $finalTermList[$term]++;
@@ -93,7 +112,7 @@ foreach ($tf_idf as $id=>$items)
       $finalTermList[$term]=1;
     }
 
-
+    $topTerms = array_unique($topTerms);
     $finalTFIDF[$id]=join($topTerms,",");
     #stop once we hit the top number of terms
     $count++;
@@ -108,8 +127,8 @@ asort($documentFreq);
 #see what our aggregate top terms were
 arsort($finalTermList); #sort it in descending order
 
-makeCSV(__DIR__."/arregrate-top-terms-by-tf-idf.csv",$finalTermList,["term","occurences"]);
-makeCSV(__DIR__."/individual-top-terms-by-tf-idf.csv",$finalTFIDF,["id","terms"]);
+makeCSV(__DIR__."/OUTPUT/arregrate-top-terms-by-tf-idf.csv",$finalTermList,["term","occurences"]);
+makeCSV(__DIR__."/OUTPUT/individual-top-terms-by-tf-idf.csv",$finalTFIDF,["id","terms"]);
 
 #-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {

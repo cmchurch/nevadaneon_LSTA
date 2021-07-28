@@ -31,7 +31,7 @@ $pattern = "/[^a-z\s]/";
 foreach ($UNLV_metadata as $row) {
   $id = $row['did'];
   $id_prefix = substr($id,0,3);
-  #if ($id_prefix!='neo') {continue;}
+  #if ($id_prefix!='NNN') {continue;}       #specify the collection if we want
   $title = $row['title'];
   $body = $row['unr-desc'];
   $string = $title ." ". $body;
@@ -67,14 +67,14 @@ foreach ($countedTokens as $countedToken)
 {
   foreach ($countedTokens as $id=>$tokens)
   {
-    foreach ($tokens as $term=>$token)
+    foreach ($tokens as $term=>$value)
     {
-      $tf_idf[$id][$term] = $token / log($documentFreq[$term]+1);
+      $tf_idf[$id][$term] = $value / log($documentFreq[$term]+1);
     }
   }
 }
 
-#see the top 3 terms for each document
+#see the top 5 terms for each document
 foreach ($tf_idf as $id=>$items)
 {
   print "\n\n" . $id . "\n";
@@ -82,18 +82,29 @@ foreach ($tf_idf as $id=>$items)
   $count=0;
   foreach ($items as $term=>$value)
   {
-    #if ($value<1) {continue;}
     print $term ." ". $value ."\n";
+
+    #add to an array so we can see what the aggregate top terms were
+    if(isset($finalTermList[$term])) {
+      $finalTermList[$term]++;
+    }
+    else {
+      $finalTermList[$term]=1;
+    }
+
+    #stop once we hit the top number of terms
     $count++;
-    if ($count>=3) {break;}
+    if ($count>=5) {break;}
   }
 }
 
 #sort the document frequency and raw frequncy lists
 asort($freq_list);
 asort($documentFreq);
-#print_r($documentFreq);
-#print_r($freq_list);
+
+#see what our aggregate top terms were
+asort($finalTermList);
+print_r($finalTermList);
 
 #-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {

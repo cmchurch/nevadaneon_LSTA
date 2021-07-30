@@ -484,10 +484,10 @@ blue|medium_blue|Medium Blue|#0000cd|0|0|205
 red|medium_candy_apple_red|Medium Candy Apple Red|#e2062c|226|6|44
 brown|medium_carmine|Medium Carmine|#af4035|175|64|53
 brown|medium_champagne|Medium Champagne|#f3e5ab|243|229|171
-green|medium_electric_blue|Medium Electric Blue|#035096|3|80|150
-purple|medium_jungle_green|Medium Jungle Green|#1c352d|28|53|45
+blue|medium_electric_blue|Medium Electric Blue|#035096|3|80|150
+green|medium_jungle_green|Medium Jungle Green|#1c352d|28|53|45
 purple|medium_lavender_magenta|Medium Lavender Magenta|#dda0dd|221|160|221
-blue|medium_orchid|Medium Orchid|#ba55d3|186|85|211
+purple|medium_orchid|Medium Orchid|#ba55d3|186|85|211
 blue|medium_persian_blue|Medium Persian Blue|#0067a5|0|103|165
 purple|medium_purple|Medium Purple|#9370db|147|112|219
 purple|medium_red_violet|Medium Red-Violet|#bb3385|187|51|133
@@ -681,186 +681,186 @@ purple|rich_maroon|Rich Maroon|#b03060|176|48|96
 green|rifle_green|Rifle Green|#414833|65|72|51
 teal|robin_egg_blue|Robin Egg Blue|#0cc|0|204|204
 pink|rose|Rose|#ff007f|255|0|127
-|rose_bonbon|Rose Bonbon|#f9429e|249|66|158
-|rose_ebony|Rose Ebony|#674846|103|72|70
-|rose_gold|Rose Gold|#b76e79|183|110|121
-|rose_madder|Rose Madder|#e32636|227|38|54
-|rose_pink|Rose Pink|#f6c|255|102|204
-|rose_quartz|Rose Quartz|#aa98a9|170|152|169
-|rose_taupe|Rose Taupe|#905d5d|144|93|93
-|rose_vale|Rose Vale|#ab4e52|171|78|82
-|rosewood|Rosewood|#65000b|101|0|11
-|rosso_corsa|Rosso Corsa|#d40000|212|0|0
-|rosy_brown|Rosy Brown|#bc8f8f|188|143|143
-|royal_azure|Royal Azure|#0038a8|0|56|168
-|royal_blue_traditional|Royal Blue (Traditional)|#002366|0|35|102
-|royal_blue_web|Royal Blue (Web)|#4169e1|65|105|225
-|royal_fuchsia|Royal Fuchsia|#ca2c92|202|44|146
-|royal_purple|Royal Purple|#7851a9|120|81|169
-|royal_yellow|Royal Yellow|#fada5e|250|218|94
-|rubine_red|Rubine Red|#d10056|209|0|86
-|ruby|Ruby|#e0115f|224|17|95
-|ruby_red|Ruby Red|#9b111e|155|17|30
-|ruddy|Ruddy|#ff0028|255|0|40
-|ruddy_brown|Ruddy Brown|#bb6528|187|101|40
-|ruddy_pink|Ruddy Pink|#e18e96|225|142|150
-|rufous|Rufous|#a81c07|168|28|7
-|russet|Russet|#80461b|128|70|27
-|rust|Rust|#b7410e|183|65|14
-|rusty_red|Rusty Red|#da2c43|218|44|67
-|sacramento_state_green|Sacramento State Green|#00563f|0|86|63
-|saddle_brown|Saddle Brown|#8b4513|139|69|19
-|safety_orange_blaze_orange|Safety Orange (Blaze Orange)|#ff6700|255|103|0
-|saffron|Saffron|#f4c430|244|196|48
-|salmon|Salmon|#ff8c69|255|140|105
-|salmon_pink|Salmon Pink|#ff91a4|255|145|164
-|sand|Sand|#c2b280|194|178|128
-|sand_dune|Sand Dune|#967117|150|113|23
-|sandstorm|Sandstorm|#ecd540|236|213|64
-|sandy_brown|Sandy Brown|#f4a460|244|164|96
-|sandy_taupe|Sandy Taupe|#967117|150|113|23
-|sangria|Sangria|#92000a|146|0|10
-|sap_green|Sap Green|#507d2a|80|125|42
-|sapphire|Sapphire|#0f52ba|15|82|186
-|sapphire_blue|Sapphire Blue|#0067a5|0|103|165
-|satin_sheen_gold|Satin Sheen Gold|#cba135|203|161|53
-|scarlet|Scarlet|#ff2400|255|36|0
-|scarlet_crayola|Scarlet (Crayola)|#fd0e35|253|14|53
-|school_bus_yellow|School Bus Yellow|#ffd800|255|216|0
-|screamin_green|Screamin' Green|#76ff7a|118|255|122
-|sea_blue|Sea Blue|#006994|0|105|148
-|sea_green|Sea Green|#2e8b57|46|139|87
-|seal_brown|Seal Brown|#321414|50|20|20
-|seashell|Seashell|#fff5ee|255|245|238
-|selective_yellow|Selective Yellow|#ffba00|255|186|0
-|sepia|Sepia|#704214|112|66|20
-|shadow|Shadow|#8a795d|138|121|93
-|shamrock_green|Shamrock Green|#009e60|0|158|96
-|shocking_pink|Shocking Pink|#fc0fc0|252|15|192
-|shocking_pink_crayola|Shocking Pink (Crayola)|#ff6fff|255|111|255
-|sienna|Sienna|#882d17|136|45|23
-|silver|Silver|#c0c0c0|192|192|192
-|sinopia|Sinopia|#cb410b|203|65|11
-|skobeloff|Skobeloff|#007474|0|116|116
-|sky_blue|Sky Blue|#87ceeb|135|206|235
-|sky_magenta|Sky Magenta|#cf71af|207|113|175
-|slate_blue|Slate Blue|#6a5acd|106|90|205
-|slate_gray|Slate Gray|#708090|112|128|144
-|smalt_dark_powder_blue|Smalt (Dark Powder Blue)|#039|0|51|153
-|smokey_topaz|Smokey Topaz|#933d41|147|61|65
-|smoky_black|Smoky Black|#100c08|16|12|8
-|snow|Snow|#fffafa|255|250|250
-|spiro_disco_ball|Spiro Disco Ball|#0fc0fc|15|192|252
-|spring_bud|Spring Bud|#a7fc00|167|252|0
-|spring_green|Spring Green|#00ff7f|0|255|127
-|st_patrick_s_blue|St. Patrick'S Blue|#23297a|35|41|122
-|steel_blue|Steel Blue|#4682b4|70|130|180
-|stil_de_grain_yellow|Stil De Grain Yellow|#fada5e|250|218|94
-|stizza|Stizza|#900|153|0|0
-|stormcloud|Stormcloud|#4f666a|79|102|106
-|straw|Straw|#e4d96f|228|217|111
-|sunglow|Sunglow|#fc3|255|204|51
-|sunset|Sunset|#fad6a5|250|214|165
-|tan|Tan|#d2b48c|210|180|140
-|tangelo|Tangelo|#f94d00|249|77|0
-|tangerine|Tangerine|#f28500|242|133|0
-|tangerine_yellow|Tangerine Yellow|#fc0|255|204|0
-|tango_pink|Tango Pink|#e4717a|228|113|122
-|taupe|Taupe|#483c32|72|60|50
-|taupe_gray|Taupe Gray|#8b8589|139|133|137
-|tea_green|Tea Green|#d0f0c0|208|240|192
-|tea_rose_orange|Tea Rose (Orange)|#f88379|248|131|121
-|tea_rose_rose|Tea Rose (Rose)|#f4c2c2|244|194|194
-|teal|Teal|#008080|0|128|128
-|teal_blue|Teal Blue|#367588|54|117|136
-|teal_green|Teal Green|#00827f|0|130|127
-|telemagenta|Telemagenta|#cf3476|207|52|118
-|tenn_tawny|Tenné (Tawny)|#cd5700|205|87|0
-|terra_cotta|Terra Cotta|#e2725b|226|114|91
-|thistle|Thistle|#d8bfd8|216|191|216
-|thulian_pink|Thulian Pink|#de6fa1|222|111|161
-|tickle_me_pink|Tickle Me Pink|#fc89ac|252|137|172
-|tiffany_blue|Tiffany Blue|#0abab5|10|186|181
-|tiger_s_eye|Tiger'S Eye|#e08d3c|224|141|60
-|timberwolf|Timberwolf|#dbd7d2|219|215|210
-|titanium_yellow|Titanium Yellow|#eee600|238|230|0
-|tomato|Tomato|#ff6347|255|99|71
-|toolbox|Toolbox|#746cc0|116|108|192
-|topaz|Topaz|#ffc87c|255|200|124
-|tractor_red|Tractor Red|#fd0e35|253|14|53
-|trolley_grey|Trolley Grey|#808080|128|128|128
-|tropical_rain_forest|Tropical Rain Forest|#00755e|0|117|94
-|true_blue|True Blue|#0073cf|0|115|207
-|tufts_blue|Tufts Blue|#417dc1|65|125|193
-|tumbleweed|Tumbleweed|#deaa88|222|170|136
-|turkish_rose|Turkish Rose|#b57281|181|114|129
-|turquoise|Turquoise|#30d5c8|48|213|200
-|turquoise_blue|Turquoise Blue|#00ffef|0|255|239
-|turquoise_green|Turquoise Green|#a0d6b4|160|214|180
-|tuscan_red|Tuscan Red|#7c4848|124|72|72
-|twilight_lavender|Twilight Lavender|#8a496b|138|73|107
-|tyrian_purple|Tyrian Purple|#66023c|102|2|60
-|ua_blue|Ua Blue|#03a|0|51|170
-|ua_red|Ua Red|#d9004c|217|0|76
-|ube|Ube|#8878c3|136|120|195
-|ucla_blue|Ucla Blue|#536895|83|104|149
-|ucla_gold|Ucla Gold|#ffb300|255|179|0
-|ufo_green|Ufo Green|#3cd070|60|208|112
-|ultra_pink|Ultra Pink|#ff6fff|255|111|255
-|ultramarine|Ultramarine|#120a8f|18|10|143
-|ultramarine_blue|Ultramarine Blue|#4166f5|65|102|245
-|umber|Umber|#635147|99|81|71
-|unbleached_silk|Unbleached Silk|#ffddca|255|221|202
-|united_nations_blue|United Nations Blue|#5b92e5|91|146|229
-|university_of_california_gold|University Of California Gold|#b78727|183|135|39
-|unmellow_yellow|Unmellow Yellow|#ff6|255|255|102
-|up_forest_green|Up Forest Green|#014421|1|68|33
-|up_maroon|Up Maroon|#7b1113|123|17|19
-|upsdell_red|Upsdell Red|#ae2029|174|32|41
-|urobilin|Urobilin|#e1ad21|225|173|33
-|usafa_blue|Usafa Blue|#004f98|0|79|152
-|usc_cardinal|Usc Cardinal|#900|153|0|0
-|usc_gold|Usc Gold|#fc0|255|204|0
-|utah_crimson|Utah Crimson|#d3003f|211|0|63
-|vanilla|Vanilla|#f3e5ab|243|229|171
-|vegas_gold|Vegas Gold|#c5b358|197|179|88
-|venetian_red|Venetian Red|#c80815|200|8|21
-|verdigris|Verdigris|#43b3ae|67|179|174
-|vermilion_cinnabar|Vermilion (Cinnabar)|#e34234|227|66|52
-|vermilion_plochere|Vermilion (Plochere)|#d9603b|217|96|59
-|veronica|Veronica|#a020f0|160|32|240
-|violet|Violet|#8f00ff|143|0|255
-|violet_blue|Violet-Blue|#324ab2|50|74|178
-|violet_color_wheel|Violet (Color Wheel)|#7f00ff|127|0|255
-|violet_ryb|Violet (Ryb)|#8601af|134|1|175
-|violet_web|Violet (Web)|#ee82ee|238|130|238
-|viridian|Viridian|#40826d|64|130|109
-|vivid_auburn|Vivid Auburn|#922724|146|39|36
-|vivid_burgundy|Vivid Burgundy|#9f1d35|159|29|53
-|vivid_cerise|Vivid Cerise|#da1d81|218|29|129
-|vivid_tangerine|Vivid Tangerine|#ffa089|255|160|137
-|vivid_violet|Vivid Violet|#9f00ff|159|0|255
-|warm_black|Warm Black|#004242|0|66|66
-|waterspout|Waterspout|#a4f4f9|164|244|249
-|wenge|Wenge|#645452|100|84|82
-|wheat|Wheat|#f5deb3|245|222|179
-|white|White|#fff|255|255|255
-|white_smoke|White Smoke|#f5f5f5|245|245|245
-|wild_blue_yonder|Wild Blue Yonder|#a2add0|162|173|208
-|wild_strawberry|Wild Strawberry|#ff43a4|255|67|164
-|wild_watermelon|Wild Watermelon|#fc6c85|252|108|133
-|wine|Wine|#722f37|114|47|55
-|wine_dregs|Wine Dregs|#673147|103|49|71
-|wisteria|Wisteria|#c9a0dc|201|160|220
-|wood_brown|Wood Brown|#c19a6b|193|154|107
-|xanadu|Xanadu|#738678|115|134|120
-|yale_blue|Yale Blue|#0f4d92|15|77|146
-|yellow|Yellow|#ff0|255|255|0
-|yellow_green|Yellow-Green|#9acd32|154|205|50
-|yellow_munsell|Yellow (Munsell)|#efcc00|239|204|0
-|yellow_ncs|Yellow (Ncs)|#ffd300|255|211|0
-|yellow_orange|Yellow Orange|#ffae42|255|174|66
-|yellow_process|Yellow (Process)|#ffef00|255|239|0
-|yellow_ryb|Yellow (Ryb)|#fefe33|254|254|51
-|zaffre|Zaffre|#0014a8|0|20|168
-|zinnwaldite_brown|Zinnwaldite Brown|#2c1608|44|22|8
+pink|rose_bonbon|Rose Bonbon|#f9429e|249|66|158
+brown|rose_ebony|Rose Ebony|#674846|103|72|70
+pink|rose_gold|Rose Gold|#b76e79|183|110|121
+red|rose_madder|Rose Madder|#e32636|227|38|54
+pink|rose_pink|Rose Pink|#f6c|255|102|204
+gray|rose_quartz|Rose Quartz|#aa98a9|170|152|169
+brown|rose_taupe|Rose Taupe|#905d5d|144|93|93
+brown|rose_vale|Rose Vale|#ab4e52|171|78|82
+brown|rosewood|Rosewood|#65000b|101|0|11
+red|rosso_corsa|Rosso Corsa|#d40000|212|0|0
+brown|rosy_brown|Rosy Brown|#bc8f8f|188|143|143
+blue|royal_azure|Royal Azure|#0038a8|0|56|168
+blue|royal_blue_traditional|Royal Blue (Traditional)|#002366|0|35|102
+blue|royal_blue_web|Royal Blue (Web)|#4169e1|65|105|225
+pink|royal_fuchsia|Royal Fuchsia|#ca2c92|202|44|146
+purple|royal_purple|Royal Purple|#7851a9|120|81|169
+yellow|royal_yellow|Royal Yellow|#fada5e|250|218|94
+red|rubine_red|Rubine Red|#d10056|209|0|86
+red|ruby|Ruby|#e0115f|224|17|95
+red|ruby_red|Ruby Red|#9b111e|155|17|30
+red|ruddy|Ruddy|#ff0028|255|0|40
+brown|ruddy_brown|Ruddy Brown|#bb6528|187|101|40
+pink|ruddy_pink|Ruddy Pink|#e18e96|225|142|150
+red|rufous|Rufous|#a81c07|168|28|7
+brown|russet|Russet|#80461b|128|70|27
+brown|rust|Rust|#b7410e|183|65|14
+red|rusty_red|Rusty Red|#da2c43|218|44|67
+green|sacramento_state_green|Sacramento State Green|#00563f|0|86|63
+brown|saddle_brown|Saddle Brown|#8b4513|139|69|19
+orange|safety_orange_blaze_orange|Safety Orange (Blaze Orange)|#ff6700|255|103|0
+yellow|saffron|Saffron|#f4c430|244|196|48
+orange|salmon|Salmon|#ff8c69|255|140|105
+pink|salmon_pink|Salmon Pink|#ff91a4|255|145|164
+gray|sand|Sand|#c2b280|194|178|128
+brown|sand_dune|Sand Dune|#967117|150|113|23
+yellow|sandstorm|Sandstorm|#ecd540|236|213|64
+brown|sandy_brown|Sandy Brown|#f4a460|244|164|96
+brown|sandy_taupe|Sandy Taupe|#967117|150|113|23
+red|sangria|Sangria|#92000a|146|0|10
+green|sap_green|Sap Green|#507d2a|80|125|42
+blue|sapphire|Sapphire|#0f52ba|15|82|186
+blue|sapphire_blue|Sapphire Blue|#0067a5|0|103|165
+brown|satin_sheen_gold|Satin Sheen Gold|#cba135|203|161|53
+red|scarlet|Scarlet|#ff2400|255|36|0
+red|scarlet_crayola|Scarlet (Crayola)|#fd0e35|253|14|53
+yellow|school_bus_yellow|School Bus Yellow|#ffd800|255|216|0
+green|screamin_green|Screamin' Green|#76ff7a|118|255|122
+blue|sea_blue|Sea Blue|#006994|0|105|148
+green|sea_green|Sea Green|#2e8b57|46|139|87
+black|seal_brown|Seal Brown|#321414|50|20|20
+white|seashell|Seashell|#fff5ee|255|245|238
+yellow|selective_yellow|Selective Yellow|#ffba00|255|186|0
+brown|sepia|Sepia|#704214|112|66|20
+gray|shadow|Shadow|#8a795d|138|121|93
+green|shamrock_green|Shamrock Green|#009e60|0|158|96
+pink|shocking_pink|Shocking Pink|#fc0fc0|252|15|192
+pink|shocking_pink_crayola|Shocking Pink (Crayola)|#ff6fff|255|111|255
+brown|sienna|Sienna|#882d17|136|45|23
+gray|silver|Silver|#c0c0c0|192|192|192
+brown|sinopia|Sinopia|#cb410b|203|65|11
+green|skobeloff|Skobeloff|#007474|0|116|116
+blue|sky_blue|Sky Blue|#87ceeb|135|206|235
+pink|sky_magenta|Sky Magenta|#cf71af|207|113|175
+purple|slate_blue|Slate Blue|#6a5acd|106|90|205
+gray|slate_gray|Slate Gray|#708090|112|128|144
+blue|smalt_dark_powder_blue|Smalt (Dark Powder Blue)|#039|0|51|153
+brown|smokey_topaz|Smokey Topaz|#933d41|147|61|65
+black|smoky_black|Smoky Black|#100c08|16|12|8
+white|snow|Snow|#fffafa|255|250|250
+blue|spiro_disco_ball|Spiro Disco Ball|#0fc0fc|15|192|252
+green|spring_bud|Spring Bud|#a7fc00|167|252|0
+green|spring_green|Spring Green|#00ff7f|0|255|127
+blue|st_patrick_s_blue|St. Patrick'S Blue|#23297a|35|41|122
+blue|steel_blue|Steel Blue|#4682b4|70|130|180
+yellow|stil_de_grain_yellow|Stil De Grain Yellow|#fada5e|250|218|94
+red|stizza|Stizza|#900|153|0|0
+gray|stormcloud|Stormcloud|#4f666a|79|102|106
+yellow|straw|Straw|#e4d96f|228|217|111
+yellow|sunglow|Sunglow|#fc3|255|204|51
+brown|sunset|Sunset|#fad6a5|250|214|165
+brown|tan|Tan|#d2b48c|210|180|140
+orange|tangelo|Tangelo|#f94d00|249|77|0
+orange|tangerine|Tangerine|#f28500|242|133|0
+yellow|tangerine_yellow|Tangerine Yellow|#fc0|255|204|0
+pink|tango_pink|Tango Pink|#e4717a|228|113|122
+brown|taupe|Taupe|#483c32|72|60|50
+gray|taupe_gray|Taupe Gray|#8b8589|139|133|137
+green|tea_green|Tea Green|#d0f0c0|208|240|192
+pink|tea_rose_orange|Tea Rose (Orange)|#f88379|248|131|121
+pink|tea_rose_rose|Tea Rose (Rose)|#f4c2c2|244|194|194
+teal|teal|Teal|#008080|0|128|128
+blue|teal_blue|Teal Blue|#367588|54|117|136
+teal|teal_green|Teal Green|#00827f|0|130|127
+purple|telemagenta|Telemagenta|#cf3476|207|52|118
+brown|tenn_tawny|Tenné (Tawny)|#cd5700|205|87|0
+brown|terra_cotta|Terra Cotta|#e2725b|226|114|91
+pink|thistle|Thistle|#d8bfd8|216|191|216
+pink|thulian_pink|Thulian Pink|#de6fa1|222|111|161
+pink|tickle_me_pink|Tickle Me Pink|#fc89ac|252|137|172
+teal|tiffany_blue|Tiffany Blue|#0abab5|10|186|181
+brown|tiger_s_eye|Tiger'S Eye|#e08d3c|224|141|60
+gray|timberwolf|Timberwolf|#dbd7d2|219|215|210
+yellow|titanium_yellow|Titanium Yellow|#eee600|238|230|0
+orange|tomato|Tomato|#ff6347|255|99|71
+purple|toolbox|Toolbox|#746cc0|116|108|192
+brown|topaz|Topaz|#ffc87c|255|200|124
+red|tractor_red|Tractor Red|#fd0e35|253|14|53
+gray|trolley_grey|Trolley Grey|#808080|128|128|128
+green|tropical_rain_forest|Tropical Rain Forest|#00755e|0|117|94
+blue|true_blue|True Blue|#0073cf|0|115|207
+blue|tufts_blue|Tufts Blue|#417dc1|65|125|193
+brown|tumbleweed|Tumbleweed|#deaa88|222|170|136
+brown|turkish_rose|Turkish Rose|#b57281|181|114|129
+teal|turquoise|Turquoise|#30d5c8|48|213|200
+teal|turquoise_blue|Turquoise Blue|#00ffef|0|255|239
+green|turquoise_green|Turquoise Green|#a0d6b4|160|214|180
+brown|tuscan_red|Tuscan Red|#7c4848|124|72|72
+purple|twilight_lavender|Twilight Lavender|#8a496b|138|73|107
+purple|tyrian_purple|Tyrian Purple|#66023c|102|2|60
+blue|ua_blue|Ua Blue|#03a|0|51|170
+red|ua_red|Ua Red|#d9004c|217|0|76
+purple|ube|Ube|#8878c3|136|120|195
+blue|ucla_blue|Ucla Blue|#536895|83|104|149
+yellow|ucla_gold|Ucla Gold|#ffb300|255|179|0
+green|ufo_green|Ufo Green|#3cd070|60|208|112
+pink|ultra_pink|Ultra Pink|#ff6fff|255|111|255
+green|ultramarine|Ultramarine|#120a8f|18|10|143
+green|ultramarine_blue|Ultramarine Blue|#4166f5|65|102|245
+brown|umber|Umber|#635147|99|81|71
+white|unbleached_silk|Unbleached Silk|#ffddca|255|221|202
+blue|united_nations_blue|United Nations Blue|#5b92e5|91|146|229
+brown|university_of_california_gold|University Of California Gold|#b78727|183|135|39
+yellow|unmellow_yellow|Unmellow Yellow|#ff6|255|255|102
+green|up_forest_green|Up Forest Green|#014421|1|68|33
+red|up_maroon|Up Maroon|#7b1113|123|17|19
+red|upsdell_red|Upsdell Red|#ae2029|174|32|41
+yellow|urobilin|Urobilin|#e1ad21|225|173|33
+blue|usafa_blue|Usafa Blue|#004f98|0|79|152
+red|usc_cardinal|Usc Cardinal|#900|153|0|0
+yellow|usc_gold|Usc Gold|#fc0|255|204|0
+red|utah_crimson|Utah Crimson|#d3003f|211|0|63
+white|vanilla|Vanilla|#f3e5ab|243|229|171
+brown|vegas_gold|Vegas Gold|#c5b358|197|179|88
+red|venetian_red|Venetian Red|#c80815|200|8|21
+teal|verdigris|Verdigris|#43b3ae|67|179|174
+orange|vermilion_cinnabar|Vermilion (Cinnabar)|#e34234|227|66|52
+orange|vermilion_plochere|Vermilion (Plochere)|#d9603b|217|96|59
+purple|veronica|Veronica|#a020f0|160|32|240
+purple|violet|Violet|#8f00ff|143|0|255
+blue|violet_blue|Violet-Blue|#324ab2|50|74|178
+purple|violet_color_wheel|Violet (Color Wheel)|#7f00ff|127|0|255
+purple|violet_ryb|Violet (Ryb)|#8601af|134|1|175
+purple|violet_web|Violet (Web)|#ee82ee|238|130|238
+green|viridian|Viridian|#40826d|64|130|109
+brown|vivid_auburn|Vivid Auburn|#922724|146|39|36
+red|vivid_burgundy|Vivid Burgundy|#9f1d35|159|29|53
+pink|vivid_cerise|Vivid Cerise|#da1d81|218|29|129
+brown|vivid_tangerine|Vivid Tangerine|#ffa089|255|160|137
+purple|vivid_violet|Vivid Violet|#9f00ff|159|0|255
+green|warm_black|Warm Black|#004242|0|66|66
+teal|waterspout|Waterspout|#a4f4f9|164|244|249
+gray|wenge|Wenge|#645452|100|84|82
+white|wheat|Wheat|#f5deb3|245|222|179
+white|white|White|#fff|255|255|255
+white|white_smoke|White Smoke|#f5f5f5|245|245|245
+gray|wild_blue_yonder|Wild Blue Yonder|#a2add0|162|173|208
+pink|wild_strawberry|Wild Strawberry|#ff43a4|255|67|164
+pink|wild_watermelon|Wild Watermelon|#fc6c85|252|108|133
+brown|wine|Wine|#722f37|114|47|55
+brown|wine_dregs|Wine Dregs|#673147|103|49|71
+purple|wisteria|Wisteria|#c9a0dc|201|160|220
+brown|wood_brown|Wood Brown|#c19a6b|193|154|107
+gray|xanadu|Xanadu|#738678|115|134|120
+blue|yale_blue|Yale Blue|#0f4d92|15|77|146
+yellow|yellow|Yellow|#ff0|255|255|0
+green|yellow_green|Yellow-Green|#9acd32|154|205|50
+yellow|yellow_munsell|Yellow (Munsell)|#efcc00|239|204|0
+yellow|yellow_ncs|Yellow (Ncs)|#ffd300|255|211|0
+orange|yellow_orange|Yellow Orange|#ffae42|255|174|66
+yellow|yellow_process|Yellow (Process)|#ffef00|255|239|0
+yellow|yellow_ryb|Yellow (Ryb)|#fefe33|254|254|51
+blue|zaffre|Zaffre|#0014a8|0|20|168
+black|zinnwaldite_brown|Zinnwaldite Brown|#2c1608|44|22|8

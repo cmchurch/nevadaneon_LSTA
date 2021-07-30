@@ -9,9 +9,9 @@ use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
 
 
-$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'machine-name');    #change to 'color-group' to use the user-created color mappings
+$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'color-group');    #change to 'color-group' to use the user-created color mappings
 $colorNames = getRGB($colorNamesCSV);
-printColorsCSV($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program
+printColorsHTML($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program
 
 
 $files = [__DIR__ . "/test-images/sutro.png",
@@ -37,31 +37,27 @@ function getColors($file, $_colorNames) {
 
   // $palette is an iterator on colors sorted by pixel count
   foreach($palette as $color => $count) {
-      // colors are represented by integers
-     $hex = Color::fromIntToHex($color); #, ': ', $count, "\n";
+      // colors are represented by integers, so need to convert to HEX and then RGB
+     $hex = Color::fromIntToHex($color);
      $name = getcolorname($hex,$_colorNames);
      if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;}
-     #echo $hex, " ", $color,"\n";
   }
 
   // it offers some helpers too
-  $topFive = $palette->getMostUsedColors(5);
-
-  $colorCount = count($palette);
-
+  #$topFive = $palette->getMostUsedColors(5);
+  #$colorCount = count($palette);
 
   arsort($colorNameCount);
   $count = 0;
-  $avoid = ["black","brown","gray","white",""];
+  $avoid = ["black","brown","gray","white",""]; #we want to avoid drap colors because they aren't neon!
   foreach ($colorNameCount as $key=>$value) {
     if (!in_array($key,$avoid)) {
       print $key . " " . $value ."\n";
-      $count++;
       if ($count>5) {break;}
     }
+    $count++; #keep counting even if we hit an avoided color, because if a neon-related color isn't in the top colors, perhaps this isn't a lit neon sign
   }
 }
-
 
 function getcolorname($_hex,$_colorNames) {
   $distances = array();
@@ -145,7 +141,7 @@ function distancel2(array $color1, array $color2) {
         pow($color1[2] - $color2[2], 2));
 }
 
-function printColorsCSV($colors) {
+function printColorsHTML($colors) {
   $html_output = fopen("color-viewer.html","w");
     $opening_tags = "
     <html>

@@ -20,7 +20,7 @@ Using tf-idf produces moderately useful results.
 #-------------------------------------------------MAIN-------------------------------------------------
 
 #INITS
-$UNLV_metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');
+$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');
 
 #get stopwords and add extended list
 $stopwords = getStopwords(__DIR__ . "/stopwords.txt");
@@ -41,7 +41,7 @@ $documentFreq=[];
 $pattern = "/[^a-z\s]/";
 
 #tokenize and count tokens for each node, filtering out stopwords
-foreach ($UNLV_metadata as $row) {
+foreach ($metadata as $row) {
   $id = $row['did'];
   $id_prefix = substr($id,0,3);
   #if ($id_prefix!='NNN') {continue;}       #specify the collection if we want
@@ -114,6 +114,7 @@ foreach ($tf_idf as $id=>$items)
 
     $topTerms = array_unique($topTerms);
     $finalTFIDF[$id]=join($topTerms,",");
+    $metadata[$id]['tags']=join($topTerms,","); #add to metadata array to rebuild import csv
     #stop once we hit the top number of terms
     $count++;
     if ($count>=5) {break;}
@@ -129,6 +130,11 @@ arsort($finalTermList); #sort it in descending order
 
 makeCSV(__DIR__."/OUTPUT/arregrate-top-terms-by-tf-idf.csv",$finalTermList,["term","occurences"]);
 makeCSV(__DIR__."/OUTPUT/individual-top-terms-by-tf-idf.csv",$finalTFIDF,["id","terms"]);
+
+$initArrayKey=array_key_first($metadata);
+$metaKeys = array_keys($metadata[$initArrayKey]);
+makeCSV(__DIR__."/OUTPUT/final-import.csv",$metadata,$metaKeys);
+
 
 #-------------------------------------------------FUNCTIONS-------------------------------------------------
 function fetchCSV($input_path,$_UID_KEY) {
@@ -171,7 +177,8 @@ function makeCSV($_output_path,$finalNodeArray,$header_keys) {
   $output = fopen($_output_path, "w");  #open an a file to output as csv
   fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
   foreach ($finalNodeArray as $term=>$value) {
-    fputcsv($output,[$term,$value],'|'); #output to file
+    if (!is_array($value)) {fputcsv($output,[$term,$value],'|');} #output to file
+    else {fputcsv($output,$value,'|');}
   }
   fclose($output); #close the output file
   print "CSV exported to $_output_path\n";

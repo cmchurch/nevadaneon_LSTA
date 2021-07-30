@@ -1,4 +1,7 @@
 <?php
+#uses the nlp-tools library
+#https://github.com/angeloskath/php-nlp-tools
+
 #load libraries installed with composer
 require '/home/chris/vendor/autoload.php';
 
@@ -37,7 +40,8 @@ $lda = new Lda(
 );
 
 // run the sampler 50 times
-$lda->train($tset,50);
+#$lda->train($tset,50);
+$lda->train($tset,100);
 
 
 print_r(

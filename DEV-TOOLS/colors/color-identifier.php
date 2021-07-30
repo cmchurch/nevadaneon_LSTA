@@ -1,11 +1,6 @@
 <?php
 #uses the color extractor library
 #https://github.com/thephpleague/color-extractor
-
-
-$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'machine-name');
-$colorNames = getRGB($colorNamesCSV);
-
 #load libraries installed with composer
 require '/home/chris/vendor/autoload.php';
 
@@ -13,39 +8,59 @@ use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
 
-$palette = Palette::fromFilename('test.png');
 
-$colorNameCount = [];
+$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'machine-name');    #change to 'color-group' to use the user-created color mappings
+$colorNames = getRGB($colorNamesCSV);
+printColorsCSV($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program
 
-// $palette is an iterator on colors sorted by pixel count
-foreach($palette as $color => $count) {
-    // colors are represented by integers
-   $hex = Color::fromIntToHex($color); #, ': ', $count, "\n";
-   $name = getcolorname($hex,$colorNames);
-   if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;}
-   #echo $hex, " ", $color,"\n";
+
+$files = [__DIR__ . "/test-images/sutro.png",
+          __DIR__ . "/test-images/green.png",
+          __DIR__ . "/test-images/test2.png",
+          __DIR__ . "/test-images/good-night.jpg",
+          __DIR__ . "/test-images/sacramento.jpg"];
+
+foreach ($files as $file) {
+  print "\n" . $file . "\n";
+  getColors($file,$colorNames);
 }
 
-// it offers some helpers too
-$topFive = $palette->getMostUsedColors(5);
 
-$colorCount = count($palette);
-
-
-arsort($colorNameCount);
-$count = 0;
-foreach ($colorNameCount as $key=>$value) {
-  print $key . " " . $value ."\n";
-  $count++;
-  if ($count>5) {break;}
-}
-
-$hex="#770b0b";
-print getcolorname($hex,$colorNames);
-
+print "\n***END***\n";
 
 /*FUNCTIONS-*/
+function getColors($file, $_colorNames) {
 
+  $palette = Palette::fromFilename($file);
+
+  $colorNameCount = [];
+
+  // $palette is an iterator on colors sorted by pixel count
+  foreach($palette as $color => $count) {
+      // colors are represented by integers
+     $hex = Color::fromIntToHex($color); #, ': ', $count, "\n";
+     $name = getcolorname($hex,$_colorNames);
+     if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;}
+     #echo $hex, " ", $color,"\n";
+  }
+
+  // it offers some helpers too
+  $topFive = $palette->getMostUsedColors(5);
+
+  $colorCount = count($palette);
+
+
+  arsort($colorNameCount);
+  $count = 0;
+  $avoid = ["black","brown","gray","white",""];
+  foreach ($colorNameCount as $key=>$value) {
+    if (!in_array($key,$avoid)) {
+      print $key . " " . $value ."\n";
+      $count++;
+      if ($count>5) {break;}
+    }
+  }
+}
 
 
 function getcolorname($_hex,$_colorNames) {
@@ -130,4 +145,23 @@ function distancel2(array $color1, array $color2) {
         pow($color1[2] - $color2[2], 2));
 }
 
+function printColorsCSV($colors) {
+  $html_output = fopen("color-viewer.html","w");
+    $opening_tags = "
+    <html>
+    <head>
+    </head>
+    <body>";
+    fwrite($html_output,$opening_tags);
+    foreach ($colors as $color) {
+        $hex=$color['hex'];
+        $colorName=$color['machine-name'];
+        $colorGroup=$color['color-group'];
+        $string = "<h1 style='color:$hex'>$colorName ($colorGroup)</h1>";
+        fwrite($html_output,$string);
+        }
+        $closing_tags="</body></html>";
+        fwrite($html_output,$closing_tags);
+        fclose($html_output);
+}
 ?>

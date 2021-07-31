@@ -2,68 +2,73 @@
 #uses the color extractor library
 #https://github.com/thephpleague/color-extractor
 #load libraries installed with composer
+
+/* ------------------------------------------------INCLUDES------------------------------------------------------------*/
 require '/home/chris/vendor/autoload.php';
 
+#load color extractor related tools
 use League\ColorExtractor\Color;
 use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
 
+/* ------------------------------------------------MAIN----------------------------------------------------------------*/
 
+#get the CSV of color names, groups, hex codes, and rgb values and then build a useable array
 $colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'color-group');    #change to 'color-group' to use the user-created color mappings
 $colorNames = getRGB($colorNamesCSV);
-printColorsHTML($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program
+printColorsHTML($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program. to make it easier to see how the computer sees
 
-
+#the test files we're planning to use
 $files = [__DIR__ . "/test-images/sutro.png",
           __DIR__ . "/test-images/green.png",
           __DIR__ . "/test-images/test2.png",
           __DIR__ . "/test-images/good-night.jpg",
           __DIR__ . "/test-images/sacramento.jpg"];
 
+#iterate over files and for each one get the main colors
 foreach ($files as $file) {
   print "\n" . $file . "\n";
-  getColors($file,$colorNames);
+  $colors = getColors($file,$colorNames);
+  print_r($colors);
 }
 
-
+#program's finished
 print "\n***END***\n";
 
-/*FUNCTIONS-*/
+/* ------------------------------------------------FUNCTIONS-------------------------------------------------------------*/
 function getColors($file, $_colorNames) {
+#This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
+  $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers
 
-  $palette = Palette::fromFilename($file);
+  $colorNameCount = []; #init a blank array for counting the colors
+  $arrayToReturn = [];  #init a final array we'll return once the function's done
 
-  $colorNameCount = [];
-
-  // $palette is an iterator on colors sorted by pixel count
+  #go over each pixel in the palette, convert the integer value to HEX and then get the color name for each pixel
   foreach($palette as $color => $count) {
-      // colors are represented by integers, so need to convert to HEX and then RGB
+     #colors are represented by integers, so need to convert to HEX and then RGB
      $hex = Color::fromIntToHex($color);
-     $name = getcolorname($hex,$_colorNames);
-     if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;}
+     $name = getColorName($hex,$_colorNames);
+     if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;} #store in the associative array a count for how many of each color we've encountered
   }
 
-  // it offers some helpers too
-  #$topFive = $palette->getMostUsedColors(5);
-  #$colorCount = count($palette);
-
-  arsort($colorNameCount);
-  $count = 0;
-  $avoid = ["black","brown","gray","white",""]; #we want to avoid drap colors because they aren't neon!
-  foreach ($colorNameCount as $key=>$value) {
-    if (!in_array($key,$avoid)) {
-      print $key . " " . $value ."\n";
-      if ($count>5) {break;}
+  arsort($colorNameCount); #sort our count of the colors in descending order
+  $iterate_count = 0; #init a count, because we only want the top colors
+  $avoid = ["black","brown","gray","white",""]; #we want to avoid drap colors because they aren't lit neon!
+  foreach ($colorNameCount as $key=>$value) {   #iterate over all the colors we've seen by their name
+    if (!in_array($key,$avoid)) {               #make sure it's not a color we want to avoid
+    $arrayToReturn[$key] = $value;
+      if ($iterate_count>5) {break;}
     }
-    $count++; #keep counting even if we hit an avoided color, because if a neon-related color isn't in the top colors, perhaps this isn't a lit neon sign
+    $iterate_count++; #keep counting even if we hit an avoided color, because if a neon-related color isn't in the top colors, perhaps this isn't a lit neon sign
   }
+  return $arrayToReturn;
 }
 
-function getcolorname($_hex,$_colorNames) {
+function getColorName($_hex,$_colorNames) {
   $distances = array();
-  $val = html2rgb($_hex);
+  $val = htmlToRGB($_hex);
   foreach ($_colorNames as $name => $c) {
-      $distances[$name] = distancel2($c, $val);
+      $distances[$name] = L2distance($c, $val);
   }
 
   $mincolor = "";
@@ -115,7 +120,7 @@ function getRGB($_colorNamesCSV) {
   return $_colorNames;
 }
 
-function html2rgb($color)
+function htmlToRGB($color)
 {
     if ($color[0] == '#')
         $color = substr($color, 1);
@@ -135,7 +140,7 @@ function html2rgb($color)
     return array($r, $g, $b);
 }
 
-function distancel2(array $color1, array $color2) {
+function L2distance($color1, $color2) {
     return sqrt(pow($color1[0] - $color2[0], 2) +
         pow($color1[1] - $color2[1], 2) +
         pow($color1[2] - $color2[2], 2));

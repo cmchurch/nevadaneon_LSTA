@@ -14,29 +14,91 @@ use League\ColorExtractor\Palette;
 /* ------------------------------------------------MAIN----------------------------------------------------------------*/
 
 #get the CSV of color names, groups, hex codes, and rgb values and then build a useable array
-$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'color-group');    #change to 'color-group' to use the user-created color mappings
+$colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'machine-name');    #change to 'color-group' to use the user-created color mappings
 $colorNames = getRGB($colorNamesCSV);
 printColorsHTML($colorNamesCSV);    #use to create a viewer file for all the colors loaded into the program. to make it easier to see how the computer sees
 
 #the test files we're planning to use
+/*
+#TEST FILES
 $files = [__DIR__ . "/test-images/sutro.png",
           __DIR__ . "/test-images/green.png",
           __DIR__ . "/test-images/test2.png",
           __DIR__ . "/test-images/good-night.jpg",
-          __DIR__ . "/test-images/sacramento.jpg"];
+          __DIR__ . "/test-images/sacramento.jpg",
+          __DIR__ . "/test-images/red_neon.jpg",
+          __DIR__ . "/test-images/flamingos.jpg",
+          __DIR__ . "/test-images/camperland.jpg",];
+*/
 
-#iterate over files and for each one get the main colors
-foreach ($files as $file) {
-  print "\n" . $file . "\n";
-  $colors = getColors($file,$colorNames);
-  print_r($colors);
+/*get the metadata list and image urls*/
+$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');    #change to 'color-group' to use the user-created color mappings
+
+foreach ($metadata as $key=>$item) {
+  $timeDayTags = explode(',',$item['time-day']);
+  if (in_array('night',$timeDayTags)||in_array('dusk',$timeDayTags)) {   # we only want night or dusk images so we can see the neon
+    $thumbnails = explode(",",$item['thumbnail']);
+    $files[$key] = $thumbnails;
+ }
 }
 
+
+#iterate over files and for each one get the main colors
+$testCount = 0;
+foreach ($files as $key=>$file) {
+  print $key . "\n*************\n";
+  $html[$key] = "<h1>$key</h1>"; #build html so we can verify the results
+  foreach ($file as $url) {
+    print $url . "\n";
+    $colors = getColors($url,$colorNames,$colorNamesCSV);
+    foreach ($colors as $color=>$count) {
+      $colorTags[$key][$color] = TRUE; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
+    }
+    $colorsString = join(array_keys($colors),","); #get the colors as a string for each photo
+    $html[$key] = $html[$key] . "<p><img src='$url'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
+  }
+  if ($testCount > 2) {break;}
+  $testCount++;
+}
+
+toHTML($html); #export an HTML file that we can use to verify results
+toCSV($colorTags); #export the CSV that we can merge with the metadata table
 #program's finished
 print "\n***END***\n";
+exit;
 
 /* ------------------------------------------------FUNCTIONS-------------------------------------------------------------*/
-function getColors($file, $_colorNames) {
+
+function toCSV($colorTags) {
+  $header_keys = ["did","color-tags"];
+  $output = fopen("color-tags.csv","w");
+  fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
+  foreach ($colorTags as $did=>$tags) {
+    $line = [$did,join(array_keys($tags),",")];
+    fputcsv($output,$line,'|'); #output headers to first line of CSV file
+  }
+  fclose($output);
+}
+
+
+function toHTML($_html) {
+  $html_output = fopen("results.html","w");
+  $opening_tags = "
+  <html>
+  <head>
+  </head>
+  <body>";
+  fwrite($html_output,$opening_tags);
+  foreach ($_html as $item) {
+      fwrite($html_output,$item);
+  }
+  $closing_tags="</body></html>";
+  fwrite($html_output,$closing_tags);
+  fclose($html_output);
+
+}
+
+function getColors($file, $_colorNames,$_colorNamesCSV) {
 #This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
   $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers
 
@@ -48,19 +110,23 @@ function getColors($file, $_colorNames) {
      #colors are represented by integers, so need to convert to HEX and then RGB
      $hex = Color::fromIntToHex($color);
      $name = getColorName($hex,$_colorNames);
-     if (!isset($colorNameCount[$name])) {$colorNameCount[$name]=1;} else {$colorNameCount[$name]++;} #store in the associative array a count for how many of each color we've encountered
+     $color_group = $_colorNamesCSV[$name]['color-group'];
+     if (!isset($colorNameCount[$color_group])) {$colorNameCount[$color_group]=1;} else {$colorNameCount[$color_group]++;} #store in the associative array a count for how many of each color we've encountered
   }
 
   arsort($colorNameCount); #sort our count of the colors in descending order
   $iterate_count = 0; #init a count, because we only want the top colors
-  $avoid = ["black","brown","gray","white",""]; #we want to avoid drap colors because they aren't lit neon!
+  $avoid = ["black","brown","gray","white",""]; #we want to avoid drab colors because they aren't lit neon!
   foreach ($colorNameCount as $key=>$value) {   #iterate over all the colors we've seen by their name
     if (!in_array($key,$avoid)) {               #make sure it's not a color we want to avoid
     $arrayToReturn[$key] = $value;
-      if ($iterate_count>5) {break;}
+      $iterate_count++;
+      if ($iterate_count>3) {break;} #just get the top three colors
     }
-    $iterate_count++; #keep counting even if we hit an avoided color, because if a neon-related color isn't in the top colors, perhaps this isn't a lit neon sign
+
   }
+  $colorCount = array_sum($colorNameCount);
+  $blackCount = $colorNameCount['black'];
   return $arrayToReturn;
 }
 
@@ -147,7 +213,7 @@ function L2distance($color1, $color2) {
 }
 
 function printColorsHTML($colors) {
-  $html_output = fopen("color-viewer.html","w");
+    $html_output = fopen("color-viewer.html","w");
     $opening_tags = "
     <html>
     <head>

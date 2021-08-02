@@ -213,7 +213,7 @@ yellow|dark_goldenrod|Dark Goldenrod|#b8860b|184|134|11
 gray|dark_gray|Dark Gray|#a9a9a9|169|169|169
 green|dark_green|Dark Green|#013220|1|50|32
 blue|dark_imperial_blue|Dark Imperial Blue|#00416a|0|65|106
-green|dark_jungle_green|Dark Jungle Green|#1a2421|26|36|33
+black|dark_jungle_green|Dark Jungle Green|#1a2421|26|36|33
 green|dark_khaki|Dark Khaki|#bdb76b|189|183|107
 gray|dark_lava|Dark Lava|#483c32|72|60|50
 purple|dark_lavender|Dark Lavender|#734f96|115|79|150
@@ -248,7 +248,7 @@ green|dartmouth_green|Dartmouth Green|#00703c|0|112|60
 gray|davy_s_grey|Davy'S Grey|#555|85|85|85
 red|debian_red|Debian Red|#d70a53|215|10|83
 red|deep_carmine|Deep Carmine|#a9203e|169|32|62
-pink|deep_carmine_pink|Deep Carmine Pink|#ef3038|239|48|56
+red|deep_carmine_pink|Deep Carmine Pink|#ef3038|239|48|56
 orange|deep_carrot_orange|Deep Carrot Orange|#e9692c|233|105|44
 pink|deep_cerise|Deep Cerise|#da3287|218|50|135
 brown|deep_champagne|Deep Champagne|#fad6a5|250|214|165

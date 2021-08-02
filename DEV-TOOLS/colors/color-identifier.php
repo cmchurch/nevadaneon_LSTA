@@ -12,6 +12,10 @@ use League\ColorExtractor\ColorExtractor;
 use League\ColorExtractor\Palette;
 
 /* ------------------------------------------------MAIN----------------------------------------------------------------*/
+#get commandline arguments
+if (isset($argv[1])) { $grouping = $argv[1];} else {$grouping = NULL;}
+
+if ($grouping == "nogroup") {print "RUNNING WITH GROUPING DISABLED.\n\n";} else { print "RUNNING WITH GROUPING ENABLED.\n\n";}
 
 #get the CSV of color names, groups, hex codes, and rgb values and then build a useable array
 $colorNamesCSV = fetchCSV(__DIR__ . "/color-names.csv",'machine-name');    #change to 'color-group' to use the user-created color mappings
@@ -45,18 +49,22 @@ foreach ($metadata as $key=>$item) {
 
 #iterate over files and for each one get the main colors
 $testCount = 0;
+$fileCount = count($files);
+$index = 0;
 foreach ($files as $key=>$file) {
-  print $key . "\n*************\n";
+  $index++;
+  print $key . "\n*************  " . number_format($index/$fileCount*100,2) . "% completed. \n";
   $html[$key] = "<h1>$key</h1>"; #build html so we can verify the results
   foreach ($file as $url) {
     print $url . "\n";
-    $colors = getColors($url,$colorNames,$colorNamesCSV);
-    if ($colors==TRUE) {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
-    if ($colors==FALSE) {print "\nSaving file and exiting."; writeFiles($html,$colorTags); exit;}
+    $colors = getColors($url,$colorNames,$colorNamesCSV,$grouping );
+    if ($colors=="skip") {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
+    if ($colors=="quit") {print "\nSaving file and exiting.\n\n"; writeFiles($html,$colorTags); exit;}
     foreach ($colors as $color=>$count) {
       $colorTags[$key][$color] = TRUE; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
     }
     $colorsString = join(array_keys($colors),","); #get the colors as a string for each photo
+    print "    COLORS: $colorsString \n";
     $html[$key] = $html[$key] . "<p><img src='$url'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
   }
   #if ($testCount > 2) {break;}
@@ -104,20 +112,20 @@ function toHTML($_html) {
 
 }
 
-function getColors($file, $_colorNames,$_colorNamesCSV) {
+function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping) {
 #This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
   $success = FALSE;
   $fail = FALSE;
   while ($success!=TRUE&&$fail!=TRUE)
    try {
-     $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers
+     @$palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers (@symbol hides warning since we have an exception handler)
      $success = TRUE;
    }
      catch (Exception $ex) {
        echo "\nCould not access current URL\n";
        $input = readline('Would you like to try again, skip, or quit and save (T/S/Q)? ');
-       if ($input=='S'||$input=='s') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return TRUE;}
-       if ($input=='Q'||$input=='q') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!"; return FALSE;}
+       if ($input=='S'||$input=='s') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return "skip";}
+       if ($input=='Q'||$input=='q') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return "quit";}
   }
   $colorNameCount = []; #init a blank array for counting the colors
   $arrayToReturn = [];  #init a final array we'll return once the function's done
@@ -127,23 +135,28 @@ function getColors($file, $_colorNames,$_colorNamesCSV) {
      #colors are represented by integers, so need to convert to HEX and then RGB
      $hex = Color::fromIntToHex($color);
      $name = getColorName($hex,$_colorNames);
-     $color_group = $_colorNamesCSV[$name]['color-group'];
-     if (!isset($colorNameCount[$color_group])) {$colorNameCount[$color_group]=1;} else {$colorNameCount[$color_group]++;} #store in the associative array a count for how many of each color we've encountered
+     if ($_grouping == "nogroup") { $colorIndex = $name;} else {$colorIndex = $_colorNamesCSV[$name]['color-group']; }
+     if (!isset($colorNameCount[$colorIndex])) {$colorNameCount[$colorIndex]=1;} else {$colorNameCount[$colorIndex]++;} #store in the associative array a count for how many of each color we've encountered
   }
 
   arsort($colorNameCount); #sort our count of the colors in descending order
   $iterate_count = 0; #init a count, because we only want the top colors
   $avoid = ["black","brown","gray","white",""]; #we want to avoid drab colors because they aren't lit neon!
+
   foreach ($colorNameCount as $key=>$value) {   #iterate over all the colors we've seen by their name
-    if (!in_array($key,$avoid)) {               #make sure it's not a color we want to avoid
+    if ($_grouping == "nogroup") {
+      $check = in_array($_colorNamesCSV[$key]['color-group'],$avoid);
+    }
+    else {
+      $check = in_array($key,$avoid);
+    }
+    if (!$check) {               #make sure it's not a color we want to avoid
     $arrayToReturn[$key] = $value;
       $iterate_count++;
       if ($iterate_count>3) {break;} #just get the top three colors
     }
 
   }
-  $colorCount = array_sum($colorNameCount);
-  $blackCount = $colorNameCount['black'];
   return $arrayToReturn;
 }
 

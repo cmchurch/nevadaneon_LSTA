@@ -51,23 +51,29 @@ foreach ($files as $key=>$file) {
   foreach ($file as $url) {
     print $url . "\n";
     $colors = getColors($url,$colorNames,$colorNamesCSV);
+    if ($colors==TRUE) {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
+    if ($colors==FALSE) {print "\nSaving file and exiting."; writeFiles($html,$colorTags); exit;}
     foreach ($colors as $color=>$count) {
       $colorTags[$key][$color] = TRUE; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
     }
     $colorsString = join(array_keys($colors),","); #get the colors as a string for each photo
     $html[$key] = $html[$key] . "<p><img src='$url'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
   }
-  if ($testCount > 2) {break;}
+  #if ($testCount > 2) {break;}
   $testCount++;
 }
 
-toHTML($html); #export an HTML file that we can use to verify results
-toCSV($colorTags); #export the CSV that we can merge with the metadata table
+writeFiles($html,$colorTags);
 #program's finished
 print "\n***END***\n";
 exit;
 
 /* ------------------------------------------------FUNCTIONS-------------------------------------------------------------*/
+
+function writeFiles($_html,$_colorTags) {
+  toHTML($_html); #export an HTML file that we can use to verify results
+  toCSV($_colorTags); #export the CSV that we can merge with the metadata table
+}
 
 function toCSV($colorTags) {
   $header_keys = ["did","color-tags"];
@@ -100,8 +106,19 @@ function toHTML($_html) {
 
 function getColors($file, $_colorNames,$_colorNamesCSV) {
 #This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
-  $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers
-
+  $success = FALSE;
+  $fail = FALSE;
+  while ($success!=TRUE&&$fail!=TRUE)
+   try {
+     $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers
+     $success = TRUE;
+   }
+     catch (Exception $ex) {
+       echo "\nCould not access current URL\n";
+       $input = readline('Would you like to try again, skip, or quit and save (T/S/Q)? ');
+       if ($input=='S'||$input=='s') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return TRUE;}
+       if ($input=='Q'||$input=='q') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!"; return FALSE;}
+  }
   $colorNameCount = []; #init a blank array for counting the colors
   $arrayToReturn = [];  #init a final array we'll return once the function's done
 

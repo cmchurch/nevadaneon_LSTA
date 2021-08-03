@@ -15,6 +15,7 @@ use League\ColorExtractor\Palette;
 #get commandline arguments
 if (isset($argv[1])) { $grouping = $argv[1];} else {$grouping = NULL;}
 $fromCache = 1;
+$save = 1;
 
 if ($grouping == "nogroup") {print "RUNNING WITH GROUPING DISABLED.\n\n";} else { print "RUNNING WITH GROUPING ENABLED.\n\n";}
 
@@ -36,6 +37,7 @@ $files = [__DIR__ . "/test-images/sutro.png",
           __DIR__ . "/test-images/camperland.jpg",];
 */
 
+
 /*get the metadata list and image urls*/
 $metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');    #change to 'color-group' to use the user-created color mappings
 
@@ -48,12 +50,40 @@ foreach ($metadata as $key=>$item) {
 }
 
 
+#TESTING - COMMENT OUT FOR ACTUAL RUN
+/*
+$files = [];
+$files['neo000011'] = [__DIR__ . "/test/neo000011-0.jpg",
+          __DIR__ . "/test/neo000011-1.jpg",
+          __DIR__ . "/test/neo000011-2.jpg",
+          __DIR__ . "/test/neo000011-3.jpg",
+          __DIR__ . "/test/neo000011-4.jpg",
+          __DIR__ . "/test/neo000011-5.jpg"];
+$files['neo000012'] = [__DIR__ . "/test/neo000012-0.jpg",
+          __DIR__ . "/test/neo000012-1.jpg",
+          __DIR__ . "/test/neo000012-2.jpg",
+          __DIR__ . "/test/neo000012-3.jpg",
+          __DIR__ . "/test/neo000012-4.jpg",
+          __DIR__ . "/test/neo000012-5.jpg"];
+$files['neo000013'] = [__DIR__ . "/test/neo000013-0.jpg",
+          __DIR__ . "/test/neo000013-1.jpg",
+          __DIR__ . "/test/neo000013-2.jpg",
+          __DIR__ . "/test/neo000013-3.jpg",
+          __DIR__ . "/test/neo000013-4.jpg",
+          __DIR__ . "/test/neo000013-5.jpg",
+          __DIR__ . "/test/neo000013-6.jpg"];
+$fromCache = 0;
+$save=0;
+*/
+#end testing parameters
+
+
 #iterate over files and for each one get the main colors
 $testCount = 0;
 $fileCount = count($files);
 $countIndex = 0;
 foreach ($files as $key=>$file) {
-  $index++;
+  $countIndex++;
   print $key . "\n*************  " . number_format($countIndex/$fileCount*100,2) . "% completed. \n";
   $html[$key] = "<h1>$key</h1>"; #build html so we can verify the results
   foreach ($file as $index=>$url) {
@@ -63,21 +93,23 @@ foreach ($files as $key=>$file) {
       $file_location = $url;
     }
     print $file_location . "\n";
-    $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping );
+    if (strpos($metadata[$key]['time-day'],'day')!==FALSE) {$lumFlag = TRUE;} else {$lumFlag = FALSE;}
+    $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping, $lumFlag);
     if ($colors=="skip") {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
     if ($colors=="quit") {print "\nSaving file and exiting.\n\n"; writeFiles($html,$colorTags); exit;}
+    if ($colors=="day") {continue;}
     foreach ($colors as $color=>$count) {
       $colorTags[$key][$color] = TRUE; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
     }
     $colorsString = join(array_keys($colors),","); #get the colors as a string for each photo
     print "    COLORS: $colorsString \n";
-    $html[$key] = $html[$key] . "<p><img src='$url'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
+    $html[$key] = $html[$key] . "<p><img src='$file_location'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
   }
   #if ($testCount > 2) {break;}
   $testCount++;
 }
 
-writeFiles($html,$colorTags);
+if ($save==1) { writeFiles($html,$colorTags); }
 #program's finished
 print "\n***END***\n";
 exit;
@@ -118,13 +150,14 @@ function toHTML($_html) {
 
 }
 
-function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping) {
+function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag) {
 #This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
   $success = FALSE;
   $fail = FALSE;
   while ($success!=TRUE&&$fail!=TRUE)
    try {
      @$palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers (@symbol hides warning since we have an exception handler)
+     if ($palette === 0) {throw new Exception;}
      $success = TRUE;
    }
      catch (Exception $ex) {
@@ -136,19 +169,28 @@ function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping) {
   $colorNameCount = []; #init a blank array for counting the colors
   $arrayToReturn = [];  #init a final array we'll return once the function's done
 
+  $total_lum = 0;
+
   #go over each pixel in the palette, convert the integer value to HEX and then get the color name for each pixel
   foreach($palette as $color => $count) {
      #colors are represented by integers, so need to convert to HEX and then RGB
      $hex = Color::fromIntToHex($color);
      $name = getColorName($hex,$_colorNames);
+
+     $total_lum += getLum($hex);
+
+
      if ($_grouping == "nogroup") { $colorIndex = $name;} else {$colorIndex = $_colorNamesCSV[$name]['color-group']; }
      if (!isset($colorNameCount[$colorIndex])) {$colorNameCount[$colorIndex]=1;} else {$colorNameCount[$colorIndex]++;} #store in the associative array a count for how many of each color we've encountered
   }
 
+  $avg_lum = $total_lum / sizeof($palette);
+  #print number_format($avg_lum/255*100,2);
+  if ($avg_lum>7) {return "day";}
+
   arsort($colorNameCount); #sort our count of the colors in descending order
   $iterate_count = 0; #init a count, because we only want the top colors
   $avoid = ["black","brown","gray","white",""]; #we want to avoid drab colors because they aren't lit neon!
-
   foreach ($colorNameCount as $key=>$value) {   #iterate over all the colors we've seen by their name
     if ($_grouping == "nogroup") {
       $check = in_array($_colorNamesCSV[$key]['color-group'],$avoid);
@@ -164,6 +206,17 @@ function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping) {
 
   }
   return $arrayToReturn;
+}
+
+function getLum($_hex)
+{
+  #see https://stackoverflow.com/questions/596216/formula-to-determine-perceived-brightness-of-rgb-color for formulas
+    $rgb = htmlToRGB($_hex);
+    $r = $rgb[0];
+    $b = $rgb[1];
+    $g = $rgb[2];
+#    return ($r+$r+$b+$g+$g+$g)/6;
+    return sqrt(0.299*$r^2 + 0.587 * $g^2 + 0.114 * $b^2);
 }
 
 function getColorName($_hex,$_colorNames) {

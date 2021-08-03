@@ -111,10 +111,7 @@ foreach ($files as $key=>$file) {
     $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping, $lumFlag,$autoskip);
     if ($colors=="skip") {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
     if ($colors=="quit") {print "\nSaving file and exiting.\n\n"; writeFiles($html,$colorTags); exit;}
-    if ($colors=="day") {
-      print " -- DAY\n";
-      $html[$key] = $html[$key] . "<p><img src='$file_location'><br><span class='colors'>DAYTIME - NO COLORS</span></p>";
-      continue;}
+    if ($colors=="day") {continue;}
     foreach ($colors as $color=>$count) {
       if (!isset($colorTags[$key][$color])) {$colorTags[$key][$color]=1;} else {$colorTags[$key][$color]++;}; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
     }
@@ -141,7 +138,7 @@ function writeFiles($_html,$_colorTags) {
 
 function toCSV($colorTags) {
   $header_keys = ["did","color-tags"];
-  $output = fopen(__DIR__ . "/OUTPUT/color-tags.csv","w");
+  $output = fopen("color-tags.csv","w");
   fputcsv($output,$header_keys,'|'); #output headers to first line of CSV file
   foreach ($colorTags as $did=>$tags) {
     $line = [$did,join(array_keys($tags),",")];
@@ -152,7 +149,7 @@ function toCSV($colorTags) {
 
 
 function toHTML($_html) {
-  $html_output = fopen(__DIR__ . "/OUTPUT/results.html","w");
+  $html_output = fopen("results.html","w");
   $opening_tags = "
   <html>
   <head>
@@ -186,7 +183,7 @@ function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag,$_au
   }
   $colorNameCount = []; #init a blank array for counting the colors
   $arrayToReturn = [];  #init a final array we'll return once the function's done
-  #if (sizeof($palette)<3000) {return "skip";} #the brochures are mostly transparent, so they have a low palette count
+  if (sizeof($palette)<3000) {return "skip";} #the brochures are mostly transparent, so they have a low palette count
 
   $total_lum = 0;
   list($width,$height) = getimagesize($file);
@@ -207,10 +204,8 @@ function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag,$_au
   #make a guess as to whether this is a daytime or nighttime image
   $avg_lum = ($total_lum / $pixels)/255*100;
   $avg_black = $colorNameCount['black'] / $pixels * 100; #percentage of the total picture made up by black / dark pixels
-  $avg_blue = $colorNameCount['blue'] / $pixels * 100;
-  $likelihood_night = $avg_black/($avg_lum+$avg_blue)*100;   #we need to figure how bright the picture is as well as how much is comprised by dark/black pixels
-  print number_format($likelihood_night,2);
-  if ($likelihood_night < 25 && $_lumFlag==TRUE) {return "day";}
+  $likelihood_night = $avg_black/$avg_lum*100;   #we need to figure how bright the picture is as well as how much is comprised by dark/black pixels
+  if ($likelihood_night < 25) {return "day";}
 
   arsort($colorNameCount); #sort our count of the colors in descending order
   $iterate_count = 0; #init a count, because we only want the top colors

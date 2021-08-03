@@ -13,9 +13,16 @@ use League\ColorExtractor\Palette;
 
 /* ------------------------------------------------MAIN----------------------------------------------------------------*/
 #get commandline arguments
-if (isset($argv[1])) { $grouping = $argv[1];} else {$grouping = NULL;}
-$fromCache = 1;
-$save = 1;
+$response = readline("Is this a dry run with test data? (Y/N): ");
+if (strtolower($response)=="y") {$dry_run=1;} else {$dry_run = 0;}
+$response = readline("Are you using cached data? (Y/N): ");
+if (strtolower($response)=="y") {$fromCache = 1;} else {$fromCache = 0;}
+$response = readline("Do you want to group the color information? (Y/N): ");
+if (strtolower($response)=="y") {$grouping = "group";} else {$grouping = "nogroup";}
+$response = readline("Do you want to automatically skip unavailable items? (Y/N): ");
+if (strtolower($response)=="y") {$autoskip = 1;} else {$autoskip = 0;}
+
+$save = 1; #default is to save, unless dry_run overrides below
 
 if ($grouping == "nogroup") {print "RUNNING WITH GROUPING DISABLED.\n\n";} else { print "RUNNING WITH GROUPING ENABLED.\n\n";}
 
@@ -50,9 +57,15 @@ foreach ($metadata as $key=>$item) {
 }
 
 
-#TESTING - COMMENT OUT FOR ACTUAL RUN
-/*
+#TESTING
+if ($dry_run==1) {
 $files = [];
+$files['neo000005'] = [__DIR__ . "/test/neo000005-0.jpg",
+          __DIR__ . "/test/neo000005-1.jpg",
+          __DIR__ . "/test/neo000005-2.jpg",
+          __DIR__ . "/test/neo000005-3.jpg",
+          __DIR__ . "/test/neo000005-4.jpg",
+          __DIR__ . "/test/neo000005-5.jpg"];
 $files['neo000011'] = [__DIR__ . "/test/neo000011-0.jpg",
           __DIR__ . "/test/neo000011-1.jpg",
           __DIR__ . "/test/neo000011-2.jpg",
@@ -74,7 +87,8 @@ $files['neo000013'] = [__DIR__ . "/test/neo000013-0.jpg",
           __DIR__ . "/test/neo000013-6.jpg"];
 $fromCache = 0;
 $save=0;
-*/
+}
+
 #end testing parameters
 
 
@@ -94,19 +108,20 @@ foreach ($files as $key=>$file) {
     }
     print $file_location . "\n";
     if (strpos($metadata[$key]['time-day'],'day')!==FALSE) {$lumFlag = TRUE;} else {$lumFlag = FALSE;}
-    $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping, $lumFlag);
+    $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping, $lumFlag,$autoskip);
     if ($colors=="skip") {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
     if ($colors=="quit") {print "\nSaving file and exiting.\n\n"; writeFiles($html,$colorTags); exit;}
     if ($colors=="day") {continue;}
     foreach ($colors as $color=>$count) {
-      $colorTags[$key][$color] = TRUE; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
+      if (!isset($colorTags[$key][$color])) {$colorTags[$key][$color]=1;} else {$colorTags[$key][$color]++;}; #we'll trace the existence of a color for each record by using a BOOL and then grabbing the key from the associative array
     }
     $colorsString = join(array_keys($colors),","); #get the colors as a string for each photo
     print "    COLORS: $colorsString \n";
     $html[$key] = $html[$key] . "<p><img src='$file_location'><br><span class='colors'>$colorsString</span></p>"; #continue building html to verify results by hand
   }
-  #if ($testCount > 2) {break;}
-  $testCount++;
+  arsort($colorTags[$key]);
+  if (sizeof($colorTags[$key])>=4) {$colorTags[$key] = array_slice($colorTags[$key],0,4);}
+  print_r($colorTags[$key]);
 }
 
 if ($save==1) { writeFiles($html,$colorTags); }
@@ -150,20 +165,20 @@ function toHTML($_html) {
 
 }
 
-function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag) {
+function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag,$_autoskip) {
 #This function gets the colors from the image, turns them into HEX then rgb values, and then calls getcolorname, which compares them to the reference list of colors and groups using l2distance (Euclidian)
   $success = FALSE;
   $fail = FALSE;
   while ($success!=TRUE&&$fail!=TRUE)
    try {
-     @$palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers (@symbol hides warning since we have an exception handler)
+     $palette = Palette::fromFilename($file); #get the palette of all present colors by pixel stored as integers (@symbol hides warning since we have an exception handler) - the second argument Color::fromHexToInt('#FFFFFF') sets transparent pixels (has alpha value) to white
      if ($palette === 0) {throw new Exception;}
      $success = TRUE;
    }
      catch (Exception $ex) {
        echo "\nCould not access current URL\n";
        $input = readline('Would you like to try again, skip, or quit and save (T/S/Q)? ');
-       if ($input=='S'||$input=='s') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return "skip";}
+       if ($input=='S'||$input=='s'||$_autoskip==1) {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return "skip";}
        if ($input=='Q'||$input=='q') {$fail = TRUE; echo "\nCURRENT VALUE FAILED!\n"; return "quit";}
   }
   $colorNameCount = []; #init a blank array for counting the colors
@@ -183,10 +198,10 @@ function getColors($file, $_colorNames,$_colorNamesCSV,$_grouping,$_lumFlag) {
      if ($_grouping == "nogroup") { $colorIndex = $name;} else {$colorIndex = $_colorNamesCSV[$name]['color-group']; }
      if (!isset($colorNameCount[$colorIndex])) {$colorNameCount[$colorIndex]=1;} else {$colorNameCount[$colorIndex]++;} #store in the associative array a count for how many of each color we've encountered
   }
-
   $avg_lum = $total_lum / sizeof($palette);
   #print number_format($avg_lum/255*100,2);
-  if ($avg_lum>7) {return "day";}
+  print $avg_lum;
+  if ($avg_lum>8) {return "day";}
 
   arsort($colorNameCount); #sort our count of the colors in descending order
   $iterate_count = 0; #init a count, because we only want the top colors

@@ -56,6 +56,16 @@ FIND-LATLON/04_get-lat-lon.php
    * USES THE ADDRESS FIELD AND IF IT'S POPULATED GETS THE LAT/LON FROM GOOGLE API GEOCODE
    * STORES LAT/LON IF THE ROW DOESN'T ALREADY HAVE DATA
 
+### DEV-TOOLS
+ASSORTED EXPERIMENTAL TOOLS FOR TAGGING THE CONTENT FOR THE EXTENSIBLE METADATA LAYER (FINAL OUTPUT IN autotag/output/final-import.csv)
+* DEV-TOOLS/autotag
+   * this tool uses tf-idf to determine the most representative tokens/tags for each record, as well as a correspondence table to user-defined tags
+   * the output from this script is ready for import into Drupal
+* DEV-TOOLS/colors
+   * this tool extracts the colors from all images labeled as night or dusk, tagging each record with the top 4 representative colors (will be used in faceting)
+   * adds field to the metadata table (input.csv) for these color tags ('color-tags')
+ * DEV-TOOLS/nlp-tools
+    * this tool uses topic modeling to generate the top topics or groupings of tokens that best describe the data (experimental, not currently useful)
 
 ## ----NOTES TO SELF------
 

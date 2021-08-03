@@ -14,6 +14,7 @@ use League\ColorExtractor\Palette;
 /* ------------------------------------------------MAIN----------------------------------------------------------------*/
 #get commandline arguments
 if (isset($argv[1])) { $grouping = $argv[1];} else {$grouping = NULL;}
+$fromCache = 1;
 
 if ($grouping == "nogroup") {print "RUNNING WITH GROUPING DISABLED.\n\n";} else { print "RUNNING WITH GROUPING ENABLED.\n\n";}
 
@@ -50,14 +51,19 @@ foreach ($metadata as $key=>$item) {
 #iterate over files and for each one get the main colors
 $testCount = 0;
 $fileCount = count($files);
-$index = 0;
+$countIndex = 0;
 foreach ($files as $key=>$file) {
   $index++;
-  print $key . "\n*************  " . number_format($index/$fileCount*100,2) . "% completed. \n";
+  print $key . "\n*************  " . number_format($countIndex/$fileCount*100,2) . "% completed. \n";
   $html[$key] = "<h1>$key</h1>"; #build html so we can verify the results
-  foreach ($file as $url) {
-    print $url . "\n";
-    $colors = getColors($url,$colorNames,$colorNamesCSV,$grouping );
+  foreach ($file as $index=>$url) {
+    if ($fromCache==1) {
+      $file_location= __DIR__ . "/tmp/" . $key . "-".$index.".jpg";
+    } else {
+      $file_location = $url;
+    }
+    print $file_location . "\n";
+    $colors = getColors($file_location,$colorNames,$colorNamesCSV,$grouping );
     if ($colors=="skip") {print "\nFILE SKIPPED. Attempting next file.\n"; continue;}
     if ($colors=="quit") {print "\nSaving file and exiting.\n\n"; writeFiles($html,$colorTags); exit;}
     foreach ($colors as $color=>$count) {

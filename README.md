@@ -63,6 +63,7 @@ ASSORTED EXPERIMENTAL TOOLS FOR TAGGING THE CONTENT FOR THE EXTENSIBLE METADATA 
    * the output from this script is ready for import into Drupal
 * DEV-TOOLS/colors
    * this tool extracts the colors from all images labeled as night or dusk, tagging each record with the top 4 representative colors (will be used in faceting)
+   * determines the brightness (luminescence) of the photo against percentage of black and blue background to determine if it is a night or day photo, in the case of mixed records
    * adds field to the metadata table (input.csv) for these color tags ('color-tags')
  * DEV-TOOLS/nlp-tools
     * this tool uses topic modeling to generate the top topics or groupings of tokens that best describe the data (experimental, not currently useful)

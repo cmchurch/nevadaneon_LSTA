@@ -46,7 +46,7 @@ $files = [__DIR__ . "/test-images/sutro.png",
 
 
 /*get the metadata list and image urls*/
-$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did');    #change to 'color-group' to use the user-created color mappings
+$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did'); 
 
 foreach ($metadata as $key=>$item) {
   $timeDayTags = explode(',',$item['time-day']);

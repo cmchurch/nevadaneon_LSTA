@@ -1,12 +1,12 @@
 id|terms
 NNN000001|market,elko
-NNN000002|elko,alcohol,flag
-NNN000003|gambling,stockmen,elko,alcohol
-NNN000004|alcohol,doors,silver,channel,elko
+NNN000002|alcohol,elko,flag
+NNN000003|gambling,stockmen,alcohol,elko
+NNN000004|alcohol,doors,silver,channel
 NNN000005|automobiles,food,channel,elko,town
 NNN000006|stockmen,lodging,channel,elko,letters
 NNN000007|townhouse,elko,lodging,pylon
-NNN000008|drive,satellite,lodging,channel,elko
+NNN000008|drive,satellite,channel,lodging,elko
 NNN000009|knapp,fender,works,lodging,elko
 NNN000010|formally,knapp,elko,lodging,pylon
 NNN000011|town,elko,lodging
@@ -16,65 +16,65 @@ NNN000014|manor,automobiles,lodging,elko,pylon
 NNN000015|holiday,elko,lodging,pylon,marquee
 NNN000016|ranch,lodging,elko,automobiles
 NNN000017|wagner,drive,lodging,elko,roof
-NNN000018|shorty,elko,alcohol,flag
+NNN000018|shorty,alcohol,elko,flag
 NNN000019|palm,alcohol,elko,banner
-NNN000020|humboldt,business,lodging,fascia,called
+NNN000020|lodging,business,fascia,humboldt,called
 NNN000021|lion,logo,elko,gambling,lodging
 NNN000022|"adult entertainment and showgirls,elko,pylon"
-NNN000023|elko,lodging,flag,pylon,marquee
+NNN000023|elko,lodging,pylon,marquee,flag
 NNN000024|traveler,elko,lodging,marquee
 NNN000025|retail,elko,banner
-NNN000026|davin,lounge,alcohol,elko,flag
+NNN000026|davin,lounge,alcohol,elko,marquee
 NNN000027|healthcare,elko,flag,mounted
-NNN000028|holiday,lodging,elko,monument,marquee
+NNN000028|holiday,lodging,monument,elko,marquee
 NNN000029|mcgill,food,alcohol,flag,mounted
 NNN000030|ely
-NNN000031|ely,alcohol,flag,marquee
+NNN000031|ely,alcohol,marquee,flag
 NNN000032|eagle,ely,automobiles,roof
 NNN000033|midget,ely,alcohol,flag,mounted
 NNN000034|ruby,ely,lodging,pylon
-NNN000035|ely,rio,alcohol,flag,lodging
+NNN000035|rio,ely,alcohol,flag,lodging
 NNN000036|pine,ely,lodging,pylon
 NNN000037|retail,shoe,construction,fascia,shop
 NNN000038|ely,lodging,pylon
-NNN000039|park,ely,lodging,flag,pylon
-NNN000040|silver,ely,lodging,flag,pylon
+NNN000039|park,ely,lodging,pylon,marquee
+NNN000040|silver,ely,lodging,pylon,flag
 NNN000041|animals,eureka,alcohol,flag
 NNN000042|eureka,alcohol,flag
 NNN000043|austin,gambling,aquatic,flag,mounted
 NNN000044|austin,alcohol,flag,mounted
 NNN000045|hawthorne,gambling,roof
 NNN000046|hawthorne,gambling,roof,mounted
-NNN000047|carson,gambling,derelict,mounted
-NNN000048|animals,carson,food,flag,pylon
-NNN000049|cactus,jack,carson,senator,flag
+NNN000047|gambling,carson,derelict,mounted
+NNN000048|animals,carson,food,pylon,flag
+NNN000049|jack,cactus,senator,carson,marquee
 NNN000050|outdoors,carson,lodging,pylon,marquee
-NNN000051|carson,flag,pylon,mounted,lodging
+NNN000051|carson,pylon,flag,lodging,mounted
 NNN000052|alcohol,lodging,carson,roof,mounted
 NNN000053|"fremont,las vegas"
-NNN000054|railroad,henderson,monument,gambling,flag
-NNN000055|gambling,complete,henderson,food
+NNN000054|henderson,railroad,monument,gambling,pylon
+NNN000055|complete,henderson,gambling,food
 NNN000056|searchlight,flag,mounted
-NNN000057|corral,alcohol,boulder,pylon
-NNN000058|entertainment,sky,drive,pylon,mounted
+NNN000057|corral,boulder,alcohol,pylon
+NNN000058|"entertainment,sky,drive,pylon,las vegas"
 NNN000059|food,henderson,monument
 NNN000060|boulder,rancho,lodging,pylon,mounted
-NNN000061|sky,henderson,lodging,flag,pylon
+NNN000061|sky,henderson,lodging,pylon,flag
 NNN000062|"cimarron,lodging,las vegas,pylon,marquee"
-NNN000063|"alcohol,banner,las vegas,flag,pylon"
-NNN000064|miracle,king,park,trailer,mobile
+NNN000063|"alcohol,banner,las vegas,pylon,flag"
+NNN000064|miracle,king,park,mobile,trailer
 NNN000065|"monument,lodging,las vegas,marquee"
 NNN000066|"floppers,las vegas"
-NNN000067|"moon,desert,lodging,las vegas,flag"
-NNN000068|starview,boulder,lodging,derelict,flag
-NNN000069|food,boulder,flag,pylon,mounted
-NNN000070|cup,food,boulder,flag
-NNN000071|sands,boulder,mounted,lodging,flag
-NNN000072|"hitching,lodging,las vegas,flag,marquee"
+NNN000067|"moon,desert,lodging,las vegas,pylon"
+NNN000068|starview,boulder,lodging,derelict,pylon
+NNN000069|boulder,food,pylon,flag,mounted
+NNN000070|cup,food,boulder,pylon
+NNN000071|sands,boulder,lodging,mounted,marquee
+NNN000072|"hitching,lodging,las vegas,marquee,flag"
 NNN000073|entertainment,boulder
 NNN000074|desert,boulder,lodging,monument
-NNN000075|traveler,mohave,boulder,lodging,flag
-NNN000076|food,boulder,flag,pylon,mounted
+NNN000075|traveler,mohave,boulder,lodging,pylon
+NNN000076|food,boulder,pylon,flag,mounted
 NNN000077|"lodging,las vegas,flag,mounted"
 NNN000078|"fremont,las vegas"
 NNN000079|"las vegas,alcohol,flag,mounted"
@@ -84,57 +84,57 @@ NNN000082|"derelict,outdoors,alcohol,las vegas,flag"
 NNN000083|"wilbur,clark,desert,lodging,las vegas"
 NNN000084|"flamingo,monument,lodging,las vegas"
 NNN000085|strike,lucky,alcohol,mounted,roof
-NNN000086|fremont,banner,mounted,lodging,roof
-NNN000087|"cortez,banner,mounted,lodging,las vegas"
-NNN000088|"fabulous,las vegas,flag,pylon,mounted"
+NNN000086|fremont,banner,lodging,mounted,roof
+NNN000087|"cortez,banner,lodging,las vegas,mounted"
+NNN000088|"fabulous,las vegas,pylon,flag,mounted"
 NNN000089|"skyline,horizon,moon,las vegas"
 NNN000090|"range,gambling,construction,banner,las vegas"
 NNN000091|"gambling,animals,las vegas"
 NNN000092|"pioneer,alcohol,las vegas,flag"
-NNN000093|"pioneer,alcohol,fremont,las vegas"
-NNN000094|"vic,las vegas,pioneer,flag,alcohol"
+NNN000093|"pioneer,fremont,alcohol,las vegas"
+NNN000094|"vic,las vegas,pioneer,alcohol,flag"
 NNN000095|"vic,pioneer,las vegas,alcohol,flag"
 NNN000096|"animals,gambling,las vegas"
-NNN000097|"plaza,union,flight,las vegas"
-NNN000098|queens,mounted,roof,flag,gambling
-NNN000099|sundance,fitzgerald,derelict,flag,mounted
-NNN000100|"monument,gambling,derelict,las vegas"
-NNN000101|"lodging,las vegas,flag,pylon,marquee"
+NNN000097|"union,plaza,flight,las vegas"
+NNN000098|queens,mounted,roof,flag,lodging
+NNN000099|sundance,fitzgerald,derelict,flag,lodging
+NNN000100|"monument,gambling,las vegas,derelict"
+NNN000101|"lodging,las vegas,pylon,marquee,flag"
 NNN000102|"gambling,lodging,las vegas,pylon,marquee"
-NNN000103|"roulette,lodging,las vegas,flag,pylon"
-NNN000104|sky,ranch,lodging,flag,pylon
-NNN000105|"angel,lodging,roof,mounted,las vegas"
+NNN000103|"roulette,lodging,las vegas,pylon,marquee"
+NNN000104|sky,ranch,lodging,pylon,marquee
+NNN000105|"angel,lodging,roof,las vegas,mounted"
 NNN000106|"rancho,lodging,las vegas"
-NNN000107|chief,lodging,flag,pylon,mounted
+NNN000107|"chief,lodging,pylon,flag,las vegas"
 NNN000108|"center,lodging,marquee,las vegas"
 NNN000109|"sombrero,lodging,las vegas"
 NNN000110|"rainbow,las vegas,lodging"
 NNN000111|"lodging,pylon,las vegas"
-NNN000112|bagdad,lodging,pylon,marquee,mounted
-NNN000113|"gambling,mounted,las vegas"
+NNN000112|bagdad,lodging,pylon,marquee
+NNN000113|"gambling,las vegas,mounted"
 NNN000114|"ethnicity,lodging,las vegas"
-NNN000115|"lodging,flag,pylon,mounted,las vegas"
+NNN000115|"lodging,pylon,flag,las vegas,mounted"
 NNN000116|"lodging,las vegas"
 NNN000117|"yucca,lodging,las vegas"
 NNN000118|"monument,lodging,las vegas"
-NNN000119|"sombrero,food,flag,mounted,las vegas"
+NNN000119|"sombrero,food,flag,las vegas,mounted"
 NNN000120|rose,desert,monument,lodging,marquee
 NNN000121|"comet,lodging,las vegas"
-NNN000122|lodging,flag,pylon,marquee,mounted
+NNN000122|"lodging,pylon,marquee,flag,las vegas"
 NNN000123|"lucky,lodging,las vegas"
-NNN000124|railroad,gambling,henderson
-NNN000125|"food,banner,flag,mounted,las vegas"
+NNN000124|railroad,henderson,gambling
+NNN000125|"food,banner,flag,las vegas,mounted"
 NNN000126|"alcohol,lodging,las vegas"
 NNN000127|"lounge,marquee,las vegas"
 NNN000128|flight,international,terminal,interior,executive
 NNN000129|"market,las vegas"
-NNN000130|"poppa,food,roof,mounted,las vegas"
-NNN000131|"floral,shot,pylon,mounted,las vegas"
+NNN000130|"poppa,food,roof,las vegas,mounted"
+NNN000131|"floral,shot,pylon,las vegas,mounted"
 NNN000132|"gambling,lodging,las vegas"
 NNN000133|"herbst,automobiles,las vegas"
 NNN000134|"slipper,shot,las vegas"
 NNN000135|"shamrock,las vegas"
-NNN000136|"animals,rider,alcohol,mounted,las vegas"
+NNN000136|"animals,rider,alcohol,las vegas,mounted"
 NNN000137|"chips,roulette,wheel,las vegas"
 NNN000138|"locker,las vegas"
 NNN000139|slipper,prior,derelict,silver,gambling
@@ -143,166 +143,166 @@ NNN000141|"las vegas"
 NNN000142|"business,alcohol,las vegas"
 NNN000143|roast,food,pylon,marquee
 NNN000144|historical,masks,entertainment,shot,marquee
-NNN000145|"holiday,script,lodging,shot,las vegas"
-NNN000146|indian,jewelry,pottery,shot
+NNN000145|"script,holiday,lodging,shot,las vegas"
+NNN000146|indian,pottery,jewelry,shot
 NNN000147|"marquis,shot,las vegas"
-NNN000148|"poodle,shot,mounted,las vegas"
+NNN000148|"poodle,shot,las vegas,mounted"
 NNN000149|"dog,las vegas"
-NNN000150|outdoors,travel,lodging,shot,mounted
+NNN000150|"outdoors,travel,lodging,shot,las vegas"
 NNN000151|healthcare,sympathy,retail,free
 NNN000152|"jack,las vegas"
 NNN000153|"ethnicity,food,outline,las vegas"
 NNN000154|"shot,las vegas"
 NNN000155|"downtown,las vegas"
 NNN000156|showboat,castaways,lodging,derelict,roof
-NNN000157|"entertainment,monument,roof,mounted,las vegas"
+NNN000157|"entertainment,monument,roof,las vegas,mounted"
 NNN000158|gambling,retail,shop,roof,marquee
-NNN000159|riviera,lodging,pylon,marquee,mounted
-NNN000160|"gambling,lodging,derelict,las vegas"
+NNN000159|"riviera,lodging,pylon,marquee,las vegas"
+NNN000160|"lodging,gambling,derelict,las vegas"
 NNN000161|"firehouse,gambling,derelict,marquee,las vegas"
-NNN000162|"las vegas,marquee,gambling,lodging"
-NNN000163|sahara,roof,marquee,mounted,gambling
-NNN000164|lodging,stardust,automobiles,terminal,gambling
-NNN000165|imperial,palace,pylon,marquee,mounted
+NNN000162|"las vegas,marquee,lodging,gambling"
+NNN000163|sahara,roof,marquee,lodging,gambling
+NNN000164|automobiles,stardust,lodging,terminal,gambling
+NNN000165|"imperial,palace,pylon,marquee,las vegas"
 NNN000166|range,animals,hacienda,riding,man
-NNN000167|"gambling,fountains,aquatic,palace,las vegas"
-NNN000168|oasis,dunes,pylon,marquee,mounted
-NNN000169|flamingo,lodging,roof,marquee,mounted
+NNN000167|"gambling,fountains,palace,aquatic,las vegas"
+NNN000168|oasis,dunes,pylon,marquee,lodging
+NNN000169|lodging,flamingo,roof,marquee
 NNN000170|"cromwell,ethnicity,lodging,marquee,las vegas"
 NNN000171|thunderbird,derelict,lodging,pylon,marquee
 NNN000172|"automobiles,palace,gambling,pylon,las vegas"
 NNN000173|"weddings and divorce,las vegas"
 NNN000174|"architecture,weddings and divorce,silver,las vegas"
-NNN000175|"architecture,weddings and divorce,pylon,mounted,las vegas"
+NNN000175|"architecture,weddings and divorce,pylon,las vegas,mounted"
 NNN000176|"candlelight,weddings and divorce,museum,pylon"
-NNN000177|"shop,banner,flag,mounted,las vegas"
-NNN000178|"alcohol,retail,flag,mounted,las vegas"
+NNN000177|"shop,banner,flag,las vegas,mounted"
+NNN000178|"alcohol,retail,flag,las vegas,mounted"
 NNN000179|"delwebb,adult entertainment and showgirls,paradise,derelict,marquis"
-NNN000180|"royal,lodging,roof,mounted,las vegas"
+NNN000180|"royal,lodging,roof,las vegas,mounted"
 NNN000181|"outdoors,gambling,las vegas"
-NNN000183|laufer,valentines,shiela,valentine,custom
-NNN000184|gambling,bay,crystal,lodging,reno
-NNN000185|paris,derelict,reading,museum
+NNN000183|laufer,valentines,shiela,valentine,swan
+NNN000184|gambling,lodging,crystal,bay,reno
+NNN000185|paris,derelict,museum,reading
 NNN000186|laundry
-NNN000187|"cupid,weddings and divorce,flag,pylon"
+NNN000187|"cupid,weddings and divorce,pylon,flag"
 NNN000188|laufer,swan,reading
-NNN000189|architecture,yucca,art,cactus,tubes
+NNN000189|yucca,architecture,art,cactus,tubes
 NNN000190|"romeo,animals,derelict,las vegas"
-NNN000191|"alcohol,retail,flag,mounted,las vegas"
-NNN000192|stateline,lodging
-NNN000193|animals,carson,flag,pylon,mounted
+NNN000191|"alcohol,retail,flag,las vegas,mounted"
+NNN000192|lodging,stateline
+NNN000193|animals,carson,pylon,flag,mounted
 NNN000194|architecture,reno
-NNN000195|entrance,gambling,laughlin,lodging
+NNN000195|entrance,laughlin,lodging,gambling
 NNN000196|edgewater,laughlin,lodging,gambling,derelict
 NNN000197|laughlin,pioneer,gambling,hall,aquatic
 NNN000198|alcohol,laughlin,gambling,pylon,mounted
 NNN000199|lovelock
-NNN000200|wagon,lovelock,shot,lodging,automobiles
+NNN000200|wagon,lovelock,lodging,shot,automobiles
 NNN000201|windmill,lounge,lovelock,food
-NNN000202|sage,lovelock,lodging
-NNN000203|sierra,lovelock,lodging,flag,pylon
+NNN000202|sage,lodging,lovelock
+NNN000203|sierra,lodging,lovelock,pylon,flag
 NNN000204|haven,lovelock,desert,lodging,pylon
 NNN000205|lodging,gambling,lovelock,pylon
 NNN000206|architecture,reno
 NNN000207|architecture,reno
 NNN000208|"douglas,streets and roads,reno"
-NNN000209|primadonna,alcohol,sierra,reno,marquee
+NNN000209|primadonna,alcohol,reno,sierra,marquee
 NNN000210|fitzgerald,alcohol,derelict,reno
 NNN000211|animals,alcohol,reno,marquee
 NNN000212|harold,derelict,alcohol,reno
 NNN000213|gambling,entrance,reno
 NNN000214|harold,derelict,alcohol,parking
 NNN000215|gambling,reno,marquee,alcohol
-NNN000216|entertainment,sierra,reno,lodging
+NNN000216|entertainment,reno,sierra,lodging
 NNN000217|marquee,reno
 NNN000218|aquatic,lodging,derelict,reno
 NNN000219|lodging,gambling,reno
-NNN000220|loding,pylon,mounted,reno
-NNN000221|animals,lodging,mounted,reno
-NNN000222|indian,ranch,lodging,roof,mounted
-NNN000223|fortune,teller,reading,mounted,reno
-NNN000224|zanzibar,lounge,roof,mounted,reno
-NNN000225|character,wink,winking,reno,lodging
-NNN000226|rancho,lodging,mounted,reno
-NNN000227|food,mounted,reno
+NNN000220|loding,pylon,reno,mounted
+NNN000221|animals,lodging,reno,mounted
+NNN000222|indian,ranch,lodging,roof,reno
+NNN000223|fortune,teller,reading,reno,mounted
+NNN000224|zanzibar,lounge,roof,reno,mounted
+NNN000225|wink,character,winking,lodging,reno
+NNN000226|rancho,lodging,reno,mounted
+NNN000227|food,reno,mounted
 NNN000228|hacienda,reno
 NNN000229|food,reno
 NNN000230|food,reno
 NNN000231|cicero,reno
-NNN000232|dune,dunes,reno,lodging
+NNN000232|dune,dunes,lodging,reno
 NNN000233|martini,glass,alcohol,reno
-NNN000234|reno,lodging,mounted
-NNN000235|reno,lodging
+NNN000234|lodging,reno,mounted
+NNN000235|lodging,reno
 NNN000236|animals,bow,automobiles,lodging,reno
-NNN000237|automobiles,lodging,mounted,reno
+NNN000237|automobiles,lodging,reno,mounted
 NNN000238|heart,town,lodging,reno,derelict
-NNN000239|uptown,lodging,flag,mounted,reno
-NNN000240|savoy,automobiles,lodging,mounted,reno
-NNN000241|cavalier,automobiles,lodging,mounted,reno
-NNN000242|big,food,marquee,mounted,reno
+NNN000239|uptown,lodging,flag,reno,mounted
+NNN000240|savoy,automobiles,lodging,reno,mounted
+NNN000241|cavalier,automobiles,lodging,reno,mounted
+NNN000242|big,food,marquee,reno,mounted
 NNN000243|zephyr,lodging,reno
-NNN000244|dutch,lodging,roof,mounted,reno
-NNN000245|trail,aquatic,lodging,mounted,reno
-NNN000246|outdoors,lodging,mounted,reno
-NNN000247|outdoors,lodging,flag,mounted,reno
-NNN000248|spur,lodging,silver,mounted,reno
-NNN000249|tavern,reno,lodging,roof,mounted
-NNN000250|silver,lodging,marquee,mounted,reno
-NNN000251|siesta,lodging,marquee,mounted,reno
-NNN000252|sunset,reno,lodging
+NNN000244|dutch,lodging,roof,reno,mounted
+NNN000245|trail,aquatic,lodging,reno,mounted
+NNN000246|outdoors,lodging,reno,mounted
+NNN000247|outdoors,lodging,flag,reno,mounted
+NNN000248|spur,lodging,silver,reno,mounted
+NNN000249|tavern,lodging,reno,roof,mounted
+NNN000250|silver,lodging,marquee,reno,mounted
+NNN000251|siesta,lodging,marquee,reno,mounted
+NNN000252|sunset,lodging,reno
 NNN000253|marqee,silver,reno,lodging,mounted
 NNN000254|micasa,reno,mounted
-NNN000255|lodging,flag,marquee,mounted,reno
-NNN000256|sierra,rancho,air,reno,lodging
-NNN000257|town,lodging,marquee,mounted,reno
-NNN000258|lucky,lodging,mounted,reno
-NNN000259|food,roof,mounted,reno
-NNN000260|flag,mounted,reno
-NNN000261|lodging,marquee,mounted,reno
-NNN000262|mounted,lodging,marquee,reno
+NNN000255|lodging,marquee,flag,reno,mounted
+NNN000256|sierra,rancho,air,lodging,reno
+NNN000257|town,lodging,marquee,reno,mounted
+NNN000258|lucky,lodging,reno,mounted
+NNN000259|food,roof,reno,mounted
+NNN000260|flag,reno,mounted
+NNN000261|lodging,marquee,reno,mounted
+NNN000262|lodging,mounted,marquee,reno
 NNN000263|rumpus,reno
-NNN000264|lodging,mounted,reno
-NNN000265|sandman,reno,lodging,marquee,mounted
-NNN000266|reno,lodging,mounted
+NNN000264|lodging,reno,mounted
+NNN000265|sandman,lodging,reno,marquee,mounted
+NNN000266|lodging,reno,mounted
 NNN000267|alturas,alcohol,banner,reno
-NNN000268|sutro,reno,lodging
-NNN000269|morris,outdoors,lodging,banner,reno
+NNN000268|sutro,lodging,reno
+NNN000269|morris,outdoors,lodging,banner
 NNN000270|automobiles,lodging,reno,marquee,mounted
-NNN000271|rio,lodging,marquee,mounted,reno
-NNN000272|aquatic,lodging,mounted,reno
-NNN000273|lodging,mounted,reno
-NNN000274|mirador,lodging,mounted,reno
-NNN000275|lodging,flag,pylon,mounted,reno
+NNN000271|rio,lodging,marquee,reno,mounted
+NNN000272|aquatic,lodging,reno,mounted
+NNN000273|lodging,reno,mounted
+NNN000274|mirador,lodging,reno,mounted
+NNN000275|lodging,pylon,flag,reno,mounted
 NNN000276|lodging,town,automobiles,reno
-NNN000277|rainbow,lodging,flag,pylon,mounted
-NNN000278|center,reno,lodging,flag,pylon
-NNN000279|arlington,reno,lodging,mounted
-NNN000280|aquatic,reno,lodging,center,flag
+NNN000277|rainbow,lodging,pylon,flag,reno
+NNN000278|center,lodging,reno,pylon,flag
+NNN000279|lodging,reno,arlington,mounted
+NNN000280|aquatic,lodging,reno,center,flag
 NNN000281|aquatic,lodging,reno
-NNN000282|aspen,lodging,flag,pylon,mounted
+NNN000282|aspen,lodging,pylon,flag,reno
 NNN000283|shamrock,lodging,reno
 NNN000284|royal,reno,automobiles,lodging,marquee
-NNN000285|sands,lodging,mounted,reno
-NNN000286|lodging,roof,mounted,reno
+NNN000285|sands,lodging,reno,mounted
+NNN000286|lodging,roof,reno,mounted
 NNN000287|lodging,reno
-NNN000288|chalet,lodging,mounted,reno
-NNN000289|park,lodging,marquee,mounted,reno
-NNN000290|booth,phone,alcohol,flag,mounted
-NNN000291|automobiles,lodging,mounted,reno
-NNN000292|gambling,reno,lodging,flag,marquee
-NNN000293|lodging,flag,mounted,reno
-NNN000294|flamingo,reno,lodging,center,flag
+NNN000288|chalet,lodging,reno,mounted
+NNN000289|park,lodging,marquee,reno,mounted
+NNN000290|booth,phone,alcohol,flag,reno
+NNN000291|automobiles,lodging,reno,mounted
+NNN000292|gambling,lodging,reno,marquee,flag
+NNN000293|lodging,flag,reno,mounted
+NNN000294|flamingo,lodging,reno,center,flag
 NNN000295|lodging,reno
 NNN000296|holiday,reno
-NNN000297|santa,ethnicity,lake,reno,lodging
+NNN000297|santa,ethnicity,lodging,reno,lake
 NNN000298|automobiles,lodging,reno
 NNN000299|business,shop,reno
 NNN000300|holiday,lodging,reno
-NNN000301|stateline,wagon,wheel,reno
-NNN000302|gambling,gsr,sierra,reno,lodging
+NNN000301|wheel,wagon,stateline,reno
+NNN000302|gambling,gsr,lodging,reno,sierra
 NNN000303|yesco,reno,mounted
 NNN000304|senator,lodging,sparks,flag,mounted
-NNN000305|elbow,victorian,sparks,mounted
+NNN000305|elbow,sparks,victorian,mounted
 NNN000306|alcohol,sparks
 NNN000307|lounge,sparks
 NNN000308|lodging,sparks
@@ -313,47 +313,307 @@ NNN000312|driftwood,lounge,sparks
 NNN000313|copenhagen,prater,sparks,alcohol
 NNN000314|yesco,derelict,reno
 NNN000315|bridge,winnemucca
-NNN000316|overland,winnemucca,bridge,lodging,mounted
+NNN000316|overland,bridge,winnemucca,lodging,mounted
 NNN000317|sage,entertainment,marquis,winnemucca
-NNN000318|truck,union,winnemucca,mounted
+NNN000318|union,truck,winnemucca,mounted
 NNN000319|animals,automobiles,winnemucca,roof
 NNN000320|lodging,winnemucca,mounted
 NNN000321|sundance,winnemucca,marquis,gambling,roof
 NNN000322|griddle,winnemucca,mounted
 NNN000323|parker,winnemucca,gambling
 NNN000324|humboldt,lodging,winnemucca,flag,mounted
-NNN000325|bull,winnemucca,yesco,food
+NNN000325|bull,yesco,winnemucca,food
 NNN000326|entertainment,dance,buildings,winnemucca
 NNN000327|truck,lodging,winnemucca,mounted
 NNN000328|sonoma,lodging,winnemucca
 NNN000329|lodging,winnemucca,roof,mounted
 NNN000330|healthcare,retail,winnemucca
-NNN000331|stockmen,elko,business,lodging
+NNN000331|stockmen,elko,lodging,business
 NNN000332|ranch,automobiles,lodging,elko
 NNN000333|business,elko,railroad
 NNN000334|food,elko,roof,mounted
-NNN000335|elko,food,alcohol,mounted,gambling
+NNN000335|elko,food,alcohol,gambling,mounted
 NNN000336|market,elko,idaho
+NNN000337|warren,ford,automobiles,elko,mounted
+NNN000338|business,lodging,alcohol,elko,flag
+NNN000339|roof,gambling,mounted,elko
+NNN000341|reflection,ranch,automobiles,lodging
+NNN000342|ford,automobiles,elko
+NNN000343|press,stack,books,piled,foreground
+NNN000344|automobiles,lodging,roof,elko,mounted
+NNN000346|ranch,lodging,pylon,elko,mounted
+NNN000347|business,lounge,mounted,elko,lodging
+NNN000348|business,lounge,installation,mounted,elko
+NNN000349|business,flag,lodging,mounted,elko
+NNN000350|stockmen,roof,lodging,mounted,elko
+NNN000351|automobiles,lodging,banner,reno,reading
+NNN000352|reno,mounted
+NNN000353|center,flag,lodging,reno,mounted
+NNN000355|machines,business,reno,flag,mounted
+NNN000356|office,town,lodging,flag,reno
+NNN000357|town,lodging,marquee,flag,reno
+NNN000360|clock,mel,duck,mels,surrounding
+NNN000361|midtown,lounge,reno,flag,mounted
+NNN000363|olympic,reno,lodging,roof,mounted
+NNN000364|reno,architecture
+NNN000365|regency,sands,reno,arlington,mounted
+NNN000366|regency,sands,roof,reno,arlington
+NNN000367|regency,sands,reno,arlington,mounted
+NNN000371|derelict,star,reno,lodging,pylon
+NNN000376|automobiles,lodging,flag,reno,mounted
+NNN000377|panoramic,automobiles,lodging,banner,reno
+NNN000378|virginian,wrap,wrapping,marquee,alcohol
+NNN000379|castaway,lodging,pylon,marquee,reno
+NNN000380|"architecture,weddings and divorce,reno,flag,mounted"
+NNN000381|entertainment,facing,reno,sierra,mounted
+NNN000382|entertainment,facing,reno,sierra,mounted
+NNN000384|entertainment,reno
+NNN000385|center,lodging,reno,marquee,flag
+NNN000386|gambling,facing,reno,reading
+NNN000387|gambling,facing,reno,reading,mounted
+NNN000388|billboard,cirque,gambling,paris,reno
+NNN000389|gambling,reno,mounted,entrance
+NNN000390|lodging,reno,pylon,mounted
+NNN000391|flamingo,lodging,reno,mounted,center
+NNN000392|gambling,reno,facing,derelict,center
+NNN000393|gambling,mounted,derelict,reno
+NNN000394|machines,business,flag,reno,mounted
+NNN000395|town,marquee,lodging,flag,reno
+NNN000396|town,marquee,flag,lodging,mounted
+NNN000397|gambling,reno,lodging,mounted,pylon
+NNN000398|gambling,flag,lodging,reno,mounted
+NNN000399|lido,fixture,lodging,large,mounted
+NNN000400|hardships,food,covid,gambling,reno
+NNN000401|mardi,gras,flag,lodging,mounted
+NNN000403|town,facing,flag,lodging,reno
+NNN000404|olympic,roof,mounted,lodging
+NNN000405|peppermill,facing,reno,mounted
+NNN000406|"ponderosa,orchid,adult entertainment and showgirls,cabaret,wild"
+NNN000407|leds,iteration,switched,architecture,reno
+NNN000408|leds,switched,architecture,reno,edition
+NNN000409|architecture,reno,edition,facing
+NNN000410|afternoon,architecture,reno,edition
+NNN000412|regency,sands,entrance,gambling,reno
+NNN000413|garage,regency,sands,reno,arlington
+NNN000414|regency,sands,roof,reno,arlington
+NNN000416|regency,sands,flag,reno,arlington
+NNN000417|regency,sands,flag,reno,arlington
+NNN000418|sands,regency,marquee,word,reno
+NNN000419|regency,sands,marquee,reno,arlington
+NNN000420|pandemic,midst,santa,covid,doors
+NNN000421|star,entrance,reno,lodging,flag
+NNN000422|thunderbird,lodging,reno,flag,mounted
+NNN000423|thunderbird,flag,lodging,reno,mounted
+NNN000424|wr,son,adams,sparks,victorian
+NNN000429|aces,tattoo,reno
+NNN000433|"weddings and divorce,architecture,reno"
+NNN000435|altman,racks,rio,ely,mounted
+NNN000443|hole,piercing,reno,reading
+NNN000445|stadium,parking,reno,mounted
+NNN000447|gambling,entrance,reno
+NNN000448|unknown,gambling,reno,reading
+NNN000452|"architecture,weddings and divorce,reno,derelict"
+NNN000457|parking,alcohol,reno,mounted
+NNN000458|entrance,alcohol,gambling,reno,mounted
+NNN000460|garage,parking,entrance,alcohol,reno
+NNN000461|stadium,exit,parking,alcohol,reno
+NNN000464|copper,ramada,queen,basin,ely
+NNN000468|dragonfly,unknown,shop,reno
+NNN000472|office,rancho,ely,aultman,lodging
+NNN000480|fish,unknown,reno
+NNN000482|flamingo,lodging,office,reno,center
+NNN000486|dust,vine,food,reno,mounted
+NNN000487|dust,vine,gambling,reno,lodging
+NNN000491|rocks,indian,derelict,ely,pylon
+NNN000496|gambling,reno,center,mounted
+NNN000499|complex,gambling,removed,reno,parking
+NNN000507|billboard,hospitality,lodging,ely,aultman
+NNN000519|lucke,alcohol,reno,wells,mounted
+NNN000521|mari,chuy,reno,flag,mounted
+NNN000527|naked,lady,reno
+NNN000534|tarot,tarrot,card,reading,unknown
+NNN000538|pirate,locaiton,unknown,reno
+NNN000540|plaza,lodging,alcohol,reno,mounted
+NNN000542|plaza,lodging,alcohol,reno,mounted
+NNN000545|electronics,cameras,premier,loan,jewelry
+NNN000546|premier,loan,jewelry,flag,reno
+NNN000547|premier,loan,jewelry,retail
+NNN000548|prospector,ely,lodging,aultman,mounted
+NNN000549|prospector,lodging,ely,aultman,mounted
+NNN000550|purple,palms,clasped,person,mural
+NNN000551|racks,ely,aultman,mounted
+NNN000552|rancho,reno,mounted
+NNN000553|removed,rancho,reno,mounted
+NNN000556|aces,ground,reno,evans
+NNN000557|ticket,aces,reno,evans,roof
+NNN000558|merchandise,team,aces,reno,evans
+NNN000562|renova,flats,reno,mounted
+NNN000563|food,eureka,mounted
+NNN000574|mels,food,reno,regency,arlington
+NNN000577|santa,july,flag,lodging,reno
+NNN000580|shoeman,cycle,custom,reno,mounted
+NNN000585|siri,gambling,reno,mounted
+NNN000588|stardust,ranch,ely,roof,mounted
+NNN000592|melting,cbd,pot,reno,sierra
+NNN000594|swiss,alcohol,reno,roof,mounted
+NNN000606|entertainment,market,reno
+NNN000608|pine,ely,aultman,lodging,mounted
+NNN000611|hr,sportsbook,dust,outdoors,elko
+NNN000613|masonic,lodging,roof,mounted,reno
+NNN000614|stockmen,gaming,elko,business,mounted
+NNN000616|alibi,casazza,lounge,reno,mounted
+NNN000618|children,star,ethnicity,dancing,elko
+NNN000624|hole,piercing,reno,reading
+NNN000633|carnation,ice,cream,roof,mounted
+NNN000636|carson,gambling,reading,entrance
+NNN000648|entertainment,reno,sierra
+NNN000653|comstock,goni,carson,gambling,mounted
+NNN000662|dos,amigos,winnemucca,mounted,gambling
+NNN000667|bonds,bail,elko,silver,mounted
+NNN000679|mounted,lodging,elko,gambling,idaho
+NNN000680|nevadareno,portico,gambling,lodging,elko
+NNN000681|park,elko,idaho,mounted
+NNN000685|lodging,office,reno,mounted
+NNN000690|cortez,lodging,reno,roof,mounted
+NNN000691|iron,rv,animals,lodging,elko
+NNN000719|pete,gambling,hall,winnemucca,mounted
+NNN000720|plaza,elko,idaho,mounted
+NNN000755|stampede,lodging,elko,flag,mounted
+NNN000762|outdoors,lodging,reno,mounted
+NNN000763|outdoors,lodging,office,reno,mounted
+NNN000765|blind,onion,pub,food,elko
+NNN000770|point,roof,reno,mounted,alcohol
+NNN000771|point,reno,mounted,entrance,alcohol
+NNN000780|aquatic,food,wild,reno,lounge
+NNN000785|dust,outdoors,elko,mounted
+NNN000792|wagon,lodging,lovelock,mounted
+NNN000795|rose,desert,douglas,roof,elko
+NNN000796|erv,camp,workers,alcohol,flag
+NNN000800|automobiles,laundry,coin,elko,mounted
+NNN000801|palomas,lovelock,mounted
+NNN000803|motors,lovelock,flag,mounted
+NNN000820|crystal,bay,calaneva,lodging
+NNN000822|biltmore,outdoors,crystal,bay,mounted
+NNN000823|biltmore,outdoors,crystal,bay,gambling
+NNN000824|biltmore,outdoors,crystal,bay,free
+NNN000825|biltmore,outdoors,architecture,crystal,bay
+NNN000826|fiiz,drinks,elko,idaho,mounted
+NNN000827|churchill,springs,fallon,gambling,williams
+NNN000828|cock,bull,food,taylor,fallon
+NNN000831|fallon,taylor,lodging,williams,mounted
+NNN000832|fallon,taylor,lodging,williams,flag
+NNN000840|gambling,fallon,super,williams
+NNN000841|super,fallon,williams,mounted
+NNN000842|fallon,lodging,williams,mounted
+NNN000843|office,fallon,lodging,williams
+NNN000844|camacho,automobiles,sales,fallon,mounted
+NNN000847|crossing,gambling,fernley,logan
+NNN000848|crossing,gambling,fernley,logan
+NNN000849|crossing,gambling,fernley,logan
+NNN000850|crossing,alt,pioneer,fernley,gambling
+NNN000851|shack,food,fernley,mounted,derelict
+NNN000853|silverado,newlands,fernley,gambling,mounted
+NNN000855|fernley,flying,truck,mounted,lodging
+NNN000856|fernley,gambling,truck,mounted,lodging
+NNN000857|truck,terirble,lodging,fernley,large
+NNN000858|diesel,fernley,gambling,lodging,mounted
+NNN000859|topaz,gardnerville,lodging,mounted
+NNN000861|bruno,gerlach,alcohol,mounted
+NNN000865|elks,hawthorne,lodging,flag,mounted
+NNN000868|hawthorne,holiday,lodging,flag,mounted
+NNN000870|tavern,hawthorne,roof,mounted
+NNN000874|barton,alcohol,gambling,mounted
+NNN000875|barton,alcohol,gambling,mounted,lodging
+NNN000876|barton,billboard,alcohol,gambling,mounted
+NNN000878|barton,instructing,exit,alcohol,gambling
+NNN000882|wagon,gambling,lodging,mounted
+NNN000885|horseshu,gambling,lodging,mounted
+NNN000886|horseshu,hoseshu,gambling,lodging
+NNN000890|mineral,springs,ruin,gambling,business
+NNN000891|star,gambling,lodging,mounted
+NNN000892|gardner,hardware,true,lone,pine
+NNN000896|mcdermitt,gambling,mounted
+NNN000897|mcdermitt,gambling,mounted
+NNN000902|bully,sports,grill,alcohol,mounted
+NNN000903|bully,sports,grill,alcohol,mounted
+NNN000904|cleaners,wedge,pkwy,reno,mounted
+NNN000905|futura,wash,automobiles,car,reno
+NNN000906|brewing,basin,great,reno,mounted
+NNN000911|jazmine,reno,mounted
+NNN000912|jazmine,reno,mounted
+NNN000913|juicy,food,giant,mounted,reno
+NNN000914|wink,lodging,reno,mounted,derelict
+NNN000915|powersports,michael,reno,mounted
+NNN000917|ridgeview,mae,anne,plaza,reno
+NNN000920|smokin,galena,wedge,pkwy,reno
+NNN000923|quail,corners,grill,mccarran,reno
+NNN000925|truckee,bagel,village,ethnicity,wedge
+NNN000926|vino,reno,mccarran,mounted
+NNN000927|readings,vivian,psychic,vivians,usa
+NNN000928|linden,lodging,reno,mounted
+NNN000931|evergreen,trailer,park,flag,reno
+NNN000932|schurz,lodging,removed,flag,mounted
+NNN000933|food,chuck,rock,sparks,mounted
+NNN000934|food,chuck,rock,sparks,mounted
+NNN000937|gambling,sparks,mounted,lodging
+NNN000938|moving,storage,brien,glendale,sparks
+NNN000939|ross,plaza,mounted,sparks
+NNN000944|village,outdoors,registration,nichols,sparks
+NNN000946|scolari,holman,sparks,mounted
+NNN000948|tonopah,entertainment,lodging,mounted
+NNN000950|boomtown,verdi,garson,gambling,outdoors
+NNN000951|boomtown,verdi,outdoors,garson,lodging
+NNN000952|boomtown,verdi,outdoors,garson,lodging
+NNN000953|boomtown,verdi,garson,outdoors,gambling
+NNN000954|boomtown,verdi,garson,outdoors,mounted
+NNN000955|boomtown,verdi,garson,outdoors,mounted
+NNN000957|ranch,verdi,caf,gambling,rv
+NNN000959|minimart,ranch,verdi,gambling,rv
+NNN000961|belle,trailer,aquatic,park,verdi
+NNN000962|smoke,shop,verdi,mounted
+NNN000963|ranch,verdi,gambling,rv,mounted
+NNN000966|rancho,lodging,mounted,wells,reading
+NNN000967|lone,star,wells,morning,lodging
+NNN000968|flying,lucky,wells,gambling,mounted
+NNN000974|wheel,wagon,griff,wells,lodging
+NNN000976|chinatown,wells,humboldt,lodging,mounted
+NNN000977|chinatown,wells,humboldt,lodging,mounted
+NNN000978|wild,lodging,mounted,wells
+NNN000979|restroom,wash,car,wendover,mounted
+NNN000980|restrooms,restroom,wendover,mounted
+NNN000989|rainbow,wendover,registration,lodging,mounted
+NNN000991|steak,rainbow,wendover,lodging,mounted
+NNN000992|rainbow,wendover,race,sports,mounted
+NNN000994|garter,wendover,mounted,lodging,gambling
+NNN000995|posure,southern,plateau,mall,retail
+NNN000996|wendover,gambling,lodging,mounted,reading
+NNN000997|wendover,walkway,gambling,mounted,lodging
+NNN000999|pilot,wendover,gambling,mounted
+NNN001001|crystal,bay,morning,stateline,gambling
+NNN001002|crystal,bay,biltmore,outdoors,alcohol
+NNN001004|toepa,incline,village,flag,mounted
+NNN001010|ethnicity,kitchen,outdoors,stateline,gambling
+NNN001013|harveys,food,sports,stateline,outdoors
 pho003383|"lodging,las vegas,downtown,fremont"
 pho003384|"alcohol,lodging,fremont,automobiles,las vegas"
 pho003385|"las vegas,alcohol,downtown,fremont"
 pho003386|"fremont,intersection,las vegas,downtown"
 pho003387|"outdoors,windmill,rancho,lodging,las vegas"
-pho003388|"rancho,lodging,outdoors,windmill,las vegas"
+pho003388|"rancho,outdoors,lodging,windmill,las vegas"
 pho003389|"animals,indian,alcohol,las vegas,downtown"
-pho003390|"desert,lodging,wilbur,clark,las vegas"
-pho003391|champagne,flamingo,lodging,parking,lot
+pho003390|"desert,wilbur,clark,lodging,las vegas"
+pho003391|champagne,flamingo,lodging,lot,automobiles
 pho003392|"cortez,lodging,automobiles,las vegas,downtown"
 pho003393|"las vegas,fabulous,downtown"
-pho003394|"gambling,hall,las vegas,downtown"
-pho003395|"plaza,union,fremont,animals,las vegas"
-pho003396|"gate,las vegas,fremont,time,alcohol"
+pho003394|"gambling,las vegas,hall,downtown"
+pho003395|"fremont,union,plaza,animals,las vegas"
+pho003396|"gate,las vegas,fremont,time,downtown"
 pho003397|"pioneer,alcohol,automobiles,las vegas,downtown"
-pho003398|race,gambling,crowd,desert,lodging
+pho003398|gambling,crowd,race,desert,lodging
 pho003399|"chief,lodging,las vegas,downtown"
 pho003400|"center,lodging,las vegas,marquee"
 pho003401|"lodging,las vegas"
-pho003402|woman,shoe,slipper,center,silver
+pho003402|woman,shoe,slipper,silver,center
 pho003403|"slipper,silver,las vegas,downtown,nev"
 pho003404|"las vegas,outdoors,desert,lodging,downtown"
 pho003405|"siegfried,lodging,las vegas,riviera,outdoors"
@@ -361,18 +621,18 @@ pho003406|"lodging,las vegas,riviera,outdoors,sahara"
 pho003407|"flight,riviera,las vegas,downtown,lodging"
 pho003408|"stardust,las vegas,downtown,lodging"
 pho003409|"entertainment,las vegas,riviera,downtown"
-pho003410|"entertainment,rancho,las vegas,marquee,gambling"
+pho003410|"entertainment,rancho,las vegas,gambling,marquee"
 pho003411|"entertainment,las vegas"
 pho003412|"entertainment,entrance,las vegas"
 pho003413|minnelli,riviera,advertising,marquee,lodging
-pho003414|"las vegas,gambling,lodging"
+pho003414|"las vegas,lodging,gambling"
 pho003415|"firehouse,las vegas,gambling,nev"
 pho003416|"ethnicity,sahara,las vegas,design,open"
-pho003417|"stardust,lodging,las vegas,royal,gambling"
-pho003418|"stardust,las vegas,royal,lodging,open"
-pho003419|"stardust,lodging,las vegas,royal,gambling"
-pho003420|"hacienda,lodging,gambling,bay,las vegas"
-pho003421|"hacienda,lodging,gambling,bay,las vegas"
+pho003417|"stardust,las vegas,lodging,royal,gambling"
+pho003418|"stardust,las vegas,royal,originally,open"
+pho003419|"stardust,las vegas,lodging,royal,gambling"
+pho003420|"hacienda,gambling,lodging,las vegas,bay"
+pho003421|"hacienda,gambling,lodging,las vegas,animals"
 pho003422|"gambling,palace,luxury,cabana,las vegas"
 pho003423|"gambling,palace,luxury,cabana,las vegas"
 pho003424|"gambling,palace,luxury,cabana,las vegas"
@@ -380,21 +640,21 @@ pho003425|dunes,oasis,gambling,stands
 pho003426|dunes,oasis,gambling,stands
 pho003427|"flamingo,lodging,las vegas,open"
 pho003428|"flamingo,lodging,las vegas,open"
-pho003429|automobiles,palace,gambling,finally
-pho003430|automobiles,palace,gambling,finally
-pho003431|automobiles,palace,gambling,finally
+pho003429|automobiles,palace,finally,gambling
+pho003430|automobiles,palace,finally,gambling
+pho003431|automobiles,palace,finally,gambling
 pho003432|"candlelight,weddings and divorce,ethnicity"
 pho003433|"alcohol,retail,young,las vegas,business"
-pho003434|"spring,alcohol,adult entertainment and showgirls,automobiles,boulder"
+pho003434|"spring,alcohol,automobiles,adult entertainment and showgirls,boulder"
 pho003435|gambling,business,henderson,boyd
 pho003436|gambling,business,henderson,boyd
-pho003437|primadonna,architecture,alcohol,reno,tall
-pho003438|primadonna,architecture,alcohol,reno,tall
+pho003437|primadonna,architecture,alcohol,tall,female
+pho003438|primadonna,architecture,alcohol,tall,female
 pho003439|gambling,carano,marquee,reno,owned
-pho003440|gambling,reno,gsr,finally
+pho003440|gambling,gsr,reno,finally
 pho003532|"outdoors,gambling,las vegas,downtown"
-pho003533|"indian,gambling,streets and roads,alcohol,fremont"
-pho003534|"indian,alcohol,fremont,outdoors,las vegas"
+pho003533|"indian,streets and roads,fremont,alcohol,gambling"
+pho003534|"indian,fremont,alcohol,outdoors,las vegas"
 pho003535|"outdoors,alcohol,las vegas,downtown"
 pho003536|"strike,lucky,alcohol,las vegas,downtown"
 pho003537|"fremont,lodging,las vegas,downtown"
@@ -402,14 +662,14 @@ pho003538|"panoramic,landmark,lodging,las vegas"
 pho003539|"moonrise,landmark,las vegas,lodging"
 pho003540|"celebrating,entertainment,sassy,year,las vegas"
 pho003541|"gambling,hall,lucky,las vegas"
-pho003542|"hall,gambling,las vegas,downtown"
-pho003543|"coin,castle,fremont,las vegas,queens"
+pho003542|"gambling,hall,las vegas,downtown"
+pho003543|"castle,fremont,coin,las vegas,queens"
 pho003544|"alcohol,pioneer,las vegas,downtown"
 pho003545|"vic,pioneer,las vegas,alcohol,downtown"
 pho003546|"vic,pioneer,las vegas,alcohol,downtown"
 pho003547|"animals,las vegas,downtown"
 pho003548|"fremont,las vegas,downtown"
-pho003549|"plaza,union,flight,lodging,las vegas"
+pho003549|"union,plaza,flight,lodging,las vegas"
 pho003550|"queens,las vegas,downtown,lodging"
 pho003551|"queens,las vegas,downtown,lodging"
 pho003552|"sundance,lodging,las vegas,downtown"
@@ -417,7 +677,7 @@ pho003553|"fremont,las vegas,downtown"
 pho003554|"lodging,las vegas,downtown"
 pho003555|"lodging,las vegas,downtown"
 pho003556|"gambling,lodging,las vegas,downtown,fremont"
-pho003557|roulette,lodging,sky,ranch
+pho003557|"roulette,lodging,sky,las vegas"
 pho003558|"roulette,lodging,las vegas,downtown,fremont"
 pho003559|"roulette,lodging,las vegas,downtown,fremont"
 pho003560|"sky,ranch,lodging,las vegas,downtown"
@@ -428,9 +688,9 @@ pho003564|"angel,lodging,las vegas,downtown"
 pho003565|"rancho,lodging,las vegas"
 pho003566|"sombrero,lodging,las vegas"
 pho003567|"rainbow,las vegas,lodging"
-pho003568|"gambling,lodging,las vegas"
-pho003569|"gambling,lodging,las vegas"
-pho003570|"gambling,lodging,las vegas"
+pho003568|"lodging,gambling,las vegas"
+pho003569|"lodging,gambling,las vegas"
+pho003570|"lodging,gambling,las vegas"
 pho003571|"bagdad,lodging,las vegas"
 pho003572|"gambling,las vegas"
 pho003573|"ethnicity,lodging,las vegas"
@@ -447,17 +707,17 @@ pho003583|lodging,railroad,gambling,international
 pho003584|"food,ethnicity,advertising,las vegas"
 pho003585|"alcohol,lodging,las vegas"
 pho003586|hong,kong,ethnicity,lounge,food
-pho003587|retail,simply,flight,mccarran,international
-pho003588|flight,mccarran,international,executive,terminal
+pho003587|simply,flight,retail,international,food
+pho003588|flight,international,executive,mccarran,terminal
 pho003589|"market,las vegas"
 pho003590|"poppa,food,las vegas"
-pho003591|fine,floral,alcohol,food,advertising
+pho003591|floral,fine,alcohol,food,advertising
 pho003592|"floral,food,las vegas"
 pho003593|"gambling,lodging,las vegas"
 pho003594|"herbst,automobiles,las vegas"
 pho003595|"shamrock,las vegas"
 pho003596|"animals,jockey,las vegas"
-pho003597|"roulette,wheel,chips,las vegas"
+pho003597|"roulette,chips,wheel,las vegas"
 pho003598|"locker,alcohol,las vegas"
 pho003599|"dipper,constellation,big,las vegas"
 pho003600|"entertainment,las vegas"
@@ -496,19 +756,19 @@ pho003632|"imperial,palace,buildings,las vegas"
 pho003633|"imperial,palace,year,automobiles,las vegas"
 pho003634|"hacienda,lodging,automobiles,las vegas"
 pho003635|animals,suit,hacienda,riding,lodging
-pho003636|"hacienda,lodging,parking,las vegas,entrance"
+pho003636|"hacienda,lodging,las vegas,parking,entrance"
 pho003637|"architecture,gambling,fountains,palace,las vegas"
 pho003638|play,gambling,larger,palace,smaller
-pho003639|food,dunes,paris,oasis,advertising
+pho003639|food,dunes,paris,advertising,oasis
 pho003640|"flamingo,lodging,automobiles,las vegas"
-pho003641|"lodging,flamingo,las vegas,marquee,gambling"
-pho003642|"flamingo,lodging,las vegas,marquee"
-pho003643|gambling,pot,floral,flamingo,lodging
+pho003641|"lodging,flamingo,las vegas,marquee"
+pho003642|"lodging,flamingo,las vegas,marquee"
+pho003643|gambling,floral,lodging,flamingo,pot
 pho003644|ethnicity,lodging,drive,flamingo
 pho003645|racing,gambling,ethnicity,odds,dog
-pho003646|merrill,joan,english,manolo,chuck
+pho003646|merrill,joan,english,manolo,gould
 pho003647|"thunderbird,lodging,las vegas"
-pho003648|"license,weddings and divorce,architecture"
+pho003648|"license,weddings and divorce"
 pho003649|"architecture,weddings and divorce,silver,las vegas"
 pho003650|"architecture,weddings and divorce,silver,las vegas"
 pho003651|"architecture,weddings and divorce,famous"
@@ -530,11 +790,11 @@ pho003666|"young,derelict,business,yesco,las vegas"
 pho003667|young,derelict,business,yesco,animals
 pho003668|"royal,lodging,las vegas"
 pho003669|"derelict,crown,yesco,royal,las vegas"
-pho003670|pond,butler,lodging,surface,automobiles
+pho003670|pond,butler,surface,automobiles,lodging
 pho003671|corral,gibson,alcohol
-pho003672|skyway,drive,automobiles,entertainment,boulder
+pho003672|skyway,drive,automobiles,boulder,entertainment
 pho003673|outpost,food,automobiles,boulder,lodging
-pho003674|food,alcohol,automobiles
+pho003674|food,alcohol,automobiles,boulder
 pho003675|boulder,rancho,lodging,automobiles
 pho003676|sky,food,lodging,automobiles
 pho003677|cimarron,food,aquatic,lodging
@@ -551,59 +811,59 @@ pho003687|lodging,boulder,nev
 pho003688|"entertainment,pin,boulder,streets and roads"
 pho003689|desert,lodging,boulder,nev
 pho003690|mohave,travelers,lodging,boulder,nev
-pho003691|food,ethnicity,boulder
-pho003692|gambling,laughlin,lodging
-pho003693|gambling,roadside,laughlin,lodging
-pho003694|edgewater,laughlin,gambling,lodging,marquee
-pho003695|crystal,gambling,hall,palace,laughlin
-pho003696|crystal,regency,laughlin,edgewater,gambling
+pho003691|food,boulder,ethnicity
+pho003692|laughlin,gambling,lodging
+pho003693|roadside,laughlin,gambling,lodging
+pho003694|edgewater,laughlin,lodging,gambling,marquee
+pho003695|crystal,gambling,palace,hall,laughlin
+pho003696|laughlin,edgewater,crystal,gambling,palace
 pho003697|pioneer,gambling,hall,laughlin,outdoors
 pho003698|alcohol,laughlin,outdoors,pioneer,gambling
 pho003699|laughlin,alcohol,nev
 pho003700|alcohol,laughlin
 pho003701|alcohol,laughlin
-pho003702|railroad,gambling,henderson,automobiles
-pho003703|railroad,gambling,henderson,parking,lot
-pho003704|railroad,marquee,gambling,henderson
+pho003702|railroad,henderson,gambling,automobiles
+pho003703|railroad,henderson,lot,gambling,parking
+pho003704|railroad,marquee,henderson,gambling
 pho003705|derelict,searchlight,retail,shop,reading
-pho003706|battle,outdoors,lumber,union,automobiles
+pho003706|lumber,battle,outdoors,union,automobiles
 pho003707|wagon,lovelock,lodging
-pho003708|wagon,lovelock,lodging
+pho003708|wagon,lodging,lovelock
 pho003709|windmill,lounge,lovelock,food
-pho003710|sage,lovelock,lodging
-pho003711|sierra,lovelock,lodging
-pho003712|haven,desert,lovelock,lodging
-pho003713|haven,desert,lovelock,lodging
+pho003710|sage,lodging,lovelock
+pho003711|sierra,lodging,lovelock
+pho003712|haven,desert,lodging,lovelock
+pho003713|haven,desert,lodging,lovelock
 pho003714|lodging,automobiles,outdoors,gambling
-pho003715|faris,bridge,pagoda,winnemucca,entertainment
-pho003716|overland,winnemucca,entertainment,lodging,bridge
-pho003717|overland,winnemucca,lodging,nev
-pho003718|sage,entertainment,bridge,winnemucca,marquee
-pho003719|entertainment,sage,winnemucca,overland,bridge
-pho003720|truck,union,derelict,winnemucca
+pho003715|faris,bridge,pagoda,overland,winnemucca
+pho003716|overland,winnemucca,lodging,bridge,sage
+pho003717|overland,lodging,winnemucca,nev
+pho003718|sage,bridge,entertainment,winnemucca,marquee
+pho003719|sage,entertainment,bridge,overland,winnemucca
+pho003720|derelict,union,truck,winnemucca
 pho003721|truck,union,derelict,winnemucca
 pho003722|animals,derelict,automobiles,winnemucca
-pho003723|winnemucca,lodging,nev
-pho003724|sundance,winnemucca,gambling,nev
-pho003725|sundance,winnemucca,gambling,nev
+pho003723|lodging,winnemucca,nev
+pho003724|sundance,gambling,winnemucca,nev
+pho003725|sundance,gambling,winnemucca,nev
 pho003726|griddle,winnemucca,food,nev
-pho003727|parker,food,shop,winnemucca,gambling
+pho003727|parker,food,shop,gambling,winnemucca
 pho003728|market,elko,idaho
 pho003729|market,elko,idaho
 pho003730|market,elko,idaho
 pho003731|pub,elko
 pho003732|stockman,gambling,alcohol,elko
-pho003733|outdoors,ground,silver,faded,elko
+pho003733|outdoors,ground,silver,faded,alcohol
 pho003734|alcohol,advertising,silver,elko
 pho003735|alcohol,advertising,silver,elko
-pho003736|alcohol,advertising,silver,elko,business
+pho003736|alcohol,advertising,silver,elko
 pho003737|food,elko,automobiles
-pho003738|stockmen,food,border,lodging,healthcare
-pho003739|lies,food,stockmen,alcohol,lodging
-pho003740|stockmen,alcohol,gambling,elko,lodging
+pho003738|stockmen,food,border,healthcare,lodging
+pho003739|lies,food,alcohol,stockmen,lodging
+pho003740|stockmen,alcohol,elko,lodging,gambling
 pho003741|role,chicken,construction,lodging,spread
 pho003742|drive,lodging,elko
-pho003743|satellites,satellite,drive,retail,tall
+pho003743|satellites,satellite,drive,tall,retail
 pho003744|knapp,fender,works,connected,lodging
 pho003745|lodging,knapp,elko,outdoors
 pho003746|lodging,knapp,depicts,outdoors,elko
@@ -611,61 +871,61 @@ pho003747|lodging,knapp,outdoors,elko
 pho003748|lodging,knapp,elko
 pho003749|town,lodging,advertising,elko
 pho003750|town,lodging,elko,thunderbird
-pho003751|town,queen,lodging,elko
-pho003752|star,queen,lodging,entertainment,travel
-pho003753|star,queen,lodging,entertainment,travel
+pho003751|town,lodging,queen,elko
+pho003752|star,lodging,entertainment,travel
+pho003753|star,lodging,entertainment,travel
 pho003754|seniors,elko,lodging,queens,smaller
 pho003755|seniors,elko,lodging,queens,smaller
-pho003756|manor,phones,automobiles,lodging,queen
+pho003756|manor,phones,automobiles,lodging
 pho003757|holiday,elko,lodging
-pho003758|ranch,automobiles,lodging,smiling
-pho003759|ranch,automobiles,lodging,smiling
-pho003760|reflection,lodging,ranch,automobiles
+pho003758|ranch,automobiles,smiling,thumbs,television
+pho003759|ranch,automobiles,smiling,thumbs,television
+pho003760|lodging,reflection,ranch,automobiles,smiling
 pho003761|friendly,ranch,lodging,automobiles
 pho003762|ranch,automobiles,lodging,elko
-pho003763|wagner,dogs,customers,lodging,drive
-pho003764|shorty,alcohol,elko,man,hat
-pho003765|shorty,savings,alcohol,elko,man
-pho003766|shorty,alcohol,elko,man,hat
-pho003767|palm,bullet,alcohol,gambling
+pho003763|wagner,customers,dogs,drive,woman
+pho003764|shorty,alcohol,man,hat,elko
+pho003765|shorty,savings,alcohol,man,hat
+pho003766|shorty,alcohol,man,hat,elko
+pho003767|palm,bullet,alcohol,advertisements
 pho003768|palm,alcohol,elko,railroad,entrance
-pho003769|polar,business,king,outdoors,architecture
-pho003770|polar,business,king,outdoors,architecture
+pho003769|polar,king,business,outdoors,architecture
+pho003770|polar,king,business,outdoors,architecture
 pho003771|business,advertising,lodging,elko,idaho
 pho003772|lion,gambling,elko,idaho,advertising
 pho003773|lion,gambling,elko,idaho,advertising
 pho003774|lion,gambling,elko,idaho,advertising
 pho003775|"adult entertainment and showgirls,trailer,elko,open"
-pho003776|food,arctic,lodging,entertainment
-pho003777|lodging,entertainment,elko,idaho
+pho003776|arctic,food,lodging,entertainment
+pho003777|lodging,entertainment,elko
 pho003778|travelers,comb,shower,aquatic,phones
 pho003779|retail,reinhart,clothing,showcased,windows
-pho003780|davin,love,retail,sports,goods
+pho003780|"davin,love,retail,weddings and divorce,heart"
 pho003781|healthcare,elko,advertising,illuminated
 pho003782|holiday,lodging,elko
-pho003783|wagon,wheel,heated,aquatic,wells
-pho003784|rancho,wells,windows,lodging,advertisements
-pho003785|rancho,wells,lodging,gambling,man
+pho003783|wheel,wagon,heated,aquatic,steam
+pho003784|rancho,wells,advertisements,hang,lodging
+pho003785|rancho,wells,lodging,man,gambling
 pho003786|rancho,wells,lodging,food,alcohol
 pho003787|wells,lodging,automobiles,nev
-pho003788|wells,mouse,floral,food,lodging
-pho003789|wagon,wheel,package,wells,lodging
-pho003790|hyde,drive,wells,lodging,orange
+pho003788|wells,mouse,floral,food,rooftop
+pho003789|wheel,wagon,package,wells,lodging
+pho003790|hyde,drive,lodging,wells,orange
 pho003791|victory,food,automobiles,wells,lodging
 pho003792|entertainment,wells,doors,entrance,nev
 pho003793|stinker,pumps,skunk,serv,fuel
 pho003794|mcgill,food,alcohol,hanging,automobiles
 pho003795|crowd,ely,buildings,automobiles
 pho003796|deserted,ely,surrounding,buildings
-pho003797|workers,capitol,northern,food,ely
-pho003798|brick,dancing,ely,hanging,food
-pho003799|workers,pickaxe,brick,alcohol,dancing
+pho003797|capitol,workers,food,northern,ely
+pho003798|brick,dancing,ely,gambling,hanging
+pho003799|pickaxe,brick,alcohol,workers,dancing
 pho003800|ely,alcohol
 pho003801|eagle,ely,automobiles
 pho003802|midget,ely,alcohol
 pho003803|ruby,automobiles,ely,lodging
 pho003804|rio,alcohol,ely
-pho003805|pine,automobiles,ely,lodging
+pho003805|pine,automobiles,lodging,ely
 pho003806|pine,ely,lodging
 pho003807|ladies,retail,alcohol,shoe
 pho003808|shoe,floral,shop,ely
@@ -678,65 +938,65 @@ pho003814|park,ely,lodging
 pho003815|silver,ely,lodging
 pho003816|silver,ely,lodging
 pho003817|animals,eureka,alcohol
-pho003818|eureka,alcohol,market
+pho003818|alcohol,eureka,market
 pho003819|austin,gambling,aquatic,alcohol
 pho003820|austin,gambling,aquatic,alcohol
-pho003821|austin,mart,alcohol,automobiles,business
+pho003821|austin,mart,automobiles,alcohol,business
 pho003822|hawthorne,gambling
 pho003823|hawthorne,gambling
-pho003824|carson,gambling,illuminated
-pho003825|carson,gambling,illuminated
-pho003826|carson,gambling,illuminated
-pho003827|carson,gambling,illuminated
-pho003828|carson,gambling,illuminated
-pho003829|carson,gambling,illuminated
-pho003830|carson,gambling,illuminated
-pho003831|carson,gambling,illuminated
+pho003824|gambling,carson,illuminated
+pho003825|gambling,carson,illuminated
+pho003826|gambling,carson,illuminated
+pho003827|gambling,carson,illuminated
+pho003828|gambling,carson,illuminated
+pho003829|gambling,carson,illuminated
+pho003830|gambling,carson,illuminated
+pho003831|gambling,carson,illuminated
 pho003832|animals,carson,food
 pho003833|animals,carson,food
-pho003834|cactus,jack,senator,carson,holding
-pho003835|cactus,jack,senator,carson,holding
+pho003834|jack,senator,cactus,holding,carson
+pho003835|jack,senator,cactus,holding,carson
 pho003836|lasso,outdoors,carson,lodging
 pho003837|lasso,outdoors,carson,lodging
 pho003838|carson,lodging
 pho003839|carson,lodging
-pho003840|alcohol,ghost,lodging,carson
+pho003840|alcohol,ghost,lodging,holding
 pho003841|food,biggest,alcohol,reno,downtown
-pho003842|hay,herz,jewelry,pedestrians,dancing
+pho003842|hay,herz,pedestrians,biggest,dancing
 pho003843|sunderlands,paper,alcohol,millimery,phote
-pho003844|"douglas,streets and roads,race,reno"
+pho003844|"douglas,streets and roads,race,hang"
 pho003845|architecture,reno,automobiles,crowd,biggest
 pho003846|architecture,reno,automobiles,biggest,time
-pho003847|fitzgerald,clover,leaf,alcohol,reno
-pho003848|animals,alcohol,reno,gambling,illuminated
+pho003847|fitzgerald,clover,leaf,alcohol,letter
+pho003848|animals,alcohol,reno,illuminated,gambling
 pho003849|harold,rooftop,alcohol,reno,business
 pho003850|gambling,reno,alcohol
-pho003851|harold,alcohol,reno,parking,lot
+pho003851|harold,alcohol,lot,reno,parking
 pho003852|alcohol,advertising,reno,business,illuminated
 pho003853|alcohol,reno,gambling,illuminated,nev
 pho003854|alcohol,reno,gambling,illuminated,nev
-pho003855|entertainment,food,holding,gambling
-pho003856|entertainment,gambling,food,holding
-pho003857|entertainment,gambling,food,holding
+pho003855|entertainment,food,holding,depicts
+pho003856|entertainment,food,gambling,holding
+pho003857|entertainment,food,gambling,holding
 pho003858|aquatic,food,specials,dance,lodging
 pho003859|lodging,pots,gambling,rainbow,reno
 pho003860|lodging,sucker,horseshow,pots
 pho003861|lodging,sucker,horseshow,pots
 pho003862|loding,reno,nev
-pho003863|animals,lodging,mccarran,derelict,reno
+pho003863|animals,lodging,derelict,reno,mccarran
 pho003864|indian,ranch,lodging,derelict,reno
 pho003865|indian,ranch,lodging,derelict,reno
 pho003866|indian,ranch,lodging,derelict,reno
 pho003867|fortune,teller,depicts,reno
 pho003868|zanzibar,lounge,palm,depicts,reno
 pho003869|zanzibar,lounge,palm,depicts,reno
-pho003870|wink,winking,reno,lodging,man
-pho003871|wink,winking,reno,lodging,man
-pho003872|wink,winking,reno,lodging,man
+pho003870|wink,winking,lodging,reno,man
+pho003871|wink,winking,lodging,reno,man
+pho003872|wink,winking,lodging,reno,man
 pho003873|rancho,lodging,reno,nev
 pho003874|food
 pho003875|food,reno,outline,illuminated,nev
-pho003876|food,hacienda,animals,ethnicity,reno
+pho003876|hacienda,food,animals,ethnicity,reno
 pho003877|food,reno,nev
 pho003878|food,reno,nev
 pho003879|food,reno,nev
@@ -760,99 +1020,99 @@ pho003896|zephyr,lodging,reno,nev
 pho003897|dutch,lodging,reno,nev
 pho003898|trail,aquatic,lodging,reno,nev
 pho003899|outdoors,lodging,reno,nev
-pho003900|outdoors,reno,lodging,nev
-pho003901|spur,silver,reno,lodging,nev
+pho003900|outdoors,lodging,reno,nev
+pho003901|spur,silver,lodging,reno,nev
 pho003902|tavern,lodging,reno,nev
-pho003903|tavern,reno,lodging,nev
+pho003903|tavern,lodging,reno,nev
 pho003904|silver,lodging,reno,nev
-pho003905|silver,reno,lodging,nev
+pho003905|silver,lodging,reno,nev
 pho003906|siesta,lodging,reno,nev
-pho003907|siesta,reno,lodging,nev
-pho003908|sunset,reno,lodging,nev
+pho003907|siesta,lodging,reno,nev
+pho003908|sunset,lodging,reno,nev
 pho003909|silver,food,lodging,reno,nev
-pho003910|casa,food,ethnicity,reno,nev
-pho003911|reno,lodging,nev
-pho003912|sierra,rancho,reno,lodging,nev
-pho003913|sierra,rancho,reno,lodging,nev
-pho003914|sierra,rancho,steam,lodging,reno
-pho003915|town,reno,lodging,nev
-pho003916|lucky,reno,lodging,nev
+pho003910|casa,ethnicity,food,reno,nev
+pho003911|lodging,reno,nev
+pho003912|sierra,rancho,lodging,reno,nev
+pho003913|sierra,rancho,lodging,reno,nev
+pho003914|sierra,steam,rancho,lodging,vintage
+pho003915|town,lodging,reno,nev
+pho003916|lucky,lodging,reno,nev
 pho003917|lucky,lodging,reno,nev
 pho003918|lucky,lodging,reno,nev
 pho003919|alcohol,lounge,food,reno,nev
 pho003920|reno,derelict,automobiles,nev
 pho003921|lodging,reno,nev
-pho003922|shady,grove,lodging,reno,called
-pho003923|rancho,reno,lodging,nev
+pho003922|grove,lodging,shady,called,reno
+pho003923|rancho,lodging,reno,nev
 pho003924|rumpus,reno,alcohol,nev
-pho003925|reno,lodging,nev
-pho003926|sandman,reno,lodging,nev
-pho003927|sandman,reno,lodging,nev
+pho003925|lodging,reno,nev
+pho003926|sandman,lodging,reno,nev
+pho003927|sandman,lodging,reno,nev
 pho003928|automobiles,lodging,reno,nev
 pho003929|automobiles,lodging,reno,nev
 pho003930|alturas,alcohol,reno,nev
-pho003931|sutro,reno,lodging,nev
-pho003932|morris,reno,lodging,nev
-pho003933|morris,reno,lodging,nev
+pho003931|sutro,lodging,reno,nev
+pho003932|morris,lodging,reno,nev
+pho003933|morris,lodging,reno,nev
 pho003934|automobiles,lodging,reno,nev
 pho003935|automobiles,lodging,reno,nev
-pho003936|rio,reno,lodging,nev
-pho003937|aquatic,reno,lodging,nev
-pho003938|reno,lodging,nev
-pho003939|mirador,reno,lodging,nev
+pho003936|rio,lodging,reno,nev
+pho003937|aquatic,lodging,reno,nev
+pho003938|lodging,reno,nev
+pho003939|mirador,lodging,reno,nev
 pho003940|henson,alcohol,lodging,reno,nev
 pho003941|lodging,automobiles,town,cortez
 pho003942|lodging,town,automobiles,reno
-pho003943|rainbow,reno,lodging,nev
-pho003944|rainbow,reno,lodging,nev
-pho003945|rainbow,reno,lodging,nev
-pho003946|center,reno,lodging,nev
-pho003947|center,reno,lodging,nev
-pho003948|reno,lodging,nev
-pho003949|aquatic,reno,lodging,nev
+pho003943|rainbow,lodging,reno,nev
+pho003944|rainbow,lodging,reno,nev
+pho003945|rainbow,lodging,reno,nev
+pho003946|center,lodging,reno,nev
+pho003947|center,lodging,reno,nev
+pho003948|lodging,reno,nev
+pho003949|aquatic,lodging,reno,nev
 pho003950|aquatic,lodging,automobiles,reno
-pho003951|aspen,reno,lodging,nev
+pho003951|aspen,lodging,reno,nev
 pho003952|shamrock,lodging,reno,nev
 pho003953|royal,reno,automobiles,lodging,nev
 pho003954|sands,lodging,gambling,reno,nev
-pho003955|reno,lodging,nev
-pho003956|reno,lodging,nev
-pho003957|reno,lodging,nev
-pho003958|chalet,reno,lodging,nev
-pho003959|automobiles,reno,lodging,nev
-pho003960|park,reno,lodging,nev
+pho003955|lodging,reno,nev
+pho003956|lodging,reno,nev
+pho003957|lodging,reno,nev
+pho003958|chalet,lodging,reno,nev
+pho003959|automobiles,lodging,reno,nev
+pho003960|park,lodging,reno,nev
 pho003961|booth,phone,glasses,alcohol,reno
 pho003962|booth,phone,glasses,alcohol,reno
 pho003963|towner,automobiles,lodging,reno,nev
 pho003964|towner,automobiles,lodging,reno,nev
-pho003965|gambling,reno,lodging,architecture,nev
+pho003965|gambling,architecture,lodging,reno,nev
 pho003966|lodging,reno,nev
-pho003967|flamingo,reno,lodging,nev
-pho003968|reno,lodging,nev
-pho003969|holiday,reno,lodging,nev
-pho003970|santa,reno,lodging,nev
-pho003971|food,santa,ethnicity,reno,lodging
+pho003967|flamingo,lodging,reno,nev
+pho003968|lodging,reno,nev
+pho003969|holiday,lodging,reno,nev
+pho003970|santa,lodging,reno,nev
+pho003971|food,santa,ethnicity,lodging,reno
 pho003972|automobiles,lodging,reno,nev
-pho003973|business,money,loan,shop,reno
-pho003974|senator,reno,lodging,nev
+pho003973|business,money,shop,loan,reno
+pho003974|senator,lodging,reno,nev
 pho003975|elbow,alcohol,reno,glass
 pho003976|elbow,alcohol,reno,glass
 pho003977|sparks,alcohol,nev
-pho003978|lounge,sparks,glass,alcohol,nev
+pho003978|lounge,sparks,alcohol,glass,nev
 pho003979|lounge,sparks,nev
 pho003980|sparks,lodging,nev
 pho003981|pony,animals,harold,sparks,lodging
-pho003982|washoe,northern,food,sparks,reno
+pho003982|washoe,food,northern,sparks,nev
 pho003983|coney,sparks,alcohol,glass
 pho003984|sparks,lodging,nev
 pho003985|buffalo,sparks,alcohol,glass
-pho003986|driftwood,lounge,washoe,glass,alcohol
+pho003986|driftwood,lounge,washoe,alcohol,glass
 pho003987|copenhagen,sparks,alcohol,nev
-pho003988|mobil,automobiles,derelict,sparks
-pho003989|"adult entertainment and showgirls,derelict,sparks,yesco,automobiles"
-pho003990|automobiles,derelict,sparks,yesco
-pho003991|holiday,lodging,washoe,reno
-pho003992|wagon,stateline,outdoors,underwent,construction
+pho003988|mobil,automobiles,derelict,yesco
+pho003989|"adult entertainment and showgirls,derelict,yesco,sparks,automobiles"
+pho003990|automobiles,derelict,yesco,sparks
+pho003991|holiday,washoe,lodging,nev
+pho003992|underwent,construction,wheel,wagon,stateline
 pho003993|yesco,young,business
 neo000001|gambling,lodging,downtown
 neo000002|"food,downtown,nev,las vegas"
@@ -865,7 +1125,7 @@ neo000008|"battista,nev,las vegas"
 neo000009|"gambling,nev,las vegas"
 neo000010|"las vegas,downtown,alcohol,nev"
 neo000011|boardwalk,holiday,lodging,downtown,nev
-neo000012|"alcohol,gambling,lodging,nev,las vegas"
+neo000012|"alcohol,lodging,gambling,nev,las vegas"
 neo000013|"gambling,palace,nev,las vegas"
 neo000014|"candlelight,weddings and divorce,nev,las vegas"
 neo000015|"casa,downtown,nev,las vegas"
@@ -878,26 +1138,26 @@ neo000021|"excalibur,nev,las vegas"
 neo000022|fantasia,retail,shop,downtown,nev
 neo000023|"food,downtown,nev,las vegas"
 neo000024|"flamingo,nev,las vegas"
-neo000025|outdoors,downtown,gambling,lodging,nev
+neo000025|outdoors,downtown,lodging,gambling,nev
 neo000026|"gameworks,downtown,nev,las vegas"
 neo000027|"food,downtown,nev,las vegas"
 neo000028|glass,aquatic,lodging,downtown,nev
 neo000029|"canyon,downtown,nev,las vegas"
-neo000030|"greek,gambling,lodging,nev,las vegas"
+neo000030|"greek,lodging,gambling,nev,las vegas"
 neo000031|"lodging,downtown,nev,las vegas"
 neo000032|automobiles,food,downtown,nev
 neo000033|"gambling,las vegas,downtown,lodging"
-neo000034|imperial,palace,downtown,gambling,lodging
-neo000035|klondike,downtown,gambling,lodging,nev
+neo000034|imperial,palace,downtown,lodging,gambling
+neo000035|klondike,downtown,lodging,gambling,nev
 neo000036|"downtown,lodging,nev,las vegas"
 neo000037|"tours,automobiles,las vegas,downtown,nev"
 neo000038|"retail,las vegas,downtown,nev"
-neo000039|laughing,jackalope,downtown,lodging,nev
+neo000039|jackalope,laughing,downtown,lodging,nev
 neo000040|"weddings and divorce,nev,las vegas"
 neo000041|"luxor,nev,las vegas"
 neo000042|"museum,downtown,nev,las vegas"
 neo000043|"gambling,bay,nev,las vegas"
-neo000044|"gambling,lodging,nev,las vegas"
+neo000044|"lodging,gambling,nev,las vegas"
 neo000045|"field,mccarran,nev,las vegas"
 neo000046|"food,las vegas,downtown,nev"
 neo000047|"food,las vegas,downtown,nev"
@@ -916,10 +1176,10 @@ neo000059|"downtown,nev,las vegas"
 neo000060|"pollyanna,lodging,downtown,nev,las vegas"
 neo000061|"polo,downtown,nev,las vegas"
 neo000062|"psychic,downtown,nev,las vegas"
-neo000063|riviera,downtown,gambling,lodging,nev
+neo000063|riviera,downtown,lodging,gambling,nev
 neo000064|"rosewood,food,downtown,nev,las vegas"
-neo000065|royal,downtown,gambling,lodging,nev
-neo000066|sahara,gambling,lodging,downtown,nev
+neo000065|royal,downtown,lodging,gambling,nev
+neo000066|sahara,lodging,gambling,downtown,nev
 neo000067|"downtown,nev,las vegas"
 neo000068|"showcase,plaza,nev,las vegas"
 neo000069|"silver,downtown,gambling,nev,las vegas"
@@ -946,47 +1206,47 @@ neo000089|"outdoors,alcohol,nev,las vegas"
 neo000090|"vagabond,lodging,nev,las vegas"
 neo000091|wild,aquatic,park,downtown,nev
 neo000092|"adult entertainment and showgirls,martini,slipper,fremont"
-neo000093|"cortez,historical,gambling,lodging,las vegas"
-neo000094|rider,hacienda,urban,gallery,animals
+neo000093|"cortez,historical,lodging,gambling,las vegas"
+neo000094|rider,hacienda,urban,gallery,museum
 neo000095|"thai,las vegas,food,downtown,fremont"
 neo000096|"comida,las vegas,food,downtown,fremont"
 neo000097|"entertainment,alcohol,las vegas,downtown"
-neo000098|casino,project,construction,intersection,parking
+neo000098|casino,project,construction,intersection,lot
 neo000099|bayou,labayou,fremont,gambling,derelict
 neo000100|"glitter,gulch,adult entertainment and showgirls,entertainment"
 neo000101|mermaids,fremont,gambling,derelict,nev
-neo000102|"goose,adult entertainment and showgirls,derelict,alcohol,fremont"
-neo000103|"las vegas,alcohol,fremont,derelict,gambling"
-neo000104|pedestrian,mall,screen,fremont,light
-neo000105|locker,alcohol,derelict,desert
+neo000102|"goose,adult entertainment and showgirls,derelict,fremont,alcohol"
+neo000103|"las vegas,fremont,alcohol,derelict,gambling"
+neo000104|pedestrian,screen,mall,fremont,light
+neo000105|locker,alcohol,desert,derelict
 neo000106|"custard,january,las vegas,downtown,nev"
 neo000107|"stratosphere,weddings and divorce,las vegas,nev"
 neo000108|"monterey,sky,lodging,las vegas,nev"
 neo000109|"weddings and divorce,las vegas,nev"
-neo000110|"food,market,open,derelict,las vegas"
-neo000111|sunset,traffic,automobiles,henderson,gambling
+neo000110|"market,food,las vegas,open,derelict"
+neo000111|sunset,traffic,automobiles,henderson,lodging
 neo000112|"dino,alcohol,lounge,las vegas"
 neo000113|"lodging,las vegas,downtown,nev"
 neo000114|"automobiles,lodging,las vegas,nev"
 neo000115|"fabulous,famous,las vegas,nev"
 neo000116|"architecture,weddings and divorce,las vegas,nev"
 neo000117|"lodging,las vegas,nev"
-neo000118|"lodging,holiday,bagdad,las vegas"
-neo000119|"multi,holiday,lodging,originally,las vegas"
-neo000120|"stratosphere,las vegas,downtown,gambling,lodging"
+neo000118|"lodging,bagdad,holiday,las vegas"
+neo000119|"multi,holiday,lodging,las vegas,originally"
+neo000120|"stratosphere,las vegas,downtown,lodging,gambling"
 neo000121|"louis,intersection,light,las vegas,nev"
 neo000122|retail,gambling,shop,holds,space
 neo000123|town,gambling,hall,automobiles,boulder
-neo000124|longhorn,gambling,lodging,automobiles,boulder
+neo000124|longhorn,lodging,gambling,automobiles,boulder
 neo000125|"gateway,lodging,light,las vegas,nev"
 neo000126|"tamales,food,owned,las vegas"
 neo000127|"cupid,hoover,weddings and divorce,las vegas"
 neo000128|"business,shop,silver,las vegas,downtown"
 neo000129|roadhouse,gambling,automobiles,boulder,nev
 neo000130|outpost,lodging,automobiles,boulder,nev
-neo000131|skyline,gambling,lodging,automobiles,boulder
+neo000131|skyline,lodging,gambling,automobiles,boulder
 neo000132|"fabulous,las vegas,automobiles,boulder,nev"
-neo000133|"gambling,business,owned,las vegas"
+neo000133|"gambling,owned,las vegas,business"
 neo000134|"starlite,derelict,lodging,las vegas,nev"
 neo000135|"library,las vegas,nev"
 neo000136|"lounge,las vegas,nev"
@@ -996,18 +1256,18 @@ neo000139|"sin,lodging,las vegas,nev"
 neo000140|"pamplemousse,french,food,sahara,las vegas"
 neo000141|"animals,food,sahara,nev,las vegas"
 neo000142|"adult entertainment and showgirls,library,alcohol,automobiles,boulder"
-neo000143|boulder,automobiles,gambling,lodging
-neo000144|fiesta,rancho,drive,gambling,lodging
-neo000145|mobile,sierra,park,sahara,nev
+neo000143|boulder,automobiles,lodging,gambling
+neo000144|fiesta,rancho,drive,lodging,gambling
+neo000145|mobile,park,sierra,sahara,nev
 neo000146|"bistro,ethnicity,sombrero,nev,las vegas"
 neo000147|"star,lodging,las vegas,downtown,nev"
-neo000148|piero,ethnicity,food,convention,drive
+neo000148|piero,food,ethnicity,convention,drive
 neo000149|somerset,retail,convention,center,drive
-neo000150|automobiles,palace,sahara,gambling,lodging
+neo000150|automobiles,palace,sahara,lodging,gambling
 neo000151|"lodging,las vegas,downtown,fremont"
 neo000152|"moon,desert,lodging,las vegas,downtown"
 neo000153|"hialeah,lodging,las vegas,downtown,fremont"
-neo000154|"haul,rental,fremont,business,las vegas"
+neo000154|"haul,rental,fremont,las vegas,business"
 neo000155|"travelers,lodging,las vegas,downtown,fremont"
 neo000156|"gambling,lot,lodging,las vegas,downtown"
 neo000157|"lodging,star,las vegas,downtown,fremont"
@@ -1026,9 +1286,9 @@ neo000169|"lodging,las vegas,downtown,fremont,nev"
 neo000170|"alcohol,las vegas,downtown,fremont,nev"
 neo000171|"las vegas,lodging,downtown,fremont,nev"
 neo000172|"hills,desert,lodging,las vegas,downtown"
-neo000173|"fremont,gambling,lodging,nev,las vegas"
+neo000173|"fremont,lodging,gambling,nev,las vegas"
 neo000174|fremont,animals,gambling,hall,alcohol
-neo000175|"gate,gambling,lodging,las vegas,downtown"
+neo000175|"gate,lodging,gambling,las vegas,downtown"
 neo000176|"pan,lodging,las vegas,downtown,nev"
 neo000177|"gables,lodging,las vegas,downtown,fremont"
 neo000178|food,fremont,gambling,lodging,nev
@@ -1036,7 +1296,7 @@ neo000179|portal,retail,shop,fremont,nev
 neo000180|"tattoo,fremont,nev,las vegas"
 neo000181|"retail,fremont,nev,las vegas"
 neo000182|"piazza,palm,las vegas,downtown,fremont"
-neo000183|queens,fremont,gambling,lodging,nev
+neo000183|queens,fremont,lodging,gambling,nev
 neo000184|trader,bills,automobiles,shop,retail
 neo000185|fergusons,sundown,project,construction,lodging
 neo000186|"animals,alcohol,las vegas,downtown,nev"
@@ -1056,45 +1316,45 @@ neo000199|"alcohol,las vegas,intersection,downtown,fremont"
 neo000200|"park,fremont,las vegas,downtown,nev"
 neo000201|"las vegas,downtown,fremont,nev"
 neo000202|fremont,intersection
-neo000203|alcohol,plastic,historic,spring,stylistic
-neo000204|screen,arizonacharliesboulder,octagonal,adds,real
+neo000203|alcohol,plastic,spring,stylistic,roadside
+neo000204|screen,sons,octagonal,mlor,keqjw
 neo000205|aruba,outdoors,lotus,thunderbird,sinicle
-neo000206|barker,fallen,derelict,indian,stefani
+neo000206|barker,fallen,derelict,brown,drives
 neo000207|angel,architecture,believed,component,monroe
-neo000208|bunkhouse,alcohol,box,plastic,wood
-neo000209|rusty,box,daily,broken,plastic
-neo000210|skating,rink,crystal,poole,ages
-neo000211|mojave,record,park,hilda,aging
-neo000212|lodging,plastic,received,bookings
-neo000213|automobiles,recapturist,indian,construction,portfolio
-neo000214|wynn,entrances,led,modest,stayed
-neo000215|automobiles,cabinet,hat,regency,boxes
-neo000216|food,cabinet,alexander,fonts,villas
-neo000217|blade,entertainment,iridescent,strips,screens
-neo000218|entertainment,wild,baron,wrapping
-neo000219|kings,iron,flourish,rv,spaces
-neo000220|lodging,palm,roadside,supports,amenities
-neo000221|lawless,buzz,lake,modern,center
-neo000222|fit,creation,replacement,dealership,rounded
+neo000208|bunkhouse,plastic,wood,alcohol,box
+neo000209|rusty,box,broken,daily,plastic
+neo000210|skating,rink,poole,ages,skate
+neo000211|mojave,record,park,garcia,aging
+neo000212|plastic,lodging,received,bookings
+neo000213|automobiles,recapturist,construction,carquest,quest
+neo000214|wynn,entrances,led,magic,guy
+neo000215|automobiles,cabinet,hat,boxes,traced
+neo000216|food,cabinet,alexander,fonts,greater
+neo000217|blade,entertainment,screens,strips,iridescent
+neo000218|entertainment,wild,cattle,jokers
+neo000219|kings,flourish,spaces,park,plastic
+neo000220|roadside,lodging,palm,supports,weather
+neo000221|lawless,buzz,modern,retouching,sputnik
+neo000222|fit,creation,rounded,replacement,dealership
 neo000223|food,small,architecture,sense
-neo000224|"weddings and divorce,donated,ornate,moved"
+neo000224|"weddings and divorce,concrete,donated,tuscan"
 neo000225|entertainment,business,orbits,purple
-neo000226|gambling,food,chase,triangular,downward
+neo000226|gambling,food,chase,triangular,sequence
 neo000227|gambling,palace,pokerpalace,bases,remained
 neo000228|ponderosa,lodging,chasing,plastic
-neo000229|roadrunner,rv,park,sites,travelnevada
+neo000229|roadrunner,park,rv,sites,travelnevada
 neo000230|fiberglass,gambling,silver,event,nuggets
 neo000231|food,losing,indie,bohemian
-neo000232|board,glow,repaint,july,lodging
+neo000232|board,repaint,glow,lodging,word
 neo000233|board,plastic,roadside,vintage,maryland
-neo000234|trailer,combined,custom,plastic,truck
-neo000235|"food,floral,purple,wood,weddings and divorce"
-neo000236|architecture,drive,california,ways,boards
+neo000234|"trailer,combined,plastic,custom,las vegas"
+neo000235|"food,floral,wood,purple,weddings and divorce"
+neo000236|architecture,drive,texas,ways,boards
 neo000237|"retail,bureau,las vegas,downtown,nev"
-sky000415|"vertical,assemble,las vegas,alcohol,workers"
+sky000415|"vertical,assemble,las vegas,workers,alcohol"
 sky000416|"framework,alcohol,las vegas,pioneer,fremont"
 sky000417|sagev,sal,gate,began,lodging
-sky000418|gambling,expansion,boulder,alcohol,fremont
+sky000418|gambling,expansion,boulder,fremont,alcohol
 sky000419|"expansion,gambling,streets and roads,fremont,boulder"
 sky000420|"gambling,expansion,streets and roads,fremont,las vegas"
 sky000421|"animals,streets and roads,alcohol,fremont,las vegas"
@@ -1103,39 +1363,39 @@ sky000423|"thunderbird,lodging,las vegas"
 sky000424|"gambling,architecture,las vegas"
 sky000425|grable,dan,dailey,guys,dolls
 sky000426|henry,hank,brandy,teagarden,jazz
-sky000427|coch,sands,architecture,architectural,lodging
+sky000427|coch,sands,architecture,architectural,design
 sky000428|tulip,fountain,gambling,proser,revue
 sky000429|"gambling,coch,lodging,entrance,las vegas"
-sky000430|edie,adams,rowan,martin,barnet
-sky000431|poses,costumed,andy,williams,ritz
-sky000432|scaffolding,unfinished,gambling,parking,lot
-sky000433|"entertainment,flight,fountains,construction,las vegas"
+sky000430|rowan,edie,martin,barnet,vagabonds
+sky000431|poses,costumed,andy,ritz,brothers
+sky000432|scaffolding,unfinished,gambling,lot,palace
+sky000433|"flight,entertainment,fountains,construction,las vegas"
 sky000434|wilbur,clark,desert,lodging,entrance
 sky000435|"complex,assembling,las vegas,rancho,workers"
 sky000436|"assembling,workers,sands,lodging,las vegas"
-sky000437|coch,sahara,entrance,architecture,gambling
-sky000438|electronic,generation,computerized,gambling,entrance
-sky000439|generation,electronic,computerized,gambling,entrance
-sky000440|"scale,riviera,gambling,lodging,las vegas"
+sky000437|coch,sahara,architecture,entrance,lodging
+sky000438|electronic,generation,computerized,gambling,display
+sky000439|generation,electronic,computerized,gambling,display
+sky000440|"scale,riviera,lodging,gambling,las vegas"
 sky000441|scale,gambling,hall,facade
 sky000442|scale,gambling,hall,facade
-sky000444|tallest,assembly,sahara,time,gambling
-sky000445|structural,framework,sahara,steel,gambling
-sky000446|placing,sahara,tallest,crane,time
+sky000444|tallest,assembly,sahara,time,lodging
+sky000445|structural,framework,sahara,steel,lodging
+sky000446|placing,sahara,tallest,crane,assembly
 sky000447|puts,touches,entertainment,worker,basket
-sky000448|lifting,canopy,coch,sands,crane
+sky000448|lifting,canopy,coch,crane,sands
 sky000449|watching,assembly,coch,sands,men
 sky000450|"assembly,coch,sands,lodging,las vegas"
 sky000451|"gambling,lodging,las vegas"
 sky000452|marking,outdoors,sahara,entrance,gambling
-sky000453|"stardust,facade,gambling,lodging,las vegas"
-sky000454|"las vegas,streets and roads,alcohol,gambling,fremont"
-sky000455|coch,construction,sahara,gambling,lodging
-sky000456|sahara,piece,hoisted,crane,gambling
-sky000457|rickles,buddy,greco,sahara,gambling
+sky000453|"stardust,facade,lodging,gambling,las vegas"
+sky000454|"las vegas,streets and roads,gambling,alcohol,fremont"
+sky000455|coch,construction,sahara,lodging,gambling
+sky000456|sahara,piece,hoisted,crane,construction
+sky000457|rickles,buddy,greco,sahara,lodging
 sky000458|ceasars,coch,palace,construction,gambling
 sky000459|boom,lifts,ceasars,coch,palace
-sky000461|assembled,sands,removed,construction,lodging
+sky000461|assembled,sands,construction,removed,lodging
 sky000462|"entertainment,coch,construction,las vegas"
 sky000463|"entertainment,construction,coch,entrance,las vegas"
 sky000464|"disassembly,sands,lodging,las vegas"
@@ -1144,9 +1404,9 @@ sky000466|"entertainment,coch,construction,las vegas"
 sky000467|entertainment,watching,construction,coch,work
 sky000468|ades,changing,exteriors,fa,stardust
 sky000469|ade,changing,fa,stardust,facade
-sky000470|facades,exteriors,stardust,gambling,lodging
-sky000471|"stardust,gambling,lodging,las vegas"
-sky000472|work,watch,stardust,crane,parking
+sky000470|facades,exteriors,stardust,lodging,gambling
+sky000471|"stardust,lodging,gambling,las vegas"
+sky000472|work,watch,stardust,crane,lot
 sky000473|"champagne,flamingo,lodging,gambling,las vegas"
 sky000474|piece,hoisted,boulder,alcohol,assembly
 sky000475|dam,hoover,illustration,boulder,savoy
@@ -1154,39 +1414,450 @@ sky000478|"las vegas,alcohol,fremont"
 sky000479|sitting,artist,rendering,woman,swim
 sky000480|gambling,vertical,assemble,workers,assembly
 sky000481|gambling,vertical,assemble,workers,assembly
-sky000482|"strike,gambling,hall,streets and roads"
+sky000482|"gambling,hall,strike,streets and roads"
 sky000483|slipper,plans,oversized,delivery,truck
-sky000484|minsky,giant,burlesque,fight,week
+sky000484|minsky,burlesque,fight,week,lopez
 sky000486|"animals,streets and roads,alcohol,fremont,las vegas"
 sky000487|champagne,shake,hands,flamingo,men
 sky000488|tallulah,bankhead,headlines,sands,lodging
 sky000490|anniversary,caballero,hacienda,riding,lodging
-sky000491|"stardust,gambling,lodging,las vegas"
-sky000492|lido,edition,stardust,paris,gambling
-sky000493|worker,salt,lake,prior,vic
-sky000494|unfinished,salt,leaning,lake,vic
+sky000491|"stardust,lodging,gambling,las vegas"
+sky000492|lido,stardust,paris,edition,lot
+sky000493|worker,salt,prior,vic,lake
+sky000494|unfinished,salt,leaning,vic,portions
 sky000496|laine,frankie,lawn,wilbur,clark
 sky000497|"dunes,lodging,las vegas"
-sky000498|excalibur,scale,proposed,gambling,lodging
-sky000499|excalibur,scale,proposed,gambling,lodging
+sky000498|excalibur,scale,proposed,lodging,gambling
+sky000499|excalibur,scale,proposed,lodging,gambling
 sky000500|reservation,employment,numbers,announces,rio
-sky000505|"cabaret,singer,hildegarde,rancho,las vegas"
+sky000505|"singer,hildegarde,cabaret,rancho,las vegas"
 sky000506|"animals,construction,facade,alcohol,las vegas"
-sky000507|alcohol,entrance,gambling,scale
+sky000507|alcohol,gambling,entrance,scale
 sky000508|"scale,gambling,hall,streets and roads"
 sky000509|artist,written,label,handwritten,schedule
 sky000510|"scale,gambling,hall,streets and roads"
-sky000512|"scale,riviera,gambling,lodging,las vegas"
-sky000513|"scale,riviera,gambling,lodging,las vegas"
+sky000512|"scale,riviera,lodging,gambling,las vegas"
+sky000513|"scale,riviera,lodging,gambling,las vegas"
 sky000518|gambling,scale,lodging,marquee
 sky002037|"gambling,expansion,fremont,lodging,las vegas"
 sky002038|wilbur,clark,workers,assembling,desert
-sky002039|wilbur,clark,desert,lodging,assemble
+sky002039|wilbur,clark,desert,assemble,lodging
 sky002040|stamped,studio,tel,wilbur,clark
 sky002041|stood,sands,assemble,workers,assembly
 sky002043|"sahara,entrance,las vegas"
-sky002044|"construction,sahara,las vegas,gambling"
+sky002044|"construction,sahara,las vegas,lodging"
 sky002045|"cortez,lodging,las vegas"
-sky002046|village,ripley,twilight,outdoors,entrance
+sky002046|ripley,village,twilight,outdoors,entrance
 sky002047|credit,sticker,automobiles,bureau
-sky002048|credit,thunderbird,sticker,bureau,entrance
+sky002048|credit,thunderbird,sticker,bureau,news
+NNN000340|moutning,removal,business,elko,lodging
+NNN000345|ranch,lodging,pylon,elko,mounted
+NNN000354|lodging,reno,mounted
+NNN000358|gambling,lodging,reno,roof,flag
+NNN000359|lido,entrance,lodging,reno,mounted
+NNN000362|midtown,lodging,reno,pylon,flag
+NNN000368|regency,sands,flag,reno,arlington
+NNN000369|santa,lodging,reno,lake,mounted
+NNN000370|santa,food,ethnicity,lodging,reno
+NNN000383|entertainment,garage,parking,flag,reno
+NNN000402|mels,wrapping,food,regency,mounted
+NNN000411|regency,sands,garage,reno,arlington
+NNN000415|cycles,regency,sands,reno,arlington
+NNN000425|lounge,evans,flag,reno,mounted
+NNN000426|morning,lodging,reno,flag,mounted
+NNN000427|abby,automobiles,reno,roof,flag
+NNN000428|absolute,tattoo,reno,wells
+NNN000430|alibi,casazza,lounge,reno,mounted
+NNN000431|annie,lounge,gambling,mounted,ely
+NNN000432|annie,flag,mounted,ely
+NNN000434|grace,dogs,vassar,art,reno
+NNN000436|bavarian,reno,mounted
+NNN000437|ben,fine,wine,alcohol,banner
+NNN000438|whale,bet,mural,lodging,shot
+NNN000439|bet,flag,lodging,reno,mounted
+NNN000440|cord,big,writing,ranch,ely
+NNN000441|"big,adult entertainment and showgirls,ely,roof,mounted"
+NNN000442|hole,piercing,reno,reading
+NNN000444|salon,reno,wells
+NNN000446|campo,reno,banner,sierra,food
+NNN000449|pine,center,lodging,reno,pylon
+NNN000450|entertainment,ely,marquee
+NNN000451|"architecture,weddings and divorce,flag,reno,mounted"
+NNN000453|entertainment,reno,sierra,lodging,mounted
+NNN000454|wrap,alcohol,reno,mounted
+NNN000455|alcohol,reno,marquee
+NNN000456|ledge,mounted,alcohol,reno,roof
+NNN000459|nevadan,morning,alcohol,reno,mounted
+NNN000462|rio,colors,ely,alcohol,flag
+NNN000463|college,cyclery,reno
+NNN000465|ramada,basin,ely,great,mounted
+NNN000466|deluxe,laundry,lodging,reno,mounted
+NNN000467|lodging,ely,aultman,shot,mounted
+NNN000469|pharmacy,ely,banner,open,business
+NNN000470|ecv,reno
+NNN000471|rancho,ely,aultman,lodging
+NNN000473|gambling,marquee,reno
+NNN000474|gambling,reno,entrance
+NNN000475|gambling,garage,reno,mounted,parking
+NNN000476|ringside,gambling,alcohol,hanging,reno
+NNN000477|ely,lodging,flag,mounted
+NNN000478|eureka,food,mounted,reading,flag
+NNN000479|fireside,lodging,reno,mounted
+NNN000481|flamingo,flag,lodging,reno,mounted
+NNN000483|sevens,ely,pylon,lodging,mounted
+NNN000484|dust,vine,reno,mounted
+NNN000485|dust,vine,gambling,reno,mounted
+NNN000488|silver,reno,mounted,lodging
+NNN000489|silver,food,lodging,alcohol,reno
+NNN000490|services,alcohol,silver,lodging,reno
+NNN000492|lyons,ely,roof,lodging,mounted
+NNN000493|floral,ely,ethnicity,aultman,mounted
+NNN000494|gambling,reno,marquee,business,derelict
+NNN000495|farewell,message,gambling,closure,removed
+NNN000497|gambling,reno,mounted,center,entrance
+NNN000498|gambling,reno,center,lodging,mounted
+NNN000500|hg,letters,reno
+NNN000501|loan,jewelry,animals,functioning,business
+NNN000502|shoe,animals,lodging,reno,lake
+NNN000503|animals,reno,mounted
+NNN000504|cortez,morning,roof,lodging,reno
+NNN000505|historic,ely,lodging,aultman,reading
+NNN000506|lodging,entrance,ely,aultman,mounted
+NNN000508|closeup,ely,gambling,alcohol,lodging
+NNN000509|ichiban,reno,mounted
+NNN000510|jailhouse,ely,gambling,lodging,mounted
+NNN000511|juicy,giant,bugers,food,reno
+NNN000512|kramer,midtown,owners,lodging,reno
+NNN000513|kramer,mural,mounted,reno
+NNN000514|lasting,dose,tattoo,reno,mounted
+NNN000515|liberty,daylight,aces,ely,alcohol
+NNN000516|closure,gambling,reno,marquee
+NNN000517|lodging,reno,lake,flag,mounted
+NNN000518|louie,eureka,closure,lounge,lodging
+NNN000520|mandala,massage,apothecary,reno,wells
+NNN000522|mcgill,healthcare,pharmacy,museum,derelict
+NNN000523|men,alcohol,reno,lake,mounted
+NNN000524|outdoors,morris,lodging,reno,flag
+NNN000525|eureka,lodging,mounted
+NNN000526|ely,mounted
+NNN000528|workers,ely,alcohol,aultman,lodging
+NNN000529|lodging,unknown,office,reading
+NNN000530|noble,parlor,midtown,food,reno
+NNN000531|mother,sorrows,cemetery,reno,mounted
+NNN000532|palm,unknown,open,reading,reno
+NNN000535|peg,glorified,ham,eggs,garage
+NNN000536|peppermill,reno,mounted
+NNN000537|oceano,seafood,peppermill,reno,food
+NNN000539|pizzava,reno
+NNN000541|plaza,lodging,alcohol,reno,mounted
+NNN000543|premier,loan,jewelry,reno,mounted
+NNN000544|diamonds,premier,loan,jewelry,reno
+NNN000554|roof,reno,mounted,rancho
+NNN000555|recycled,records,tattoo,flag,reno
+NNN000559|referred,architecture,iteration,moved,position
+NNN000560|architecture,reno
+NNN000561|hive,reno,suite,arlington
+NNN000564|ridley,market,basin,ely,great
+NNN000565|saint,flag,reno,mounted
+NNN000566|salvation,lodging,reno,wells,flag
+NNN000567|sands,roof,reno,arlington,entrance
+NNN000568|regency,sands,gambling,reno,arlington
+NNN000569|regency,sands,mounted,reno,arlington
+NNN000570|regency,sands,garage,reno,arlington
+NNN000571|regency,sands,free,reno,arlington
+NNN000572|mels,food,clock,shot,reno
+NNN000573|mels,food,reno,arlington,mounted
+NNN000575|mels,food,wraps,logo,shot
+NNN000576|santa,july,reno,lake,mounted
+NNN000578|park,parking,reading,flag,reno
+NNN000579|shae,tavern,reno,mounted
+NNN000581|shooters,grill,ely,alcohol,flag
+NNN000582|shooters,alcohol,reno,mounted
+NNN000583|nevadan,suites,onslow,resold,purchased
+NNN000584|siri,mounted,logo,facing,gambling
+NNN000586|unknown,eureka,derelict,flag,mounted
+NNN000587|james,infirmary,california,reno,mounted
+NNN000589|stingray,tattoo,reno,wells
+NNN000590|automotive,llc,reno,elko,flag
+NNN000591|melting,pot,reno
+NNN000593|melting,pot,reno
+NNN000595|yoga,center,outdoors,reno,mounted
+NNN000596|thunderbird,flag,lodging,reno,mounted
+NNN000597|time,lodging,reno,lake,mounted
+NNN000598|town,ely,lodging,mounted
+NNN000599|townsite,pylon,flag,lodging,reno
+NNN000600|automobiles,lodging,reno,mounted,center
+NNN000601|automobiles,lodging,flag,reno,mounted
+NNN000602|virginian,automobiles,lodging,reno,mounted
+NNN000603|vending,studios,aquatic,lime,salon
+NNN000604|market,flag,reno,mounted
+NNN000605|market,mounted,flag,reno
+NNN000607|evans,flag,lodging,shot,reno
+NNN000609|"kamy,orchid,keshmari,adult entertainment and showgirls,cabaret"
+NNN000610|wilson,bates,furniture,ely,aultman
+NNN000612|food,grill,winnemucca,unknown,business
+NNN000615|automobiles,lodging,flag,reno,mounted
+NNN000617|altura,alcohol,flag,reno,mounted
+NNN000619|food,reno,mounted
+NNN000620|architecture,battle,outdoors,flag,lodging
+NNN000621|bene,ristorante,italiano,placerville,california
+NNN000622|bene,ristorante,italiano,placerville,california
+NNN000623|bet,automobiles,lodging,reno
+NNN000625|telegraph,bull,carson,flag,mounted
+NNN000626|bodily,furnature,elko,business,mounted
+NNN000627|vista,bully,sports,grill,sparks
+NNN000628|punch,cornell,lovelock,lodging,gambling
+NNN000629|jack,cactus,character,carson,senator
+NNN000630|campion,lodging,sparks,mounted
+NNN000631|lodging,reno,mounted
+NNN000632|mining,carlin,services,trend,elko
+NNN000634|coins,northern,coin,carson,flag
+NNN000635|carson,gambling,marquee
+NNN000637|alatte,carson,gambling,food,mounted
+NNN000638|carson,gambling,mounted,reading
+NNN000639|carson,underside,portico,gambling,mounted
+NNN000640|casale,halfway,alcohol,flag,reno
+NNN000641|castaway,lodging,flag,reno,mounted
+NNN000642|castaway,lodging,reno,mounted
+NNN000643|castaway,guests,lodging,flag,office
+NNN000644|elko,lodging,mounted
+NNN000645|roof,elko,lodging,mounted
+NNN000646|chilton,centennial,elko
+NNN000647|chocolate,walrus,flag,reno,mounted
+NNN000649|entertainment,garage,parking,reno,sierra
+NNN000650|center,lodging,reno,business,derelict
+NNN000651|colt,battle,outdoors,lodging,gambling
+NNN000652|colt,battle,outdoors,gambling,mounted
+NNN000654|comstock,goni,carson,gambling,mounted
+NNN000655|coney,prater,sparks,alcohol,mounted
+NNN000656|copenhagen,prater,sparks,alcohol,mounted
+NNN000657|cozy,winnemucca,flag,lodging,mounted
+NNN000658|alcohol,flag,retail,outdoors,reno
+NNN000659|wyndham,ramada,gambling,reno,mounted
+NNN000660|dilligas,alcohol,reno,mounted,business
+NNN000661|dos,amigos,winnemucca,mounted
+NNN000663|dos,amigos,restaurante,winnemucca,mounted
+NNN000664|derelict,lodging,reno,arlington,mounted
+NNN000665|regular,tavern,reno,roof,mounted
+NNN000666|elbow,alcohol,roof,sparks,victorian
+NNN000668|bail,bonds,elko,open,silver
+NNN000669|merchandise,wiht,elko,open,mounted
+NNN000670|lodging,mounted,reno
+NNN000671|"fantasy,adult entertainment and showgirls,mounted,reno"
+NNN000672|lodging,reno,mounted
+NNN000673|traders,glass,winnemucca,mounted
+NNN000674|floyd,fireside,lounge,kietzke,roof
+NNN000675|carson,outdoors,lodging,mounted
+NNN000676|walls,winnemucca,outdoors,lodging,office
+NNN000677|coin,lodging,reno,mounted
+NNN000678|lodging,elko,gambling,mounted,idaho
+NNN000682|goodwill,carson,dust,mounted
+NNN000683|hanson,alcohol,winnemucca,flag,mounted
+NNN000684|automobiles,lodging,reno,mounted
+NNN000686|lodging,reno,mounted
+NNN000687|flag,lodging,office,reno,mounted
+NNN000688|holiday,elko,lodging,idaho,flag
+NNN000689|winnemucca,holiday,lodging,mounted
+NNN000692|edmonds,crossing,gambling,carson
+NNN000693|jr,grill,alcohol,elko,mounted
+NNN000694|jub,thirst,parlor,boarded,windows
+NNN000695|guest,kat,mound,kit,lodging
+NNN000696|parada,kietzke,reno,mounted
+NNN000697|planet,laughing,flag,reno,mounted
+NNN000698|lee,armstrong,flyin,animals,winnemucca
+NNN000699|"libido,adult entertainment and showgirls,entertainment,retail,reno"
+NNN000700|lili,kietzke,food,reno,mounted
+NNN000701|love,ranch,carson,kit,kat
+NNN000702|lucky,lodging,flag,reno,mounted
+NNN000703|manor,automobiles,lodging,elko,flag
+NNN000704|mark,fore,strike,sports,goods
+NNN000705|mark,fore,strike,sports,goods
+NNN000706|casa,reno,mounted
+NNN000707|midtown,lodging,office,shot,reno
+NNN000708|town,elko,lodging,idaho,mounted
+NNN000709|moonlite,bunnyranch,moonlight,electrical,bunny
+NNN000710|entertainment,stadium,reno,mounted,center
+NNN000711|globe,curry,alcohol,carson,built
+NNN000712|olympic,roof,lodging,mounted,flag
+NNN000713|animals,battle,outdoors,food,alcohol
+NNN000714|animals,battle,outdoors,food,alcohol
+NNN000715|animals,battle,outdoors,food,alcohol
+NNN000716|animals,battle,outdoors,food,roof
+NNN000717|park,winnemucca,lodging,roof,mounted
+NNN000718|parker,winnemucca,gambling,surrounding,mounted
+NNN000721|pony,power,lodging,prater,box
+NNN000722|pussycat,baud,alcohol,winnemucca,mounted
+NNN000723|rail,sparks,gambling,victorian,mounted
+NNN000724|rail,gambling,sparks,victorian,mounted
+NNN000725|rail,gambling,sparks,victorian,mounted
+NNN000726|rail,gambling,sparks,victorian,mounted
+NNN000727|regency,sands,roof,reno,arlington
+NNN000728|cabaret,light,mound,kit,kat
+NNN000729|lion,elko,portico,gambling,mounted
+NNN000730|regency,lodging,winnemucca,flag,mounted
+NNN000731|glad,reno,lodging,mounted,flag
+NNN000732|royal,reno,automobiles,lodging,flag
+NNN000733|removed,derelict,reno,mounted
+NNN000735|aquatic,lodging,reno,mounted
+NNN000736|russ,automobiles,sales,rv,victorian
+NNN000737|nails,safari,mounted,sparks
+NNN000738|sagebrush,ranch,kit,kat,carson
+NNN000739|sagebrush,ranch,kit,kat,carson
+NNN000740|sandman,lodging,reno,mounted
+NNN000741|sandman,lodging,office,reno,mounted
+NNN000742|sawasdee,thai,sparks,food,mccarran
+NNN000743|scott,shady,winnemucca,lodging,mounted
+NNN000744|scott,shady,lodging,winnemucca,mounted
+NNN000745|scott,shady,lodging,winnemucca,roof
+NNN000746|scott,shady,office,lodging,winnemucca
+NNN000747|shifters,pub,midtown,flag,reno
+NNN000748|shine,salon,suite,sparks,mccarran
+NNN000749|silver,alcohol,elko,business
+NNN000750|silver,automobiles,lodging,flag,painted
+NNN000751|queen,caroline,silver,lodging,carson
+NNN000752|sk,noodle,sparks,suite,mccarran
+NNN000753|gambling,carson,mounted
+NNN000754|betsy,kitchen,big,carson,gambling
+NNN000756|outdoors,stardust,lake,lodging,california
+NNN000757|stockmen,elko,business,mounted
+NNN000758|sundance,winnemucca,gambling,mounted,marquee
+NNN000759|sundance,winnemucca,gambling,marquee,flag
+NNN000760|sunset,lodging,mounted,reno,flag
+NNN000761|taco,time,winnemucca,mounted,business
+NNN000764|telescope,lanes,elko,flag,mounted
+NNN000766|griddle,winnemucca,mounted,flag
+NNN000767|lace,carson,flag,mounted
+NNN000768|animals,winnemucca,food,pub,mounted
+NNN000769|animals,winnemucca,food,mounted,alcohol
+NNN000772|union,carson,mounted
+NNN000773|tombstone,territory,terriroty,reno,mounted
+NNN000774|travelers,lodging,elko,mounted,idaho
+NNN000775|tsa,custom,car,truck,carson
+NNN000776|winnemucca,free
+NNN000777|orchid,wild,reno,mounted
+NNN000778|food,wild,aquatic,flag,reno
+NNN000779|food,wild,aquatic,reno,mounted
+NNN000781|winnemucca,lodging,mounted
+NNN000782|winners,winnemucca,lodging,gambling,mounted
+NNN000783|winners,winnemucca,lodging,parking,gambling
+NNN000784|winners,winnemucca,lodging,flag,mounted
+NNN000786|improvement,esmeralda,cvic,minden,carson
+NNN000787|minden,carson,lodging,gambling,mounted
+NNN000788|minden,carson,lodging,roof,gambling
+NNN000789|business,gambling,roof,elko,mounted
+NNN000790|business,band,gambling,mounted,elko
+NNN000791|business,gambling,elko,mounted
+NNN000793|outdoors,elko,flag,mounted
+NNN000794|entertainment,crystal,roof,elko,business
+NNN000797|french,gardnerville,alcohol,flag,mounted
+NNN000798|valmy,lodging,mounted
+NNN000799|inez,alcohol,elko,mounted
+NNN000802|lazy,campground,cornell,lovelock,mounted
+NNN000804|pj,strike,lucky,alcohol,elko
+NNN000805|ranch,elko,flag,mounted
+NNN000806|minden,food,flag,mounted
+NNN000807|folklife,outdoors,center,roof,elko
+NNN000808|sharkey,gardnerville,gambling,mounted
+NNN000809|sierra,lodging,lovelock,mounted
+NNN000810|star,yoga,scott,roof,elko
+NNN000811|carlin,closeups,chestnut,lodging,food
+NNN000812|carlin,missing,lodging,mounted
+NNN000813|stray,dog,pub,business,elko
+NNN000814|sue,fantasy,alcohol,elko,flag
+NNN000815|sunset,cornell,lovelock,lodging,removed
+NNN000816|thunderbird,lodging,elko,mounted,idaho
+NNN000817|outdoors,lodging,elko,flag,mounted
+NNN000818|crystal,bay,alcohol,mounted
+NNN000819|crystal,bay,calaneva,lodging,mounted
+NNN000821|biltmore,outdoors,crystal,bay,lodging
+NNN000829|depot,fallon,williams,mounted
+NNN000830|hursh,fallon,maine,flag,mounted
+NNN000833|fallon,gambling,maine,mounted
+NNN000834|kent,fallon,maine,flag,mounted
+NNN000835|lodging,fallon,mounted
+NNN000836|springs,oasis,fallon,gambling,mounted
+NNN000837|overland,alcohol,fallon,lodging,roof
+NNN000838|stockman,standalone,fallon,gambling,williams
+NNN000839|gambling,fallon,super,williams
+NNN000845|theaters,fallon,maine,flag,mounted
+NNN000846|glass,fallon,mounted,reno
+NNN000852|silverado,newlands,fernley,gambling,mounted
+NNN000854|silverado,dsc,trip,jpg,gambling
+NNN000860|topaz,gardnerville,lodging,mounted
+NNN000862|gerlach,alcohol,mounted
+NNN000863|workers,gerlach,alcohol,roof
+NNN000864|cinadome,entertainment,hawthorne,mounted
+NNN000866|hawthorne,flag,mounted
+NNN000867|hawthorne,roof,lodging,mounted
+NNN000869|tavern,hawthorne,roof,mounted,flag
+NNN000871|food,hawthorne,mounted
+NNN000872|hazen,retail,flag,mounted,automobiles
+NNN000873|barton,alcohol,gambling,portico,mounted
+NNN000877|barton,alcohol,gambling,mounted
+NNN000880|pete,cactus,gambling,mounted
+NNN000881|pete,cactus,gambling,mounted,lodging
+NNN000883|jacks,gambling,wrapping,lodging
+NNN000884|jacks,gambling,lodging,mounted
+NNN000887|horseshu,gambling,lodging,mounted
+NNN000888|pony,gambling,mounted
+NNN000889|pony,gambling,mounted
+NNN000893|margie,lone,pine,ethnicity,california
+NNN000894|mt,whitney,lone,pine,lodging
+NNN000895|mcdermitt,gambling,mounted
+NNN000898|ta,frontage,shot,mounted
+NNN000899|mina,sue,derelict,lodging,mounted
+NNN000900|atlantis,lodging,gambling,reno,mounted
+NNN000901|atlantis,lodging,gambling,reno,mounted
+NNN000907|brewing,basin,great,reno,logo
+NNN000908|brewing,basin,great,reno,mounted
+NNN000909|lanes,sierra,reno,mounted
+NNN000910|lanes,sierra,mural,close,reno
+NNN000916|mall,town,reno,mounted
+NNN000918|cyclesmith,bicycle,sierra,shop,reno
+NNN000919|sierra,meadows,pkwy,reno,mounted
+NNN000921|tamarack,gambling,reno,mounted
+NNN000922|tamarack,gambling,reno,mounted
+NNN000924|parlor,reno,mounted
+NNN000929|whispering,wine,vine,mounted,reno
+NNN000930|alcohol,roof,reno,mounted
+NNN000935|greenbrae,commons,sparks,roof,mounted
+NNN000936|gambling,sparks,mounted,lodging,entrance
+NNN000940|automobiles,sales,sparks,rock,mounted
+NNN000941|florist,sparks,mounted
+NNN000943|village,outdoors,nichols,sparks,mounted
+NNN000945|caf,ounted,derelict,sparks,mounted
+NNN000947|haul,silverada,trailer,sparks,reno
+NNN000949|tonopah,tlc,thetonopah,alcohol,business
+NNN000956|kantina,peak,crystal,verdi,mounted
+NNN000958|ranch,verdi,gambling,rv,mounted
+NNN000960|belle,aquatic,market,food,verdi
+NNN000964|bella,hacienda,wells,mounted
+NNN000965|rancho,roof,lodging,mounted,wells
+NNN000969|flying,wells,mounted,advertising,gambling
+NNN000970|entertainment,flag,mounted,wells
+NNN000971|market,wells,humboldt,mounted
+NNN000972|sharon,wells,lodging,mounted
+NNN000973|victory,missing,lodging,flag,mounted
+NNN000975|wheel,wagon,griff,wells,lodging
+NNN000981|montego,bay,wendover,portico,mounted
+NNN000982|montego,bay,wendover,mounted
+NNN000983|montego,bay,wendover,mounted
+NNN000984|montego,bay,wendover,mounted
+NNN000985|montego,bay,wendover,mounted
+NNN000986|concert,peppermill,wendover,hall,mounted
+NNN000987|concert,peppermill,wendover,hall,mounted
+NNN000988|rainbow,wendover,mounted,lodging,gambling
+NNN000990|rainbow,wendover,mounted,lodging,gambling
+NNN000993|garter,wendover,mounted,lodging,gambling
+NNN000998|wendover,gambling,mounted,lodging
+NNN001000|wendover,created,designer,outdoors,vic
+NNN001003|kelly,jim,gambling,crystal,bay
+NNN001005|hard,rock,vinyl,stateline,outdoors
+NNN001006|alpine,hard,union,rock,ceiling
+NNN001007|gambling,stateline,outdoors,lake,mounted
+NNN001008|ourt,ceiling,stateline,caf,gambling
+NNN001009|gambling,stateline,outdoors,lake,mounted
+NNN001011|mclennan,russ,stateline,gambling,outdoors
+NNN001012|harveys,food,sports,stateline,outdoors
+NNN001014|cone,cove,pine,zephyr,lodging
+NNN001015|cove,zephyr,lodging,mounted,food

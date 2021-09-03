@@ -97,6 +97,29 @@ function mediaNodesIterate($_mediaNodes, $_fileNodes, $_dcNode,$_mediaTypes) {
     return [$_mediaNodes,$_fileNodes,$_dcNode];
 }
 
+
+function getJSONAPI ($_uuid) {
+  $url = "http://special.library.unlv.edu/jsonapi/node/dc_object/" . $_uuid;
+  $data=file_get_contents($url); #GET the JSON API results from the ENDPOINT AS A JSON OBJECT
+  $jsonObj=json_decode($data);
+  $node=$jsonObj->data;
+  $dcNode = ['did'      =>    $node->attributes->field_digital_id,
+             'uuid'     =>    $node->id,
+             'url'      =>    str_replace("http://n2t.net","http://special.library.unlv.edu",$node->attributes->field_archival_resource_key->uri),
+             'title'    =>    $node->attributes->title,
+             'body'     =>    getbody($node),
+             'citation' =>    getcitation($node),
+             'lat'      =>    getlatlon($node)[0],
+             'lon'      =>    getlatlon($node)[1],
+             'thumbnail'=>    NULL,
+             'service'  =>    NULL,
+             'original' =>    NULL
+
+  ];
+  print "FOUND MISSING PARENT, GRABBED " . $dcNode['did'] . " from web\n";
+  return $dcNode;
+}
+
 #***********************************
 #***************MAIN****************
 #***********************************
@@ -180,11 +203,20 @@ foreach ($childNodeArray as $child) {
   #it is a child, so update the file URLs with the results from ABOVE
   $parents=$child['parent']; #there can be multiple parents in array for some collections
   foreach ($parents as $parent) { #iterate over the parents and see if one matches our parent list, if so break
+    $parentFound = FALSE;
     if (isset($finalNodeArray[$parent->id])) {
       $updateUUID = $parent->id;
+      $parentFound = TRUE;
       break;
     }
   }
+
+  #this code catches child nodes and grabs the parent if the parent didn't exist (last batch of NNN items had imageless parents, which messed up code)
+  if ($parentFound == FALSE) {
+    $updateUUID = $child['parent'][0]->id;
+    $finalNodeArray[$updateUUID] = getJSONAPI($updateUUID);
+  }
+
   foreach (array_values($mediaTypes) as $type) {
 
     #update each image type based on what's in the child

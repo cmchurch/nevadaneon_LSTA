@@ -25,6 +25,10 @@ Christopher Church, PHD
    * IN FEEDS, THE TAMPER MODULE WILL EXPLODE THE NON-ATOMIZED DATA IN THESE FIELDS TO POPULATE THE RELEVANT URL FIELDS
    * FEEDS WILL NEED A CONTENT TYPE WITH FIELDS ONTO WHICH THE CSV FIELDS CAN BE MAPPED
    * **NOTE** Tell it to skip any items that do not have any images associated with the record
+   * **NOTE** I had to update this with a hack to redownload any parent nodes if a child exists without a parent; this is because many of the later NNN items have parents imported without associated media nodes, and since the initial API grab uses the media endpoint, these nodes were missing; by grabbing them at this point, we ensure that no items are missed -> it's not ideal, but it works without having to rewrite all the code
+
+dev-read-json.php
+ * this script is just used to output what's in the downloaded JSON file; I used this to discover the issue with parentless child nodes (due to no media nodes being associated with the parent node)
 
 ### METADATA MERGE
 03_append-local-metadata.php
@@ -47,6 +51,8 @@ Christopher Church, PHD
    * THIS SCRIPT PROCESSES THE METADATA CONTAINED IN THE DESCRIPTION FIELD FOR THE ITEMS IN THE SKY PREFIX (YESCO COLLECTION), BUILDING A METADATA TABLE FOR 03_append-local-metadata
       * IT SKIPS ALL CHILDREN NODES AND ONLY DOES THE PARENTS; IT PROCESSES THE DATE RANGES INTO A COMMA SEPARATED RANGE
 
+10_append-NNN-meta.php
+   * this is a dev script for combining the final NNN metadata table with the main extensible metadata table; it was single-use and shouldn't really be necessary again.
 
 99_update-feeds.php
   * THIS SCRIPT COPIES THE OUTPUT FROM 03_append-local-metadata.php TO THE FEEDS DIRECTORY IN DRUPAL FOR IMPORT

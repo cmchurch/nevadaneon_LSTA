@@ -1,7 +1,7 @@
 <?php
 print "\n\nCombining color-tags data with extensible metadata table.\n";
 
-$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/INPUT/input.csv",'did-unr');
+$metadata = fetchCSV(__DIR__ . "/../../METADATA-MERGE/OUTPUT/import.csv",'did-unr');
 $colordata = fetchCSV(__DIR__ . "/OUTPUT/color-tags.csv",'did');
 
 foreach ($metadata as $key=>$item) {
@@ -9,7 +9,7 @@ foreach ($metadata as $key=>$item) {
   else {$metadata[$key]['color-tags']=NULL;}
 }
 
-makeCSV(__DIR__."/OUTPUT/input-with-color-tags.csv",$metadata);
+makeCSV(__DIR__."/OUTPUT/import-with-color-tags.csv",$metadata);
 
 /* FUNCTIONS */
 
